@@ -8,13 +8,15 @@ import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
 
+// Only use basename when deployed to GitHub Pages (github.io domain)
+const basename = window.location.hostname.endsWith("github.io") ? "/strings-chordforge" : "/";
+
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      {/* When deploying to GitHub Pages sub‑path we need a basename */}
-      <BrowserRouter basename="/strings-chordforge">
+      <BrowserRouter basename={basename}>
         <Routes>
           <Route path="/" element={<Index />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
