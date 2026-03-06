@@ -19,6 +19,39 @@ Diagrams are created to resemble the actual size of the instrument, including sc
   <img src="https://github.com/user-attachments/assets/c13ff6b8-7f54-401b-8cbd-e808adb366bc" />
 </div>
 
+<p align="center">Default Instrument Measurement Values</p>
+
+<div align="center">
+  <table><thead>
+    <tr>
+      <th></th>
+      <th>Guitar</th>
+      <th>Ukulele</th>
+      <th>Bass</th>
+    </tr></thead>
+  <tbody>
+    <tr>
+      <td>Scale Length</td>
+      <td>468mm</td>
+      <td>382mm</td>
+      <td>864mm</td>
+    </tr>
+    <tr>
+      <td>Nut Width</td>
+      <td>43mm</td>
+      <td>35mm</td>
+      <td>42mm</td>
+    </tr>
+    <tr>
+      <td>Bridge Width</td>
+      <td>56mm</td>
+      <td>42mm</td>
+      <td>60mm</td>
+    </tr>
+  </tbody>
+  </table>
+</div>
+
 ### Colored & Outlined Chart
 
 Choose your preferred color & taste between wooden style or diagram-based style.
@@ -82,8 +115,9 @@ Adjust the diagram to your liking, for example, by changing the instrument, scal
       Music Education Worksheet
     </td>
     <td align="center">
-      <img src="path/to/image4.png" /><br>
-      And More...
+      <img src="https://github.com/user-attachments/assets/e691ae60-0f03-47a2-af1b-ecad16cf8ae5" /><br>
+      Music Education Book<br>
+      Mockup Credit: upklyak
     </td>
   </tr>
 </table>
