@@ -59,3 +59,29 @@ Adjust the diagram to your liking, for example, by changing the instrument, scal
 3. Customize the diagram to your liking.
 
 4. Export the result. You can adjust the image width. You can choose SVG, PNG, JPG formats, or simply copy it if you don't want to bother downloading it.
+
+
+## Example Use Cases
+
+<table>
+  <tr>
+    <td>
+      <img src="https://github.com/user-attachments/assets/c81b4273-d5d1-420c-b8bf-02a6e9716585" /><br>
+      Lyrics and Chords VIdeo
+    </td>
+    <td>
+      <img src="https://github.com/user-attachments/assets/6861e96b-690d-4ece-857e-be76f0196ae5" /><br>
+      Tutorial or Lesson Video
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <img src="https://github.com/user-attachments/assets/ecde5180-3237-422c-98bc-5dae9562a61a" /><br>
+      Music Education Worksheet
+    </td>
+    <td>
+      <img src="path/to/image4.png" /><br>
+      And More...
+    </td>
+  </tr>
+</table>
