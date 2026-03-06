@@ -65,21 +65,23 @@ Adjust the diagram to your liking, for example, by changing the instrument, scal
 
 <table>
   <tr>
-    <td>
+    <td align="center">
       <img src="https://github.com/user-attachments/assets/c81b4273-d5d1-420c-b8bf-02a6e9716585" /><br>
-      Lyrics and Chords VIdeo
+      Lyrics and Chords Video<br>
+      Image Credit: George Webster
     </td>
-    <td>
+    <td align="center">
       <img src="https://github.com/user-attachments/assets/6861e96b-690d-4ece-857e-be76f0196ae5" /><br>
-      Tutorial or Lesson Video
+      Tutorial or Lesson Video<br>
+      Image Credit: Marco Cirillo Ukulele
     </td>
   </tr>
   <tr>
-    <td>
+    <td align="center">
       <img src="https://github.com/user-attachments/assets/ecde5180-3237-422c-98bc-5dae9562a61a" /><br>
       Music Education Worksheet
     </td>
-    <td>
+    <td align="center">
       <img src="path/to/image4.png" /><br>
       And More...
     </td>
