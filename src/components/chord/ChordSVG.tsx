@@ -1,5 +1,5 @@
-import React, { useMemo, forwardRef } from 'react';
-import { InstrumentConfig, ChordConfig, DisplayConfig, ChartTheme, AllLabelSettings, LabelSettings } from '@/types/chord';
+import React, { useMemo, forwardRef, useState, useCallback } from 'react';
+import { InstrumentConfig, ChordConfig, DisplayConfig, ChartTheme, AllLabelSettings, LabelSettings, BarreConfig } from '@/types/chord';
 import { getNoteAtFret, fretPosition } from '@/utils/music';
 import { CHART_THEMES, ChartColors } from '@/data/chartThemes';
 
@@ -10,6 +10,7 @@ interface Props {
   chartTheme: ChartTheme;
   labelSettings: AllLabelSettings;
   onPositionClick: (stringIndex: number, fret: number) => void;
+  onBarreAdd?: (barre: BarreConfig) => void;
 }
 
 function getLabelFont(ls: LabelSettings, globalFont: string): string {
@@ -21,9 +22,16 @@ function getLabelColor(ls: LabelSettings, normal: string, contrast: string): str
   return ls.fullContrast ? contrast : normal;
 }
 
+interface DragState {
+  startString: number;
+  startFret: number;
+  currentString: number;
+}
+
 export const ChordSVG = forwardRef<SVGSVGElement, Props>(
-  ({ instrument, chord, display, chartTheme, labelSettings, onPositionClick }, ref) => {
+  ({ instrument, chord, display, chartTheme, labelSettings, onPositionClick, onBarreAdd }, ref) => {
     const C: ChartColors = CHART_THEMES[chartTheme] || CHART_THEMES['realistic-dark'];
+    const [dragState, setDragState] = useState<DragState | null>(null);
 
     const calc = useMemo(() => {
       const sl = display.scaleLength;
@@ -76,26 +84,27 @@ export const ChordSVG = forwardRef<SVGSVGElement, Props>(
     const { sf, nf, ns, topAbsY, botAbsY, topW, botW, maxW, pad, vw, vh, cx, toSvgY, stringX, widthAt, fretAbsY, frets, stringThick } = calc;
     const rotation = display.rotation;
 
-    const handleClick = (e: React.MouseEvent<SVGSVGElement>) => {
+    const hitTest = useCallback((e: React.MouseEvent<SVGSVGElement>) => {
       const svg = e.currentTarget;
       const pt = svg.createSVGPoint();
       pt.x = e.clientX;
       pt.y = e.clientY;
       const ctm = svg.getScreenCTM();
-      if (!ctm) return;
+      if (!ctm) return null;
       const p = pt.matrixTransform(ctm.inverse());
 
+      // Above nut area
       if (p.y < frets[0].svgY && p.y > frets[0].svgY - 14) {
         let nearest = 0, minD = Infinity;
         for (let s = 0; s < ns; s++) {
           const d = Math.abs(p.x - stringX(s, topAbsY));
           if (d < minD) { minD = d; nearest = s; }
         }
-        if (minD < 8) onPositionClick(nearest, 0);
-        return;
+        if (minD < 8) return { stringIndex: nearest, fret: 0 };
+        return null;
       }
 
-      if (p.y < frets[0].svgY || p.y > frets[frets.length - 1].svgY) return;
+      if (p.y < frets[0].svgY || p.y > frets[frets.length - 1].svgY) return null;
 
       let fretNum = sf + 1;
       for (let i = 1; i < frets.length; i++) {
@@ -108,7 +117,42 @@ export const ChordSVG = forwardRef<SVGSVGElement, Props>(
         const d = Math.abs(p.x - stringX(s, absY));
         if (d < minD) { minD = d; nearest = s; }
       }
-      if (minD < 8) onPositionClick(nearest, fretNum);
+      if (minD < 8) return { stringIndex: nearest, fret: fretNum };
+      return null;
+    }, [frets, ns, sf, topAbsY, pad, stringX]);
+
+    const handleMouseDown = (e: React.MouseEvent<SVGSVGElement>) => {
+      const hit = hitTest(e);
+      if (!hit || hit.fret === 0) return;
+      setDragState({ startString: hit.stringIndex, startFret: hit.fret, currentString: hit.stringIndex });
+    };
+
+    const handleMouseMove = (e: React.MouseEvent<SVGSVGElement>) => {
+      if (!dragState) return;
+      const hit = hitTest(e);
+      if (hit && hit.fret === dragState.startFret) {
+        setDragState({ ...dragState, currentString: hit.stringIndex });
+      }
+    };
+
+    const handleMouseUp = (e: React.MouseEvent<SVGSVGElement>) => {
+      if (dragState) {
+        const from = Math.min(dragState.startString, dragState.currentString);
+        const to = Math.max(dragState.startString, dragState.currentString);
+        if (from !== to && onBarreAdd) {
+          onBarreAdd({ fret: dragState.startFret, fromString: from, toString: to });
+        } else {
+          // Single click - normal position toggle
+          onPositionClick(dragState.startString, dragState.startFret);
+        }
+        setDragState(null);
+        return;
+      }
+      // Fallback for clicks above nut
+      const hit = hitTest(e);
+      if (hit && hit.fret === 0) {
+        onPositionClick(hit.stringIndex, 0);
+      }
     };
 
     const fbPoints = [
@@ -140,15 +184,36 @@ export const ChordSVG = forwardRef<SVGSVGElement, Props>(
       }
     }
 
-    // Finger dots
-    const fingerDots = chord.positions.map((fret, s) => {
-      if (fret === null || fret === 0 || fret <= sf || fret > sf + nf) return null;
+    // Collect all finger dots (standard + multi-position)
+    const allFingerDots: { x: number; y: number; note: string; stringIndex: number }[] = [];
+
+    if (display.multiPositionMode && chord.multiPositions) {
+      chord.multiPositions.forEach((fretList, s) => {
+        for (const fret of fretList) {
+          if (fret <= sf || fret > sf + nf) continue;
+          const midAbsY = (fretAbsY(fret - 1) + fretAbsY(fret)) / 2;
+          allFingerDots.push({
+            x: stringX(s, midAbsY),
+            y: toSvgY(midAbsY),
+            note: getNoteAtFret(instrument.tuningIndices[s], fret),
+            stringIndex: s,
+          });
+        }
+      });
+    }
+
+    // Standard single-position dots
+    chord.positions.forEach((fret, s) => {
+      if (fret === null || fret === 0 || fret <= sf || fret > sf + nf) return;
+      // In multi-position mode, skip if already covered
+      if (display.multiPositionMode && chord.multiPositions[s]?.includes(fret)) return;
       const midAbsY = (fretAbsY(fret - 1) + fretAbsY(fret)) / 2;
-      return {
+      allFingerDots.push({
         x: stringX(s, midAbsY),
         y: toSvgY(midAbsY),
         note: getNoteAtFret(instrument.tuningIndices[s], fret),
-      };
+        stringIndex: s,
+      });
     });
 
     const nutH = 1.8;
@@ -156,7 +221,6 @@ export const ChordSVG = forwardRef<SVGSVGElement, Props>(
     const muteSize = display.muteSize;
     const openR = display.openSize;
 
-    // Counter-rotation and centering for labels that shouldn't rotate with chart
     const counterRotate = (ls: LabelSettings, x: number, y: number) => {
       if (rotation !== 0 && !ls.rotateWithChart) {
         return `rotate(${-rotation}, ${x}, ${y})`;
@@ -164,7 +228,6 @@ export const ChordSVG = forwardRef<SVGSVGElement, Props>(
       return undefined;
     };
 
-    // Compute dominant-baseline and text-anchor for proper centering when counter-rotated
     const getLabelAnchor = (ls: LabelSettings) => {
       if (rotation !== 0 && !ls.rotateWithChart) {
         return { dominantBaseline: 'central' as const, textAnchor: 'middle' as const };
@@ -172,12 +235,49 @@ export const ChordSVG = forwardRef<SVGSVGElement, Props>(
       return {};
     };
 
+    // Barre rendering
+    const barreElements = (chord.barres || []).map((barre, i) => {
+      if (barre.fret <= sf || barre.fret > sf + nf) return null;
+      const midAbsY = (fretAbsY(barre.fret - 1) + fretAbsY(barre.fret)) / 2;
+      const y = toSvgY(midAbsY);
+      const x1 = stringX(barre.fromString, midAbsY);
+      const x2 = stringX(barre.toString, midAbsY);
+      return (
+        <line key={`barre${i}`}
+          x1={x1} y1={y} x2={x2} y2={y}
+          stroke={C.finger} strokeWidth={dotR * 1.8}
+          strokeLinecap="round" opacity={0.85}
+        />
+      );
+    });
+
+    // Drag preview barre
+    const dragPreview = dragState && dragState.startString !== dragState.currentString ? (() => {
+      const fret = dragState.startFret;
+      if (fret <= sf || fret > sf + nf) return null;
+      const midAbsY = (fretAbsY(fret - 1) + fretAbsY(fret)) / 2;
+      const y = toSvgY(midAbsY);
+      const from = Math.min(dragState.startString, dragState.currentString);
+      const to = Math.max(dragState.startString, dragState.currentString);
+      const x1 = stringX(from, midAbsY);
+      const x2 = stringX(to, midAbsY);
+      return (
+        <line
+          x1={x1} y1={y} x2={x2} y2={y}
+          stroke={C.finger} strokeWidth={dotR * 1.8}
+          strokeLinecap="round" opacity={0.4}
+        />
+      );
+    })() : null;
+
     return (
       <svg
         ref={ref}
         viewBox={`0 0 ${vw} ${vh}`}
         xmlns="http://www.w3.org/2000/svg"
-        onClick={handleClick}
+        onMouseDown={handleMouseDown}
+        onMouseMove={handleMouseMove}
+        onMouseUp={handleMouseUp}
         style={{
           cursor: 'crosshair',
           maxHeight: '82vh',
@@ -259,8 +359,12 @@ export const ChordSVG = forwardRef<SVGSVGElement, Props>(
           );
         })}
 
+        {/* Barres */}
+        {barreElements}
+        {dragPreview}
+
         {/* Finger dots */}
-        {fingerDots.map((dot, i) => dot && (
+        {allFingerDots.map((dot, i) => (
           <g key={`fd${i}`}>
             <circle cx={dot.x} cy={dot.y} r={dotR}
               fill={C.useGradients ? 'url(#finger-grad)' : C.finger} />

@@ -14,14 +14,18 @@ interface Props {
   onOpenChange: (open: boolean) => void;
   svgRef: React.RefObject<SVGSVGElement>;
   chordName: string;
+  rotation: number;
 }
 
-export function ExportDialog({ open, onOpenChange, svgRef, chordName }: Props) {
+export function ExportDialog({ open, onOpenChange, svgRef, chordName, rotation }: Props) {
   const [format, setFormat] = useState<'svg' | 'png' | 'jpg'>('svg');
-  const [width, setWidth] = useState(1200);
+  const [size, setSize] = useState(1200);
   const [transparent, setTransparent] = useState(true);
   const [copied, setCopied] = useState(false);
   const { toast } = useToast();
+
+  const isHorizontal = rotation === 90 || rotation === -90;
+  const sizeLabel = isHorizontal ? 'Height (px)' : 'Width (px)';
 
   const handleExport = () => {
     if (!svgRef.current) return;
@@ -29,7 +33,7 @@ export function ExportDialog({ open, onOpenChange, svgRef, chordName }: Props) {
     if (format === 'svg') {
       exportChartSVG(svgRef.current, `${filename}.svg`);
     } else {
-      exportChartRaster(svgRef.current, format, width, transparent, `${filename}.${format}`);
+      exportChartRaster(svgRef.current, format, size, transparent, `${filename}.${format}`, rotation);
     }
     onOpenChange(false);
   };
@@ -37,7 +41,7 @@ export function ExportDialog({ open, onOpenChange, svgRef, chordName }: Props) {
   const handleCopy = async () => {
     if (!svgRef.current) return;
     try {
-      await copyChartRaster(svgRef.current, format as 'png' | 'jpg', width, transparent);
+      await copyChartRaster(svgRef.current, format as 'png' | 'jpg', size, transparent, rotation);
       setCopied(true);
       toast({ title: 'Copied to clipboard!' });
       setTimeout(() => setCopied(false), 2000);
@@ -69,9 +73,9 @@ export function ExportDialog({ open, onOpenChange, svgRef, chordName }: Props) {
           {format !== 'svg' && (
             <>
               <div className="flex items-center justify-between">
-                <Label className="text-sm">Width (px)</Label>
+                <Label className="text-sm">{sizeLabel}</Label>
                 <Input type="number" className="w-28 h-8 text-sm" min={100} max={8000}
-                  value={width} onChange={(e) => setWidth(parseInt(e.target.value) || 1200)} />
+                  value={size} onChange={(e) => setSize(parseInt(e.target.value) || 1200)} />
               </div>
               {format === 'png' && (
                 <div className="flex items-center justify-between">

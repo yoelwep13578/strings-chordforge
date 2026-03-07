@@ -1,5 +1,5 @@
-import { useState, useRef, useEffect } from 'react';
-import { InstrumentConfig, ChordConfig, DisplayConfig, ChartTheme, AllLabelSettings, DEFAULT_LABEL_SETTINGS } from '@/types/chord';
+import { useState, useRef, useEffect, useCallback } from 'react';
+import { InstrumentConfig, ChordConfig, DisplayConfig, ChartTheme, AllLabelSettings, DEFAULT_LABEL_SETTINGS, BarreConfig } from '@/types/chord';
 import { INSTRUMENTS, CHORD_LIBRARIES } from '@/data/chordTemplates';
 import { ChordSVG } from '@/components/chord/ChordSVG';
 import { ControlPanel } from '@/components/chord/ControlPanel';
@@ -13,8 +13,10 @@ const Index = () => {
   const [chord, setChord] = useState<ChordConfig>({
     name: 'G7',
     positions: [3, 2, 0, 0, 0, 1],
+    multiPositions: [[], [], [], [], [], []],
     startFret: 0,
     numFrets: 5,
+    barres: [],
   });
   const [display, setDisplay] = useState<DisplayConfig>({
     showInlay: true,
@@ -29,17 +31,19 @@ const Index = () => {
     muteSize: 3.2,
     openSize: 1.6,
     dotSize: 2.6,
+    multiPositionMode: false,
   });
   const [chartTheme, setChartTheme] = useState<ChartTheme>('realistic-dark');
   const [labelSettings, setLabelSettings] = useState<AllLabelSettings>(DEFAULT_LABEL_SETTINGS);
   const [exportOpen, setExportOpen] = useState(false);
   const svgRef = useRef<SVGSVGElement>(null);
 
-  // Apply webapp theme based on chart theme
   useEffect(() => {
     document.documentElement.setAttribute('data-chart-theme', chartTheme);
     return () => { document.documentElement.removeAttribute('data-chart-theme'); };
   }, [chartTheme]);
+
+  const makeEmptyMultiPositions = (strings: number) => Array.from({ length: strings }, () => [] as number[]);
 
   const handleInstrumentChange = (key: string) => {
     const inst = INSTRUMENTS[key];
@@ -57,11 +61,11 @@ const Index = () => {
       const first = presets[firstKey][0];
       setSelectedChordKey(firstKey);
       setVariationIndex(0);
-      setChord({ name: first.name, positions: [...first.positions], startFret: first.startFret, numFrets: 5 });
+      setChord({ name: first.name, positions: [...first.positions], multiPositions: makeEmptyMultiPositions(inst.strings), startFret: first.startFret, numFrets: 5, barres: [] });
     } else {
       setSelectedChordKey('');
       setVariationIndex(0);
-      setChord({ name: '', positions: new Array(inst.strings).fill(null), startFret: 0, numFrets: 5 });
+      setChord({ name: '', positions: new Array(inst.strings).fill(null), multiPositions: makeEmptyMultiPositions(inst.strings), startFret: 0, numFrets: 5, barres: [] });
     }
   };
 
@@ -72,7 +76,7 @@ const Index = () => {
     const variations = presets[key];
     if (variations && variations[0]) {
       const t = variations[0];
-      setChord({ name: t.name, positions: [...t.positions], startFret: t.startFret, numFrets: chord.numFrets });
+      setChord(prev => ({ ...prev, name: t.name, positions: [...t.positions], multiPositions: makeEmptyMultiPositions(instrument.strings), startFret: t.startFret, barres: [] }));
     }
   };
 
@@ -82,21 +86,51 @@ const Index = () => {
     const variations = presets[selectedChordKey];
     if (variations && variations[idx]) {
       const t = variations[idx];
-      setChord({ name: t.name, positions: [...t.positions], startFret: t.startFret, numFrets: chord.numFrets });
+      setChord(prev => ({ ...prev, name: t.name, positions: [...t.positions], multiPositions: makeEmptyMultiPositions(instrument.strings), startFret: t.startFret, barres: [] }));
     }
   };
 
-  const handlePositionClick = (stringIndex: number, fret: number) => {
+  const handlePositionClick = useCallback((stringIndex: number, fret: number) => {
+    if (display.multiPositionMode && fret > 0) {
+      // In multi-position mode, toggle fret in multiPositions array
+      setChord((prev) => {
+        const mp = prev.multiPositions.map(arr => [...arr]);
+        const idx = mp[stringIndex].indexOf(fret);
+        if (idx >= 0) {
+          mp[stringIndex].splice(idx, 1);
+        } else {
+          mp[stringIndex].push(fret);
+          mp[stringIndex].sort((a, b) => a - b);
+        }
+        return { ...prev, multiPositions: mp };
+      });
+    } else {
+      setChord((prev) => {
+        const np = [...prev.positions];
+        if (fret === 0) {
+          np[stringIndex] = np[stringIndex] === 0 ? null : 0;
+        } else {
+          np[stringIndex] = np[stringIndex] === fret ? null : fret;
+        }
+        return { ...prev, positions: np };
+      });
+    }
+  }, [display.multiPositionMode]);
+
+  const handleBarreAdd = useCallback((barre: BarreConfig) => {
     setChord((prev) => {
-      const np = [...prev.positions];
-      if (fret === 0) {
-        np[stringIndex] = np[stringIndex] === 0 ? null : 0;
-      } else {
-        np[stringIndex] = np[stringIndex] === fret ? null : fret;
+      // Check if same barre exists, if so remove it (toggle)
+      const existing = prev.barres.findIndex(
+        b => b.fret === barre.fret && b.fromString === barre.fromString && b.toString === barre.toString
+      );
+      if (existing >= 0) {
+        const newBarres = [...prev.barres];
+        newBarres.splice(existing, 1);
+        return { ...prev, barres: newBarres };
       }
-      return { ...prev, positions: np };
+      return { ...prev, barres: [...prev.barres, barre] };
     });
-  };
+  }, []);
 
   return (
     <div className="flex flex-col lg:flex-row min-h-screen">
@@ -129,6 +163,7 @@ const Index = () => {
           chartTheme={chartTheme}
           labelSettings={labelSettings}
           onPositionClick={handlePositionClick}
+          onBarreAdd={handleBarreAdd}
         />
       </main>
 
@@ -137,6 +172,7 @@ const Index = () => {
         onOpenChange={setExportOpen}
         svgRef={svgRef}
         chordName={chord.name}
+        rotation={display.rotation}
       />
     </div>
   );

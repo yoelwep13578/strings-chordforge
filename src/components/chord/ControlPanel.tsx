@@ -9,7 +9,7 @@ import { Button } from '@/components/ui/button';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Separator } from '@/components/ui/separator';
 import { Tooltip, TooltipContent, TooltipTrigger, TooltipProvider } from '@/components/ui/tooltip';
-import { Download, RotateCcw, RotateCw } from 'lucide-react';
+import { Download, RotateCcw, RotateCw, Info } from 'lucide-react';
 
 interface Props {
   instrumentKey: string;
@@ -138,7 +138,7 @@ export function ControlPanel({
             onChange={(e) => onChordChange({ ...chord, startFret: Math.max(0, parseInt(e.target.value) || 0) })} />
         </Field>
         <Field label="Frets Shown">
-          <Input type="number" className="w-20 h-8 text-sm" min={1} max={12}
+          <Input type="number" className="w-20 h-8 text-sm" min={1} max={24}
             value={chord.numFrets}
             onChange={(e) => onChordChange({ ...chord, numFrets: Math.max(1, parseInt(e.target.value) || 1) })} />
         </Field>
@@ -220,9 +220,62 @@ export function ControlPanel({
           <Switch checked={display.showTuning}
             onCheckedChange={(v) => onDisplayChange({ ...display, showTuning: v })} />
         </Field>
+        <TooltipProvider delayDuration={200}>
+          <div className="flex items-center justify-between gap-3">
+            <div className="flex items-center gap-1.5">
+              <Label className="text-sm text-secondary-foreground shrink-0">Multi-Position</Label>
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <Info className="w-3.5 h-3.5 text-muted-foreground cursor-help" />
+                </TooltipTrigger>
+                <TooltipContent className="max-w-[220px]">
+                  Allow multiple finger positions on the same string. Useful for scale diagrams, interval maps, or tab alternatives.
+                </TooltipContent>
+              </Tooltip>
+            </div>
+            <Switch checked={display.multiPositionMode}
+              onCheckedChange={(v) => onDisplayChange({ ...display, multiPositionMode: v })} />
+          </div>
+        </TooltipProvider>
       </div>
 
       <Separator />
+
+      {/* Barres */}
+      {chord.barres.length > 0 && (
+        <>
+          <div className="space-y-3">
+            <SectionTitle>Barres</SectionTitle>
+            <div className="space-y-1.5">
+              {chord.barres.map((b, i) => (
+                <div key={i} className="flex items-center justify-between text-xs text-muted-foreground">
+                  <span>Fret {b.fret}: string {b.fromString + 1}–{b.toString + 1}</span>
+                  <Button variant="ghost" size="sm" className="h-6 px-2 text-xs"
+                    onClick={() => {
+                      const newBarres = [...chord.barres];
+                      newBarres.splice(i, 1);
+                      onChordChange({ ...chord, barres: newBarres });
+                    }}>
+                    Remove
+                  </Button>
+                </div>
+              ))}
+            </div>
+            <p className="text-xs text-muted-foreground italic">Drag across strings on the chart to add barres</p>
+          </div>
+          <Separator />
+        </>
+      )}
+
+      {chord.barres.length === 0 && (
+        <>
+          <div className="space-y-2">
+            <SectionTitle>Barres</SectionTitle>
+            <p className="text-xs text-muted-foreground italic">Drag across strings on the same fret to create a barre indicator</p>
+          </div>
+          <Separator />
+        </>
+      )}
 
       {/* Marker Sizes */}
       <div className="space-y-3">
