@@ -120,4 +120,13 @@ Adjust the diagram to your liking, for example, by changing the instrument, scal
       Mockup Credit: upklyak
     </td>
   </tr>
+  <tr>
+    <td align="center">
+      <img src="https://github.com/user-attachments/assets/e83872d3-1094-4e53-9349-27e9201f24b0" /><br>
+      Songbook or Zine Indie
+    </td>
+    <td align="center">
+      <img src="" />
+    </td>
+  </tr>
 </table>
