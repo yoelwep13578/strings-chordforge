@@ -55,10 +55,12 @@ export function ControlPanel({
 
   return (
     <div className="space-y-5">
-      <div>
-        <h1 className="text-lg font-bold text-foreground tracking-tight">ChordForge</h1>
-        <p className="text-xs text-muted-foreground">Chord chart generator</p>
-      </div>
+      <a href="https://github.com/yoelwep13578/strings-chordforge" target="_blank">
+        <div>
+          <h1 className="text-lg font-bold text-foreground tracking-tight">ChordForge</h1>
+          <p className="text-xs text-muted-foreground">Chord chart generator</p>
+        </div>
+      </a>
 
       <Separator />
 
@@ -342,3 +344,4 @@ export function ControlPanel({
     </div>
   );
 }
+
