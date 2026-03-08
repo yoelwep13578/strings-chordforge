@@ -1,5 +1,5 @@
 import React, { useMemo, forwardRef, useState, useCallback } from 'react';
-import { InstrumentConfig, ChordConfig, DisplayConfig, ChartTheme, AllLabelSettings, LabelSettings, BarreConfig } from '@/types/chord';
+import { InstrumentConfig, ChordConfig, DisplayConfig, ChartTheme, AllLabelSettings, LabelSettings, BarreConfig, barreToInternal } from '@/types/chord';
 import { getNoteAtFret, fretPosition } from '@/utils/music';
 import { CHART_THEMES, ChartColors } from '@/data/chartThemes';
 
