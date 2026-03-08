@@ -3,12 +3,14 @@ import { Label } from '@/components/ui/label';
 import { Input } from '@/components/ui/input';
 import { Switch } from '@/components/ui/switch';
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/components/ui/collapsible';
+import { Tooltip, TooltipContent, TooltipTrigger, TooltipProvider } from '@/components/ui/tooltip';
 import { ChevronDown } from 'lucide-react';
 
 interface Props {
   title: string;
   settings: LabelSettings;
   onChange: (settings: LabelSettings) => void;
+  globalContrastActive?: boolean;
 }
 
 const Field = ({ label, children }: { label: string; children: React.ReactNode }) => (
@@ -18,7 +20,7 @@ const Field = ({ label, children }: { label: string; children: React.ReactNode }
   </div>
 );
 
-export function LabelSettingsSection({ title, settings, onChange }: Props) {
+export function LabelSettingsSection({ title, settings, onChange, globalContrastActive }: Props) {
   const update = (partial: Partial<LabelSettings>) => onChange({ ...settings, ...partial });
 
   return (
@@ -34,8 +36,21 @@ export function LabelSettingsSection({ title, settings, onChange }: Props) {
             onChange={(e) => update({ fontSize: parseFloat(e.target.value) || 2.5 })} />
         </Field>
         <Field label="Full Contrast">
-          <Switch checked={settings.fullContrast}
-            onCheckedChange={(v) => update({ fullContrast: v })} />
+          {globalContrastActive ? (
+            <TooltipProvider delayDuration={200}>
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <span className="inline-flex">
+                    <Switch checked={true} disabled className="opacity-50" />
+                  </span>
+                </TooltipTrigger>
+                <TooltipContent>Contrast applied globally</TooltipContent>
+              </Tooltip>
+            </TooltipProvider>
+          ) : (
+            <Switch checked={settings.fullContrast}
+              onCheckedChange={(v) => update({ fullContrast: v })} />
+          )}
         </Field>
         <Field label="Height Offset">
           <Input type="number" className="w-16 h-7 text-xs" min={-20} max={20} step={0.5}

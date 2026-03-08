@@ -16,13 +16,22 @@ export interface ChordTemplate {
   variation: string;
   positions: (number | null)[];
   startFret: number;
+  barres?: BarreConfig[];
 }
 
 export interface ChordConfig {
   name: string;
   positions: (number | null)[];
+  multiPositions: number[][];  // per-string array of frets (for scale mode)
   startFret: number;
   numFrets: number;
+  barres: BarreConfig[];
+}
+
+export interface BarreConfig {
+  fret: number;
+  fromString: number;
+  toString: number;
 }
 
 export type ChartTheme = 'realistic-dark' | 'realistic-light' | 'outline-light' | 'outline-dark';
@@ -64,6 +73,8 @@ export interface DisplayConfig {
   muteSize: number;
   openSize: number;
   dotSize: number;
+  multiPositionMode: boolean;
+  globalFullContrast: boolean;
 }
 
 export interface ExportOptions {

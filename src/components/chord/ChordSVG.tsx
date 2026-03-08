@@ -30,7 +30,35 @@ interface DragState {
 
 export const ChordSVG = forwardRef<SVGSVGElement, Props>(
   ({ instrument, chord, display, chartTheme, labelSettings, onPositionClick, onBarreAdd }, ref) => {
-    const C: ChartColors = CHART_THEMES[chartTheme] || CHART_THEMES['realistic-dark'];
+    const baseC: ChartColors = CHART_THEMES[chartTheme] || CHART_THEMES['realistic-dark'];
+    
+    // Apply global full contrast for outline themes
+    const C: ChartColors = useMemo(() => {
+      if (!display.globalFullContrast) return baseC;
+      const isOutlineLight = chartTheme === 'outline-light';
+      const isOutlineDark = chartTheme === 'outline-dark';
+      if (!isOutlineLight && !isOutlineDark) return baseC;
+      const c = isOutlineLight ? '#ffffff' : '#000000';
+      return {
+        ...baseC,
+        fret: c,
+        nut: c,
+        nutDark: c,
+        stringBass: c,
+        stringTreble: c,
+        inlay: isOutlineLight ? 'rgba(255,255,255,0.15)' : 'rgba(0,0,0,0.15)',
+        finger: c,
+        fingerHighlight: c,
+        fingerText: isOutlineLight ? '#000000' : '#ffffff',
+        binding: c,
+        label: c,
+        labelContrast: c,
+        chordName: c,
+        chordNameContrast: c,
+        openMute: c,
+        useGradients: false,
+      };
+    }, [baseC, display.globalFullContrast, chartTheme]);
     const [dragState, setDragState] = useState<DragState | null>(null);
 
     const calc = useMemo(() => {

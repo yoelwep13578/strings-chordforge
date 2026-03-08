@@ -52,15 +52,14 @@ export function ControlPanel({
 }: Props) {
   const chordPresets = CHORD_LIBRARIES[instrumentKey] || {};
   const variations = chordPresets[selectedChordKey] || [];
+  const isOutlineTheme = chartTheme === 'outline-light' || chartTheme === 'outline-dark';
 
   return (
     <div className="space-y-5">
-      <a href="https://github.com/yoelwep13578/strings-chordforge" target="_blank">
-        <div>
-          <h1 className="text-lg font-bold text-foreground tracking-tight">ChordForge</h1>
-          <p className="text-xs text-muted-foreground">Chord chart generator</p>
-        </div>
-      </a>
+      <div>
+        <h1 className="text-lg font-bold text-foreground tracking-tight">ChordForge</h1>
+        <p className="text-xs text-muted-foreground">Chord chart generator</p>
+      </div>
 
       <Separator />
 
@@ -206,6 +205,25 @@ export function ControlPanel({
       {/* Display */}
       <div className="space-y-3">
         <SectionTitle>Display</SectionTitle>
+        {isOutlineTheme && (
+          <TooltipProvider delayDuration={200}>
+            <div className="flex items-center justify-between gap-3">
+              <div className="flex items-center gap-1.5">
+                <Label className="text-sm text-secondary-foreground shrink-0">Global Full Contrast</Label>
+                <Tooltip>
+                  <TooltipTrigger asChild>
+                    <Info className="w-3.5 h-3.5 text-muted-foreground cursor-help" />
+                  </TooltipTrigger>
+                  <TooltipContent className="max-w-[240px]">
+                    Apply maximum contrast to all chart elements — pure {chartTheme === 'outline-light' ? 'white' : 'black'} for the {chartTheme === 'outline-light' ? 'Outline Light' : 'Outline Dark'} theme.
+                  </TooltipContent>
+                </Tooltip>
+              </div>
+              <Switch checked={display.globalFullContrast}
+                onCheckedChange={(v) => onDisplayChange({ ...display, globalFullContrast: v })} />
+            </div>
+          </TooltipProvider>
+        )}
         <Field label="Inlay Dots">
           <Switch checked={display.showInlay}
             onCheckedChange={(v) => onDisplayChange({ ...display, showInlay: v })} />
@@ -323,16 +341,20 @@ export function ControlPanel({
         <SectionTitle>Label Settings</SectionTitle>
         <LabelSettingsSection title="Chord Name"
           settings={labelSettings.chordName}
-          onChange={(s) => onLabelSettingsChange({ ...labelSettings, chordName: s })} />
+          onChange={(s) => onLabelSettingsChange({ ...labelSettings, chordName: s })}
+          globalContrastActive={isOutlineTheme && display.globalFullContrast} />
         <LabelSettingsSection title="Fret Numbers"
           settings={labelSettings.fretNumbers}
-          onChange={(s) => onLabelSettingsChange({ ...labelSettings, fretNumbers: s })} />
+          onChange={(s) => onLabelSettingsChange({ ...labelSettings, fretNumbers: s })}
+          globalContrastActive={isOutlineTheme && display.globalFullContrast} />
         <LabelSettingsSection title="Tuning Labels"
           settings={labelSettings.tuning}
-          onChange={(s) => onLabelSettingsChange({ ...labelSettings, tuning: s })} />
+          onChange={(s) => onLabelSettingsChange({ ...labelSettings, tuning: s })}
+          globalContrastActive={isOutlineTheme && display.globalFullContrast} />
         <LabelSettingsSection title="Note Labels"
           settings={labelSettings.noteLabels}
-          onChange={(s) => onLabelSettingsChange({ ...labelSettings, noteLabels: s })} />
+          onChange={(s) => onLabelSettingsChange({ ...labelSettings, noteLabels: s })}
+          globalContrastActive={isOutlineTheme && display.globalFullContrast} />
       </div>
 
       <Separator />
@@ -344,4 +366,3 @@ export function ControlPanel({
     </div>
   );
 }
-
