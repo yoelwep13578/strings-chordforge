@@ -1,6 +1,6 @@
 import React, { useMemo, forwardRef, useState, useCallback } from 'react';
 import { InstrumentConfig, ChordConfig, DisplayConfig, ChartTheme, AllLabelSettings, LabelSettings, BarreConfig, barreToInternal } from '@/types/chord';
-import { getNoteAtFret, fretPosition } from '@/utils/music';
+import { getNoteAtFret, fretPosition, formatNote, formatChordName } from '@/utils/music';
 import { CHART_THEMES, ChartColors } from '@/data/chartThemes';
 
 interface Props {
@@ -406,7 +406,7 @@ export const ChordSVG = forwardRef<SVGSVGElement, Props>(
                 fill={getLabelColor(labelSettings.noteLabels, C.fingerText, C.fingerText)}
                 transform={counterRotate(labelSettings.noteLabels, dot.x + labelSettings.noteLabels.widthOffset, dot.y + 0.85 + labelSettings.noteLabels.heightOffset)}
                 {...getLabelAnchor(labelSettings.noteLabels)}
-              >{dot.note}</text>
+              >{formatNote(dot.note, display.useFlats, display.useProperSymbols)}</text>
             )}
           </g>
         ))}
@@ -455,7 +455,7 @@ export const ChordSVG = forwardRef<SVGSVGElement, Props>(
               fill={getLabelColor(labelSettings.tuning, C.label, C.labelContrast)}
               transform={counterRotate(labelSettings.tuning, x, y)}
               {...getLabelAnchor(labelSettings.tuning)}
-            >{instrument.tuning[s]}</text>
+            >{formatNote(instrument.tuning[s], display.useFlats, display.useProperSymbols)}</text>
           );
         })}
 
@@ -472,7 +472,7 @@ export const ChordSVG = forwardRef<SVGSVGElement, Props>(
               transform={counterRotate(labelSettings.chordName, x, y)}
               {...getLabelAnchor(labelSettings.chordName)}
             >
-              {chord.name}
+              {formatChordName(chord.name, chord.flatName, display.useFlats, display.useProperSymbols)}
             </text>
           );
         })()}

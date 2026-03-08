@@ -1,5 +1,6 @@
 import { ChordConfig, DisplayConfig, ChartTheme, AllLabelSettings } from '@/types/chord';
 import { INSTRUMENTS, CHORD_LIBRARIES, FONT_OPTIONS } from '@/data/chordTemplates';
+import { formatChordName } from '@/utils/music';
 import { CHART_THEME_OPTIONS } from '@/data/chartThemes';
 import { LabelSettingsSection } from './LabelSettingsSection';
 import { Label } from '@/components/ui/label';
@@ -97,9 +98,11 @@ export function ControlPanel({
           <Select value={selectedChordKey} onValueChange={onChordKeyChange}>
             <SelectTrigger className="w-32 h-8 text-sm"><SelectValue placeholder="Select..." /></SelectTrigger>
             <SelectContent>
-              {Object.keys(chordPresets).map((k) => (
-                <SelectItem key={k} value={k}>{k}</SelectItem>
-              ))}
+              {Object.keys(chordPresets).map((k) => {
+                const tmpl = chordPresets[k]?.[0];
+                const label = formatChordName(k, tmpl?.flatName, display.useFlats, display.useProperSymbols);
+                return <SelectItem key={k} value={k}>{label}</SelectItem>;
+              })}
             </SelectContent>
           </Select>
         </Field>
@@ -240,6 +243,27 @@ export function ControlPanel({
           <Switch checked={display.showTuning}
             onCheckedChange={(v) => onDisplayChange({ ...display, showTuning: v })} />
         </Field>
+        <Field label="Change # to b">
+          <Switch checked={display.useFlats}
+            onCheckedChange={(v) => onDisplayChange({ ...display, useFlats: v })} />
+        </Field>
+        <TooltipProvider delayDuration={200}>
+          <div className="flex items-center justify-between gap-3">
+            <div className="flex items-center gap-1.5">
+              <Label className="text-sm text-secondary-foreground shrink-0">Use proper ♯ and ♭</Label>
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <Info className="w-3.5 h-3.5 text-muted-foreground cursor-help" />
+                </TooltipTrigger>
+                <TooltipContent className="max-w-[240px]">
+                  Replace standard # and b with proper musical symbols ♯ and ♭ in note labels and tuning display.
+                </TooltipContent>
+              </Tooltip>
+            </div>
+            <Switch checked={display.useProperSymbols}
+              onCheckedChange={(v) => onDisplayChange({ ...display, useProperSymbols: v })} />
+          </div>
+        </TooltipProvider>
         <TooltipProvider delayDuration={200}>
           <div className="flex items-center justify-between gap-3">
             <div className="flex items-center gap-1.5">

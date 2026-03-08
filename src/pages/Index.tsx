@@ -33,6 +33,8 @@ const Index = () => {
     dotSize: 2.6,
     multiPositionMode: false,
     globalFullContrast: false,
+    useFlats: false,
+    useProperSymbols: false,
   });
   const [chartTheme, setChartTheme] = useState<ChartTheme>('realistic-dark');
   const [labelSettings, setLabelSettings] = useState<AllLabelSettings>(DEFAULT_LABEL_SETTINGS);
@@ -62,7 +64,7 @@ const Index = () => {
       const first = presets[firstKey][0];
       setSelectedChordKey(firstKey);
       setVariationIndex(0);
-      setChord({ name: first.name, positions: [...first.positions], multiPositions: makeEmptyMultiPositions(inst.strings), startFret: first.startFret, numFrets: 5, barres: first.barres ? [...first.barres] : [] });
+      setChord({ name: first.name, flatName: first.flatName, positions: [...first.positions], multiPositions: makeEmptyMultiPositions(inst.strings), startFret: first.startFret, numFrets: 5, barres: first.barres ? [...first.barres] : [] });
     } else {
       setSelectedChordKey('');
       setVariationIndex(0);
@@ -77,7 +79,7 @@ const Index = () => {
     const variations = presets[key];
     if (variations && variations[0]) {
       const t = variations[0];
-      setChord(prev => ({ ...prev, name: t.name, positions: [...t.positions], multiPositions: makeEmptyMultiPositions(instrument.strings), startFret: t.startFret, barres: t.barres ? [...t.barres] : [] }));
+      setChord(prev => ({ ...prev, name: t.name, flatName: t.flatName, positions: [...t.positions], multiPositions: makeEmptyMultiPositions(instrument.strings), startFret: t.startFret, barres: t.barres ? [...t.barres] : [] }));
     }
   };
 
@@ -87,7 +89,7 @@ const Index = () => {
     const variations = presets[selectedChordKey];
     if (variations && variations[idx]) {
       const t = variations[idx];
-      setChord(prev => ({ ...prev, name: t.name, positions: [...t.positions], multiPositions: makeEmptyMultiPositions(instrument.strings), startFret: t.startFret, barres: t.barres ? [...t.barres] : [] }));
+      setChord(prev => ({ ...prev, name: t.name, flatName: t.flatName, positions: [...t.positions], multiPositions: makeEmptyMultiPositions(instrument.strings), startFret: t.startFret, barres: t.barres ? [...t.barres] : [] }));
     }
   };
 

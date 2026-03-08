@@ -13,6 +13,7 @@ export interface InstrumentConfig {
 
 export interface ChordTemplate {
   name: string;
+  flatName?: string;
   variation: string;
   positions: (number | null)[];
   startFret: number;
@@ -21,6 +22,7 @@ export interface ChordTemplate {
 
 export interface ChordConfig {
   name: string;
+  flatName?: string;
   positions: (number | null)[];
   multiPositions: number[][];  // per-string array of frets (for scale mode)
   startFret: number;
@@ -89,6 +91,8 @@ export interface DisplayConfig {
   dotSize: number;
   multiPositionMode: boolean;
   globalFullContrast: boolean;
+  useFlats: boolean;
+  useProperSymbols: boolean;
 }
 
 export interface ExportOptions {
