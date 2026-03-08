@@ -269,7 +269,7 @@ export function ControlPanel({
             <div className="space-y-1.5">
               {chord.barres.map((b, i) => (
                 <div key={i} className="flex items-center justify-between text-xs text-muted-foreground">
-                  <span>Fret {b.fret}: string {b.fromString + 1}–{b.toString + 1}</span>
+                  <span>Fret {b.fret}: string {b.fromString}–{b.toString}</span>
                   <Button variant="ghost" size="sm" className="h-6 px-2 text-xs"
                     onClick={() => {
                       const newBarres = [...chord.barres];
