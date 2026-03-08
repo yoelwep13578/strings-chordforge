@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect, useCallback } from 'react';
-import { InstrumentConfig, ChordConfig, DisplayConfig, ChartTheme, AllLabelSettings, DEFAULT_LABEL_SETTINGS, BarreConfig } from '@/types/chord';
+import { InstrumentConfig, ChordConfig, DisplayConfig, ChartTheme, AllLabelSettings, DEFAULT_LABEL_SETTINGS, BarreConfig, barreFromInternal } from '@/types/chord';
 import { INSTRUMENTS, CHORD_LIBRARIES } from '@/data/chordTemplates';
 import { ChordSVG } from '@/components/chord/ChordSVG';
 import { ControlPanel } from '@/components/chord/ControlPanel';
@@ -120,18 +120,20 @@ const Index = () => {
 
   const handleBarreAdd = useCallback((barre: BarreConfig) => {
     setChord((prev) => {
+      // barre comes from drag interaction as internal 0-indexed, convert to user format
+      const userBarre = barreFromInternal(barre.fret, barre.fromString, barre.toString, instrument.strings);
       // Check if same barre exists, if so remove it (toggle)
       const existing = prev.barres.findIndex(
-        b => b.fret === barre.fret && b.fromString === barre.fromString && b.toString === barre.toString
+        b => b.fret === userBarre.fret && b.fromString === userBarre.fromString && b.toString === userBarre.toString
       );
       if (existing >= 0) {
         const newBarres = [...prev.barres];
         newBarres.splice(existing, 1);
         return { ...prev, barres: newBarres };
       }
-      return { ...prev, barres: [...prev.barres, barre] };
+      return { ...prev, barres: [...prev.barres, userBarre] };
     });
-  }, []);
+  }, [instrument.strings]);
 
   return (
     <div className="flex flex-col lg:flex-row min-h-screen">

@@ -30,8 +30,22 @@ export interface ChordConfig {
 
 export interface BarreConfig {
   fret: number;
+  /** 1-indexed from right (string 1 = thinnest/highest pitch) */
   fromString: number;
+  /** 1-indexed from right (string 1 = thinnest/highest pitch) */
   toString: number;
+}
+
+/** Convert user-facing 1-indexed-from-right barre to internal 0-indexed-from-left */
+export function barreToInternal(barre: BarreConfig, totalStrings: number): { fret: number; fromIdx: number; toIdx: number } {
+  const fromIdx = totalStrings - barre.toString;
+  const toIdx = totalStrings - barre.fromString;
+  return { fret: barre.fret, fromIdx, toIdx };
+}
+
+/** Convert internal 0-indexed-from-left to user-facing 1-indexed-from-right barre */
+export function barreFromInternal(fret: number, fromIdx: number, toIdx: number, totalStrings: number): BarreConfig {
+  return { fret, fromString: totalStrings - toIdx, toString: totalStrings - fromIdx };
 }
 
 export type ChartTheme = 'realistic-dark' | 'realistic-light' | 'outline-light' | 'outline-dark';
