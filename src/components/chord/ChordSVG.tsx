@@ -265,11 +265,12 @@ export const ChordSVG = forwardRef<SVGSVGElement, Props>(
 
     // Barre rendering
     const barreElements = (chord.barres || []).map((barre, i) => {
-      if (barre.fret <= sf || barre.fret > sf + nf) return null;
-      const midAbsY = (fretAbsY(barre.fret - 1) + fretAbsY(barre.fret)) / 2;
+      const { fret, fromIdx, toIdx } = barreToInternal(barre, ns);
+      if (fret <= sf || fret > sf + nf) return null;
+      const midAbsY = (fretAbsY(fret - 1) + fretAbsY(fret)) / 2;
       const y = toSvgY(midAbsY);
-      const x1 = stringX(barre.fromString, midAbsY);
-      const x2 = stringX(barre.toString, midAbsY);
+      const x1 = stringX(fromIdx, midAbsY);
+      const x2 = stringX(toIdx, midAbsY);
       return (
         <line key={`barre${i}`}
           x1={x1} y1={y} x2={x2} y2={y}
