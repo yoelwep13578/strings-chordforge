@@ -1981,1157 +1981,1157 @@ export const GUITAR_CHORDS: Record<string, ChordTemplate[]> = {
 
 export const UKULELE_CHORDS: Record<string, ChordTemplate[]> = {
   // C Family
-  C: [
+  'C': [
     { name: 'C', variation: 'Open 1', positions: [0, 0, 0, 0], startFret: 0 },
     { name: 'C', variation: 'Mini 1', positions: [1, 4, 3, 3], startFret: 0 },
     { name: 'C', variation: 'Mini 2', positions: [5, 7, 4, 7], startFret: 3 },
     { name: 'C', variation: 'High 1', positions: [9, 7, 8, 8], startFret: 6 },
   ],
-  Cm: [
+  'Cm': [
     { name: 'Cm', variation: 'Open 1', positions: [0, 3, 1, 3], startFret: 0 },
     { name: 'Cm', variation: 'Mini 1', positions: [1, 3, 3, 3], startFret: 0 },
     { name: 'Cm', variation: 'Mini 2', positions: [5, 7, 4, 6], startFret: 3 },
     { name: 'Cm', variation: 'High 1', positions: [8, 7, 8, 7], startFret: 6 },
   ],
-  Cdim: [
+  'Cdim': [
     { name: 'Cdim', variation: 'Open 1', positions: [5, 3, 2, 0], startFret: 1 },
     { name: 'Cdim', variation: 'Mini 1', positions: [1, 3, 2, 3], startFret: 0 },
     { name: 'Cdim', variation: 'Mini 2', positions: [5, 6, 4, 6], startFret: 3 },
     { name: 'Cdim', variation: 'High 1', positions: [8, 7, 8, 9], startFret: 6 },
   ],
-  Caug: [
+  'Caug': [
     { name: 'Caug', variation: 'Open 1', positions: [1, 0, 0, 4], startFret: 0 },
     { name: 'Caug', variation: 'Mini 1', positions: [1, 4, 2, 3], startFret: 0 },
     { name: 'Caug', variation: 'Mini 2', positions: [5, 4, 4, 5], startFret: 3 },
     { name: 'Caug', variation: 'High 1', positions: [10, 8, 8, 7], startFret: 6 },
   ],
-  Csus2: [
+  'Csus2': [
     { name: 'Csus2', variation: 'Open 1', positions: [0, 2, 1, 3], startFret: 0 },
     { name: 'Csus2', variation: 'Mini 1', positions: [1, 2, 3, 3], startFret: 0 },
     { name: 'Csus2', variation: 'Mini 2', positions: [5, 7, 4, 5], startFret: 3 },
     { name: 'Csus2', variation: 'High 1', positions: [7, 7, 8, 7], startFret: 6, barres: [{ fret: 7, fromString: 1, toString: 4 }] },
   ],
-  Csus4: [
+  'Csus4': [
     { name: 'Csus4', variation: 'Open 1', positions: [0, 0, 1, 4], startFret: 0 },
     { name: 'Csus4', variation: 'Mini 1', positions: [5, 5, 3, 2], startFret: 1 },
     { name: 'Csus4', variation: 'Mini 2', positions: [5, 7, 6, 8], startFret: 4 },
     { name: 'Csus4', variation: 'High 1', positions: [9, 7, 8, 8], startFret: 6 },
   ],
-  Cmaj7: [
+  'Cmaj7': [
     { name: 'Cmaj7', variation: 'Open 1', positions: [0, 0, 0, 2], startFret: 1 },
     { name: 'Cmaj7', variation: 'Mini 1', positions: [5, 4, 3, 2], startFret: 1 },
     { name: 'Cmaj7', variation: 'Mini 2', positions: [5, 7, 7, 7], startFret: 4 },
     { name: 'Cmaj7', variation: 'High 1', positions: [9, 11, 8, 10], startFret: 7 },
   ],
-  Cm7: [
+  'Cm7': [
     { name: 'Cm7', variation: 'Open 1', positions: [3, 0, 3, 6], startFret: 2 },
     { name: 'Cm7', variation: 'Barre 1', positions: [3, 3, 3, 3], startFret: 2, barres: [{ fret: 3, fromString: 1, toString: 4 }] },
     { name: 'Cm7', variation: 'Mini 1', positions: [5, 7, 6, 6], startFret: 4 },
     { name: 'Cm7', variation: 'High 1', positions: [8, 10, 8, 10], startFret: 7 },
   ],
-  C7: [
+  'C7': [
     { name: 'C7', variation: 'Open 1', positions: [0, 0, 0, 1], startFret: 0 },
     { name: 'C7', variation: 'Barre 1', positions: [3, 4, 3, 3], startFret: 2, barres: [{ fret: 3, fromString: 1, toString: 4 }] },
     { name: 'C7', variation: 'Mini 1', positions: [5, 7, 6, 7], startFret: 4 },
     { name: 'C7', variation: 'High 1', positions: [9, 10, 8, 10], startFret: 7 },
   ],
-  Cdim7: [
+  'Cdim7': [
     { name: 'Cdim7', variation: 'Open 1', positions: [5, 3, 2, 0], startFret: 1 },
     { name: 'Cdim7', variation: 'Mini 1', positions: [2, 3, 2, 3], startFret: 1 },
     { name: 'Cdim7', variation: 'Mini 2', positions: [5, 6, 5, 6], startFret: 4 },
     { name: 'Cdim7', variation: 'High 1', positions: [8, 9, 8, 9], startFret: 7 },
   ],
-  Cadd9: [
+  'Cadd9': [
     { name: 'Cadd9', variation: 'Open 1', positions: [0, 2, 0, 3], startFret: 1 },
     { name: 'Cadd9', variation: 'Mini 1', positions: [5, 4, 3, 5], startFret: 2 },
     { name: 'Cadd9', variation: 'High 1', positions: [7, 7, 8, 7], startFret: 6, barres: [{ fret: 7, fromString: 1, toString: 4 }] },
   ],
-  C9: [
+  'C9': [
     { name: 'C9', variation: 'Open 1', positions: [3, 2, 0, 3], startFret: 1 },
     { name: 'C9', variation: 'Mini 1', positions: [5, 4, 6, 5], startFret: 3 },
     { name: 'C9', variation: 'High 1', positions: [7, 10, 8, 7], startFret: 6 },
   ],
-  C6: [
+  'C6': [
     { name: 'C6', variation: 'Open 1', positions: [0, 0, 0, 0], startFret: 0 },
     { name: 'C6', variation: 'Mini 1', positions: [2, 4, 3, 3], startFret: 1 },
     { name: 'C6', variation: 'Mini 2', positions: [5, 7, 5, 7], startFret: 4 },
     { name: 'C6', variation: 'High 1', positions: [9, 9, 8, 10], startFret: 7 },
   ],
-  Cm6: [
+  'Cm6': [
     { name: 'Cm6', variation: 'Open 1', positions: [5, 3, 3, 0], startFret: 2 },
     { name: 'Cm6', variation: 'Mini 1', positions: [2, 3, 3, 3], startFret: 1 },
     { name: 'Cm6', variation: 'Mini 2', positions: [5, 7, 5, 6], startFret: 4 },
     { name: 'Cm6', variation: 'High 1', positions: [8, 9, 8, 10], startFret: 7 },
   ],
-  C7sus4: [
+  'C7sus4': [
     { name: 'C7sus4', variation: 'Open 1', positions: [0, 0, 1, 1], startFret: 0 },
     { name: 'C7sus4', variation: 'Barre 1', positions: [3, 5, 3, 3], startFret: 2, barres: [{ fret: 3, fromString: 1, toString: 4 }] },
     { name: 'C7sus4', variation: 'Mini 1', positions: [5, 7, 6, 8], startFret: 4 },
     { name: 'C7sus4', variation: 'High 1', positions: [10, 10, 8, 10], startFret: 7 },
   ],
-  Cm7b5: [
+  'Cm7b5': [
     { name: 'Cm7b5', variation: 'Open 1', positions: [8, 0, 6, 9], startFret: 5 },
     { name: 'Cm7b5', variation: 'Mini 1', positions: [3, 3, 2, 3], startFret: 1 },
     { name: 'Cm7b5', variation: 'Mini 2', positions: [5, 6, 6, 6], startFret: 4 },
     { name: 'Cm7b5', variation: 'High 1', positions: [8, 10, 8, 9], startFret: 7 },
   ],
   // C#/Db Family
-  C#: [
+  'C#': [
     { name: 'C#', flatName: 'Db', variation: 'Open 1', positions: [1, 1, 1, 0], startFret: 0, barres: [{ fret: 1, fromString: 1, toString: 3 }] },
     { name: 'C#', flatName: 'Db', variation: 'Barre 1', positions: [1, 1, 1, 2], startFret: 0, barres: [{ fret: 1, fromString: 1, toString: 3 }] },
     { name: 'C#', flatName: 'Db', variation: 'Mini 1', positions: [6, 5, 4, 7], startFret: 3 },
     { name: 'C#', flatName: 'Db', variation: 'High 1', positions: [7, 8, 9, 8], startFret: 6 },
   ],
-  C#m: [
+  'C#m': [
     { name: 'C#m', flatName: 'Dbm', variation: 'Open 1', positions: [1, 1, 0, 1], startFret: 0, barres: [{ fret: 1, fromString: 1, toString: 4 }] },
     { name: 'C#m', flatName: 'Dbm', variation: 'Mini 1', positions: [1, 4, 2, 4], startFret: 0 },
     { name: 'C#m', flatName: 'Dbm', variation: 'Mini 2', positions: [6, 4, 4, 5], startFret: 3 },
     { name: 'C#m', flatName: 'Dbm', variation: 'High 1', positions: [10, 8, 9, 7], startFret: 6 },
   ],
-  C#dim: [
+  'C#dim': [
     { name: 'C#dim', flatName: 'Dbdim', variation: 'Open 1', positions: [0, 1, 0, 0], startFret: 0 },
     { name: 'C#dim', flatName: 'Dbdim', variation: 'Mini 1', positions: [1, 4, 3, 4], startFret: 0 },
     { name: 'C#dim', flatName: 'Dbdim', variation: 'Mini 2', positions: [6, 7, 4, 7], startFret: 3 },
     { name: 'C#dim', flatName: 'Dbdim', variation: 'High 1', positions: [10, 7, 9, 7], startFret: 6 },
   ],
-  C#aug: [
+  'C#aug': [
     { name: 'C#aug', flatName: 'Dbaug', variation: 'Open 1', positions: [4, 1, 1, 0], startFret: 0 },
     { name: 'C#aug', flatName: 'Dbaug', variation: 'Barre 1', positions: [2, 1, 1, 1], startFret: 0, barres: [{ fret: 1, fromString: 2, toString: 4 }] },
     { name: 'C#aug', flatName: 'Dbaug', variation: 'Mini 1', positions: [6, 5, 5, 4], startFret: 3 },
     { name: 'C#aug', flatName: 'Dbaug', variation: 'High 1', positions: [10, 9, 9, 7], startFret: 6 },
   ],
-  C#sus2: [
+  'C#sus2': [
     { name: 'C#sus2', flatName: 'Dbsus2', variation: 'Open 1', positions: [1, 3, 0, 4], startFret: 0 },
     { name: 'C#sus2', flatName: 'Dbsus2', variation: 'Mini 1', positions: [1, 3, 1, 4], startFret: 0 },
     { name: 'C#sus2', flatName: 'Dbsus2', variation: 'Mini 2', positions: [6, 7, 4, 6], startFret: 3 },
     { name: 'C#sus2', flatName: 'Dbsus2', variation: 'High 1', positions: [8, 8, 9, 7], startFret: 6 },
   ],
-  C#sus4: [
+  'C#sus4': [
     { name: 'C#sus4', flatName: 'Dbsus4', variation: 'Open 1', positions: [1, 1, 2, 0], startFret: 0 },
     { name: 'C#sus4', flatName: 'Dbsus4', variation: 'Mini 1', positions: [1, 1, 2, 3], startFret: 0 },
     { name: 'C#sus4', flatName: 'Dbsus4', variation: 'Mini 2', positions: [6, 6, 4, 7], startFret: 3 },
     { name: 'C#sus4', flatName: 'Dbsus4', variation: 'High 1', positions: [7, 8, 9, 9], startFret: 6 },
   ],
-  C#maj7: [
+  'C#maj7': [
     { name: 'C#maj7', flatName: 'Dbmaj7', variation: 'Open 1', positions: [1, 0, 1, 4], startFret: 0 },
     { name: 'C#maj7', flatName: 'Dbmaj7', variation: 'Barre 1', positions: [1, 1, 1, 3], startFret: 0, barres: [{ fret: 1, fromString: 1, toString: 3 }] },
     { name: 'C#maj7', flatName: 'Dbmaj7', variation: 'Mini 1', positions: [5, 5, 4, 4], startFret: 3 },
     { name: 'C#maj7', flatName: 'Dbmaj7', variation: 'High 1', positions: [10, 12, 9, 11], startFret: 8 },
   ],
-  C#m7: [
+  'C#m7': [
     { name: 'C#m7', flatName: 'Dbm7', variation: 'Open 1', positions: [1, 1, 0, 2], startFret: 0 },
     { name: 'C#m7', flatName: 'Dbm7', variation: 'Barre 1', positions: [4, 4, 4, 4], startFret: 3, barres: [{ fret: 4, fromString: 1, toString: 4 }] },
     { name: 'C#m7', flatName: 'Dbm7', variation: 'High 1', positions: [9, 11, 9, 11], startFret: 8 },
     { name: 'C#m7', flatName: 'Dbm7', variation: 'High 2', positions: [13, 13, 12, 14], startFret: 11 },
   ],
-  C#7: [
+  'C#7': [
     { name: 'C#7', flatName: 'Db7', variation: 'Barre 1', positions: [1, 1, 1, 2], startFret: 0, barres: [{ fret: 1, fromString: 1, toString: 3 }] },
     { name: 'C#7', flatName: 'Db7', variation: 'Barre 2', positions: [4, 5, 4, 4], startFret: 3, barres: [{ fret: 4, fromString: 1, toString: 4 }] },
     { name: 'C#7', flatName: 'Db7', variation: 'High 1', positions: [10, 11, 9, 11], startFret: 8 },
     { name: 'C#7', flatName: 'Db7', variation: 'High 2', positions: [13, 13, 13, 14], startFret: 12, barres: [{ fret: 13, fromString: 1, toString: 3 }] },
   ],
-  C#dim7: [
+  'C#dim7': [
     { name: 'C#dim7', flatName: 'Dbdim7', variation: 'Open 1', positions: [0, 1, 0, 1], startFret: 0 },
     { name: 'C#dim7', flatName: 'Dbdim7', variation: 'Mini 1', positions: [3, 4, 3, 4], startFret: 2 },
     { name: 'C#dim7', flatName: 'Dbdim7', variation: 'Mini 2', positions: [6, 7, 6, 7], startFret: 5 },
     { name: 'C#dim7', flatName: 'Dbdim7', variation: 'High 1', positions: [9, 10, 9, 10], startFret: 8 },
   ],
-  C#add9: [
+  'C#add9': [
     { name: 'C#add9', flatName: 'Dbadd9', variation: 'Mini 1', positions: [1, 3, 1, 4], startFret: 0 },
     { name: 'C#add9', flatName: 'Dbadd9', variation: 'Mini 2', positions: [6, 5, 4, 6], startFret: 3 },
     { name: 'C#add9', flatName: 'Dbadd9', variation: 'High 1', positions: [8, 8, 9, 8], startFret: 7, barres: [{ fret: 8, fromString: 1, toString: 4 }] },
     { name: 'C#add9', flatName: 'Dbadd9', variation: 'High 2', positions: [10, 13, 11, 11], startFret: 9 },
   ],
-  C#9: [
+  'C#9': [
     { name: 'C#9', flatName: 'Db9', variation: 'Mini 1', positions: [4, 3, 1, 4], startFret: 0 },
     { name: 'C#9', flatName: 'Db9', variation: 'Mini 2', positions: [6, 5, 7, 6], startFret: 4 },
     { name: 'C#9', flatName: 'Db9', variation: 'High 1', positions: [8, 11, 9, 8], startFret: 7 },
   ],
-  C#6: [
+  'C#6': [
     { name: 'C#6', flatName: 'Db6', variation: 'Barre 1', positions: [1, 1, 1, 1], startFret: 0, barres: [{ fret: 1, fromString: 1, toString: 4 }] },
     { name: 'C#6', flatName: 'Db6', variation: 'Mini 1', positions: [6, 8, 6, 8], startFret: 5 },
     { name: 'C#6', flatName: 'Db6', variation: 'High 1', positions: [10, 10, 9, 11], startFret: 8 },
     { name: 'C#6', flatName: 'Db6', variation: 'High 2', positions: [13, 13, 13, 13], startFret: 12, barres: [{ fret: 13, fromString: 1, toString: 4 }] },
   ],
-  C#m6: [
+  'C#m6': [
     { name: 'C#m6', flatName: 'Dbm6', variation: 'Open 1', positions: [1, 1, 0, 1], startFret: 0, barres: [{ fret: 1, fromString: 1, toString: 4 }] },
     { name: 'C#m6', flatName: 'Dbm6', variation: 'Mini 1', positions: [3, 4, 4, 4], startFret: 2 },
     { name: 'C#m6', flatName: 'Dbm6', variation: 'Mini 2', positions: [6, 8, 6, 7], startFret: 5 },
     { name: 'C#m6', flatName: 'Dbm6', variation: 'High 1', positions: [9, 10, 9, 11], startFret: 8 },
   ],
-  C#7sus4: [
+  'C#7sus4': [
     { name: 'C#7sus4', flatName: 'Db7sus4', variation: 'Mini 1', positions: [1, 1, 2, 2], startFret: 0 },
     { name: 'C#7sus4', flatName: 'Db7sus4', variation: 'Barre 1', positions: [4, 6, 4, 4], startFret: 3, barres: [{ fret: 4, fromString: 1, toString: 4 }] },
     { name: 'C#7sus4', flatName: 'Db7sus4', variation: 'High 1', positions: [11, 11, 9, 11], startFret: 8 },
     { name: 'C#7sus4', flatName: 'Db7sus4', variation: 'High 2', positions: [13, 13, 14, 14], startFret: 12 },
   ],
-  C#m7b5: [
+  'C#m7b5': [
     { name: 'C#m7b5', flatName: 'Dbm7b5', variation: 'Open 1', positions: [0, 1, 0, 2], startFret: 0 },
     { name: 'C#m7b5', flatName: 'Dbm7b5', variation: 'Mini 1', positions: [4, 4, 3, 4], startFret: 2 },
     { name: 'C#m7b5', flatName: 'Dbm7b5', variation: 'Mini 2', positions: [6, 7, 7, 7], startFret: 5 },
     { name: 'C#m7b5', flatName: 'Dbm7b5', variation: 'High 1', positions: [9, 11, 9, 10], startFret: 8 },
   ],
   // D Family
-  D: [
+  'D': [
     { name: 'D', variation: 'Open 1', positions: [1, 2, 2, 0], startFret: 0 },
     { name: 'D', variation: 'Mini 1', positions: [2, 2, 2, 1], startFret: 0 },
     { name: 'D', variation: 'Mini 2', positions: [7, 6, 5, 4], startFret: 3 },
     { name: 'D', variation: 'High 1', positions: [7, 9, 8, 9], startFret: 6 },
   ],
-  Dm: [
+  'Dm': [
     { name: 'Dm', variation: 'Open 1', positions: [3, 2, 1, 0], startFret: 0 },
     { name: 'Dm', variation: 'Mini 1', positions: [2, 2, 1, 2], startFret: 0 },
     { name: 'Dm', variation: 'Mini 2', positions: [7, 5, 5, 4], startFret: 3 },
     { name: 'Dm', variation: 'High 1', positions: [7, 9, 9, 8], startFret: 6 },
   ],
-  Ddim: [
+  'Ddim': [
     { name: 'Ddim', variation: 'Open 1', positions: [1, 2, 1, 0], startFret: 0 },
     { name: 'Ddim', variation: 'Mini 1', positions: [1, 2, 1, 4], startFret: 0 },
     { name: 'Ddim', variation: 'Mini 2', positions: [7, 5, 4, 6], startFret: 3 },
     { name: 'Ddim', variation: 'High 1', positions: [7, 8, 9, 8], startFret: 6 },
   ],
-  Daug: [
+  'Daug': [
     { name: 'Daug', variation: 'Open 1', positions: [0, 2, 2, 1], startFret: 0 },
     { name: 'Daug', variation: 'Mini 1', positions: [4, 2, 2, 1], startFret: 0 },
     { name: 'Daug', variation: 'Mini 2', positions: [7, 6, 6, 4], startFret: 3 },
     { name: 'Daug', variation: 'High 1', positions: [7, 10, 7, 9], startFret: 6 },
   ],
-  Dsus2: [
+  'Dsus2': [
     { name: 'Dsus2', variation: 'Open 1', positions: [2, 2, 0, 1], startFret: 0 },
     { name: 'Dsus2', variation: 'Mini 1', positions: [2, 4, 2, 5], startFret: 1 },
     { name: 'Dsus2', variation: 'Mini 2', positions: [7, 4, 5, 4], startFret: 3 },
     { name: 'Dsus2', variation: 'High 1', positions: [7, 9, 8, 7], startFret: 6 },
   ],
-  Dsus4: [
+  'Dsus4': [
     { name: 'Dsus4', variation: 'Open 1', positions: [1, 2, 3, 0], startFret: 0 },
     { name: 'Dsus4', variation: 'Mini 1', positions: [2, 2, 3, 1], startFret: 0 },
     { name: 'Dsus4', variation: 'Mini 2', positions: [7, 7, 5, 4], startFret: 3 },
     { name: 'Dsus4', variation: 'High 1', positions: [7, 9, 7, 10], startFret: 6 },
   ],
-  Dmaj7: [
+  'Dmaj7': [
     { name: 'Dmaj7', variation: 'Open 1', positions: [7, 6, 9, 0], startFret: 5 },
     { name: 'Dmaj7', variation: 'Barre 1', positions: [2, 2, 2, 4], startFret: 1, barres: [{ fret: 2, fromString: 1, toString: 3 }] },
     { name: 'Dmaj7', variation: 'Mini 1', positions: [7, 6, 5, 4], startFret: 3 },
     { name: 'Dmaj7', variation: 'High 1', positions: [7, 9, 9, 9], startFret: 6 },
   ],
-  Dm7: [
+  'Dm7': [
     { name: 'Dm7', variation: 'Open 1', positions: [7, 5, 8, 0], startFret: 4 },
     { name: 'Dm7', variation: 'Mini 1', positions: [2, 2, 1, 3], startFret: 0 },
     { name: 'Dm7', variation: 'Barre 1', positions: [5, 5, 5, 5], startFret: 4, barres: [{ fret: 5, fromString: 1, toString: 4 }] },
     { name: 'Dm7', variation: 'High 1', positions: [7, 9, 8, 8], startFret: 6 },
   ],
-  D7: [
+  'D7': [
     { name: 'D7', variation: 'Open 1', positions: [5, 2, 2, 0], startFret: 1 },
     { name: 'D7', variation: 'Barre 1', positions: [2, 2, 2, 3], startFret: 1, barres: [{ fret: 2, fromString: 1, toString: 3 }] },
     { name: 'D7', variation: 'Barre 2', positions: [5, 6, 5, 5], startFret: 4, barres: [{ fret: 5, fromString: 1, toString: 4 }] },
     { name: 'D7', variation: 'High 1', positions: [7, 9, 8, 9], startFret: 6 },
   ],
-  Ddim7: [
+  'Ddim7': [
     { name: 'Ddim7', variation: 'Mini 1', positions: [1, 2, 1, 2], startFret: 0 },
     { name: 'Ddim7', variation: 'Mini 2', positions: [4, 5, 4, 5], startFret: 3 },
     { name: 'Ddim7', variation: 'High 1', positions: [7, 8, 7, 8], startFret: 6 },
     { name: 'Ddim7', variation: 'High 2', positions: [10, 11, 10, 11], startFret: 9 },
   ],
-  Dadd9: [
+  'Dadd9': [
     { name: 'Dadd9', variation: 'Open 1', positions: [7, 6, 0, 0], startFret: 5 },
     { name: 'Dadd9', variation: 'Mini 1', positions: [2, 4, 2, 5], startFret: 1 },
     { name: 'Dadd9', variation: 'Mini 2', positions: [7, 6, 5, 7], startFret: 4 },
     { name: 'Dadd9', variation: 'High 1', positions: [9, 9, 10, 9], startFret: 8, barres: [{ fret: 9, fromString: 1, toString: 4 }] },
   ],
-  D9: [
+  'D9': [
     { name: 'D9', variation: 'Open 1', positions: [5, 6, 0, 5], startFret: 4 },
     { name: 'D9', variation: 'Mini 1', positions: [5, 4, 2, 5], startFret: 1 },
     { name: 'D9', variation: 'Mini 2', positions: [7, 6, 8, 7], startFret: 5 },
     { name: 'D9', variation: 'High 1', positions: [9, 12, 10, 9], startFret: 8 },
   ],
-  D6: [
+  'D6': [
     { name: 'D6', variation: 'Open 1', positions: [4, 2, 2, 0], startFret: 1 },
     { name: 'D6', variation: 'Barre 1', positions: [2, 2, 2, 2], startFret: 1, barres: [{ fret: 2, fromString: 1, toString: 4 }] },
     { name: 'D6', variation: 'Mini 1', positions: [4, 6, 5, 5], startFret: 3 },
     { name: 'D6', variation: 'High 1', positions: [7, 9, 7, 9], startFret: 6 },
   ],
-  Dm6: [
+  'Dm6': [
     { name: 'Dm6', variation: 'Open 1', positions: [4, 2, 1, 0], startFret: 0 },
     { name: 'Dm6', variation: 'Mini 1', positions: [2, 2, 1, 2], startFret: 0 },
     { name: 'Dm6', variation: 'Mini 2', positions: [4, 5, 5, 5], startFret: 3 },
     { name: 'Dm6', variation: 'High 1', positions: [7, 9, 7, 8], startFret: 6 },
   ],
-  D7sus4: [
+  'D7sus4': [
     { name: 'D7sus4', variation: 'Open 1', positions: [0, 2, 5, 3], startFret: 1 },
     { name: 'D7sus4', variation: 'Mini 1', positions: [2, 2, 3, 3], startFret: 1 },
     { name: 'D7sus4', variation: 'Barre 1', positions: [5, 7, 5, 5], startFret: 4, barres: [{ fret: 5, fromString: 1, toString: 4 }] },
     { name: 'D7sus4', variation: 'High 1', positions: [7, 9, 8, 10], startFret: 6 },
   ],
-  Dm7b5: [
+  'Dm7b5': [
     { name: 'Dm7b5', variation: 'Open 1', positions: [10, 0, 10, 11], startFret: 9 },
     { name: 'Dm7b5', variation: 'Mini 1', positions: [1, 2, 1, 3], startFret: 0 },
     { name: 'Dm7b5', variation: 'Mini 2', positions: [5, 5, 4, 5], startFret: 3 },
     { name: 'Dm7b5', variation: 'High 1', positions: [7, 8, 8, 8], startFret: 6 },
   ],
   // Eb/D# Family
-  Eb: [
+  'Eb': [
     { name: 'Eb', variation: 'Open 1', positions: [0, 3, 0, 1], startFret: 0 },
     { name: 'Eb', variation: 'Mini 1', positions: [2, 3, 3, 1], startFret: 0 },
     { name: 'Eb', variation: 'Mini 2', positions: [4, 7, 6, 6], startFret: 3 },
     { name: 'Eb', variation: 'High 1', positions: [8, 10, 7, 10], startFret: 6 },
   ],
-  Ebm: [
+  'Ebm': [
     { name: 'Ebm', variation: 'Open 1', positions: [0, 3, 2, 1], startFret: 0 },
     { name: 'Ebm', variation: 'Mini 1', positions: [4, 3, 2, 1], startFret: 0 },
     { name: 'Ebm', variation: 'Mini 2', positions: [4, 6, 6, 6], startFret: 3 },
     { name: 'Ebm', variation: 'High 1', positions: [8, 10, 7, 9], startFret: 6 },
   ],
-  Ebdim: [
+  'Ebdim': [
     { name: 'Ebdim', variation: 'Open 1', positions: [1, 3, 2, 0], startFret: 0 },
     { name: 'Ebdim', variation: 'Mini 1', positions: [2, 3, 2, 1], startFret: 0 },
     { name: 'Ebdim', variation: 'Mini 2', positions: [4, 6, 5, 6], startFret: 3 },
     { name: 'Ebdim', variation: 'High 1', positions: [8, 9, 7, 9], startFret: 6 },
   ],
-  Ebaug: [
+  'Ebaug': [
     { name: 'Ebaug', variation: 'Open 1', positions: [0, 3, 1, 2], startFret: 0 },
     { name: 'Ebaug', variation: 'Mini 1', positions: [1, 3, 3, 2], startFret: 0 },
     { name: 'Ebaug', variation: 'Mini 2', positions: [4, 7, 5, 6], startFret: 3 },
     { name: 'Ebaug', variation: 'High 1', positions: [8, 9, 7, 10], startFret: 6 },
   ],
-  Ebsus2: [
+  'Ebsus2': [
     { name: 'Ebsus2', variation: 'Open 1', positions: [3, 3, 1, 0], startFret: 0 },
     { name: 'Ebsus2', variation: 'Mini 1', positions: [2, 3, 1, 1], startFret: 0 },
     { name: 'Ebsus2', variation: 'Mini 2', positions: [4, 5, 6, 6], startFret: 3 },
     { name: 'Ebsus2', variation: 'High 1', positions: [8, 10, 7, 8], startFret: 6 },
   ],
-  Ebsus4: [
+  'Ebsus4': [
     { name: 'Ebsus4', variation: 'Open 1', positions: [0, 3, 4, 1], startFret: 0 },
     { name: 'Ebsus4', variation: 'Mini 1', positions: [4, 3, 4, 1], startFret: 0 },
     { name: 'Ebsus4', variation: 'Mini 2', positions: [8, 8, 6, 5], startFret: 4 },
     { name: 'Ebsus4', variation: 'High 1', positions: [8, 10, 10, 11], startFret: 7 },
   ],
-  Ebmaj7: [
+  'Ebmaj7': [
     { name: 'Ebmaj7', variation: 'Open 1', positions: [0, 3, 6, 5], startFret: 2 },
     { name: 'Ebmaj7', variation: 'Barre 1', positions: [3, 3, 3, 5], startFret: 2, barres: [{ fret: 3, fromString: 1, toString: 3 }] },
     { name: 'Ebmaj7', variation: 'Mini 1', positions: [8, 7, 6, 5], startFret: 4 },
     { name: 'Ebmaj7', variation: 'High 1', positions: [8, 10, 10, 10], startFret: 7 },
   ],
-  Ebm7: [
+  'Ebm7': [
     { name: 'Ebm7', variation: 'Mini 1', positions: [3, 3, 2, 4], startFret: 1 },
     { name: 'Ebm7', variation: 'Barre 1', positions: [6, 6, 6, 6], startFret: 5, barres: [{ fret: 6, fromString: 1, toString: 4 }] },
     { name: 'Ebm7', variation: 'High 1', positions: [8, 10, 9, 9], startFret: 7 },
     { name: 'Ebm7', variation: 'High 2', positions: [11, 13, 11, 13], startFret: 10 },
   ],
-  Eb7: [
+  'Eb7': [
     { name: 'Eb7', variation: 'Open 1', positions: [0, 3, 6, 4], startFret: 2 },
     { name: 'Eb7', variation: 'Barre 1', positions: [3, 3, 3, 4], startFret: 2, barres: [{ fret: 3, fromString: 1, toString: 3 }] },
     { name: 'Eb7', variation: 'Barre 2', positions: [6, 7, 6, 6], startFret: 5, barres: [{ fret: 6, fromString: 1, toString: 4 }] },
     { name: 'Eb7', variation: 'High 1', positions: [8, 10, 9, 10], startFret: 7 },
   ],
-  Ebdim7: [
+  'Ebdim7': [
     { name: 'Ebdim7', variation: 'Open 1', positions: [5, 3, 2, 0], startFret: 1 },
     { name: 'Ebdim7', variation: 'Mini 1', positions: [2, 3, 2, 3], startFret: 1 },
     { name: 'Ebdim7', variation: 'Mini 2', positions: [5, 6, 5, 6], startFret: 4 },
     { name: 'Ebdim7', variation: 'High 1', positions: [8, 9, 8, 9], startFret: 7 },
   ],
-  Ebadd9: [
+  'Ebadd9': [
     { name: 'Ebadd9', variation: 'Open 1', positions: [0, 3, 1, 1], startFret: 0 },
     { name: 'Ebadd9', variation: 'Mini 1', positions: [3, 5, 3, 6], startFret: 2 },
     { name: 'Ebadd9', variation: 'Mini 2', positions: [8, 7, 6, 8], startFret: 5 },
     { name: 'Ebadd9', variation: 'High 1', positions: [10, 10, 11, 10], startFret: 9, barres: [{ fret: 10, fromString: 1, toString: 4 }] },
   ],
-  Eb9: [
+  'Eb9': [
     { name: 'Eb9', variation: 'Open 1', positions: [0, 3, 1, 4], startFret: 0 },
     { name: 'Eb9', variation: 'Mini 1', positions: [6, 5, 3, 6], startFret: 2 },
     { name: 'Eb9', variation: 'High 1', positions: [8, 7, 9, 8], startFret: 6 },
     { name: 'Eb9', variation: 'High 2', positions: [10, 13, 11, 10], startFret: 9 },
   ],
-  Eb6: [
+  'Eb6': [
     { name: 'Eb6', variation: 'Open 1', positions: [0, 3, 6, 3], startFret: 2 },
     { name: 'Eb6', variation: 'Barre 1', positions: [3, 3, 3, 3], startFret: 2, barres: [{ fret: 3, fromString: 1, toString: 4 }] },
     { name: 'Eb6', variation: 'Mini 1', positions: [5, 7, 6, 6], startFret: 4 },
     { name: 'Eb6', variation: 'High 1', positions: [8, 10, 8, 10], startFret: 7 },
   ],
-  Ebm6: [
+  'Ebm6': [
     { name: 'Ebm6', variation: 'Open 1', positions: [8, 0, 6, 9], startFret: 5 },
     { name: 'Ebm6', variation: 'Mini 1', positions: [3, 3, 2, 3], startFret: 1 },
     { name: 'Ebm6', variation: 'Mini 2', positions: [5, 6, 6, 6], startFret: 4 },
     { name: 'Ebm6', variation: 'High 1', positions: [8, 10, 8, 9], startFret: 7 },
   ],
-  Eb7sus4: [
+  'Eb7sus4': [
     { name: 'Eb7sus4', variation: 'Mini 1', positions: [3, 3, 4, 4], startFret: 2 },
     { name: 'Eb7sus4', variation: 'Barre 1', positions: [6, 8, 6, 6], startFret: 5, barres: [{ fret: 6, fromString: 1, toString: 4 }] },
     { name: 'Eb7sus4', variation: 'High 1', positions: [8, 10, 9, 11], startFret: 7 },
     { name: 'Eb7sus4', variation: 'High 2', positions: [13, 13, 11, 13], startFret: 10 },
   ],
-  Ebm7b5: [
+  'Ebm7b5': [
     { name: 'Ebm7b5', variation: 'Open 1', positions: [8, 6, 9, 0], startFret: 5 },
     { name: 'Ebm7b5', variation: 'Mini 1', positions: [2, 3, 2, 4], startFret: 1 },
     { name: 'Ebm7b5', variation: 'Mini 2', positions: [6, 6, 5, 6], startFret: 4 },
     { name: 'Ebm7b5', variation: 'High 1', positions: [8, 9, 9, 9], startFret: 7 },
   ],
   // E Family
-  E: [
+  'E': [
     { name: 'E', variation: 'Open 1', positions: [1, 4, 0, 2], startFret: 0 },
     { name: 'E', variation: 'Mini 1', positions: [1, 4, 2, 2], startFret: 0 },
     { name: 'E', variation: 'Barre 1', positions: [4, 4, 4, 5], startFret: 3, barres: [{ fret: 4, fromString: 1, toString: 3 }] },
     { name: 'E', variation: 'High 1', positions: [9, 8, 7, 9], startFret: 6 },
   ],
-  Em: [
+  'Em': [
     { name: 'Em', variation: 'Open 1', positions: [0, 4, 1, 2], startFret: 0 },
     { name: 'Em', variation: 'Mini 1', positions: [4, 4, 3, 1], startFret: 0 },
     { name: 'Em', variation: 'Mini 2', positions: [4, 7, 4, 7], startFret: 3 },
     { name: 'Em', variation: 'High 1', positions: [9, 7, 7, 8], startFret: 6 },
   ],
-  Edim: [
+  'Edim': [
     { name: 'Edim', variation: 'Open 1', positions: [0, 4, 4, 1], startFret: 0 },
     { name: 'Edim', variation: 'Mini 1', positions: [1, 4, 3, 1], startFret: 0 },
     { name: 'Edim', variation: 'Mini 2', positions: [4, 7, 6, 7], startFret: 3 },
     { name: 'Edim', variation: 'High 1', positions: [9, 10, 7, 10], startFret: 6 },
   ],
-  Eaug: [
+  'Eaug': [
     { name: 'Eaug', variation: 'Open 1', positions: [1, 4, 0, 3], startFret: 0 },
     { name: 'Eaug', variation: 'Mini 1', positions: [1, 4, 2, 3], startFret: 0 },
     { name: 'Eaug', variation: 'Mini 2', positions: [5, 4, 4, 5], startFret: 3 },
     { name: 'Eaug', variation: 'High 1', positions: [9, 8, 8, 7], startFret: 6 },
   ],
-  Esus2: [
+  'Esus2': [
     { name: 'Esus2', variation: 'Open 1', positions: [4, 4, 2, 0], startFret: 1 },
     { name: 'Esus2', variation: 'Mini 1', positions: [1, 4, 2, 2], startFret: 0 },
     { name: 'Esus2', variation: 'Mini 2', positions: [4, 6, 4, 7], startFret: 3 },
     { name: 'Esus2', variation: 'High 1', positions: [9, 8, 7, 9], startFret: 6 },
   ],
-  Esus4: [
+  'Esus4': [
     { name: 'Esus4', variation: 'Open 1', positions: [4, 4, 1, 0], startFret: 0 },
     { name: 'Esus4', variation: 'Mini 1', positions: [2, 4, 1, 2], startFret: 0 },
     { name: 'Esus4', variation: 'Mini 2', positions: [4, 4, 5, 5], startFret: 3 },
     { name: 'Esus4', variation: 'High 1', positions: [9, 9, 7, 9], startFret: 6 },
   ],
-  Emaj7: [
+  'Emaj7': [
     { name: 'Emaj7', variation: 'Open 1', positions: [1, 3, 0, 2], startFret: 0 },
     { name: 'Emaj7', variation: 'Barre 1', positions: [4, 4, 4, 6], startFret: 3, barres: [{ fret: 4, fromString: 1, toString: 3 }] },
     { name: 'Emaj7', variation: 'High 1', positions: [8, 8, 7, 7], startFret: 6 },
   ],
-  Em7: [
+  'Em7': [
     { name: 'Em7', variation: 'Open 1', positions: [0, 2, 0, 2], startFret: 1 },
     { name: 'Em7', variation: 'Mini 1', positions: [4, 4, 3, 5], startFret: 2 },
     { name: 'Em7', variation: 'High 1', positions: [7, 7, 7, 7], startFret: 6, barres: [{ fret: 7, fromString: 1, toString: 4 }] },
     { name: 'Em7', variation: 'High 2', positions: [12, 14, 12, 14], startFret: 11 },
   ],
-  E7: [
+  'E7': [
     { name: 'E7', variation: 'Open 1', positions: [1, 2, 0, 2], startFret: 0 },
     { name: 'E7', variation: 'Barre 1', positions: [4, 4, 4, 5], startFret: 3, barres: [{ fret: 4, fromString: 1, toString: 3 }] },
     { name: 'E7', variation: 'High 1', positions: [7, 8, 7, 7], startFret: 6, barres: [{ fret: 7, fromString: 1, toString: 4 }] },
     { name: 'E7', variation: 'High 2', positions: [13, 14, 12, 14], startFret: 11 },
   ],
-  Edim7: [
+  'Edim7': [
     { name: 'Edim7', variation: 'Open 1', positions: [0, 1, 0, 1], startFret: 0 },
     { name: 'Edim7', variation: 'Mini 1', positions: [3, 4, 3, 4], startFret: 2 },
     { name: 'Edim7', variation: 'Mini 2', positions: [6, 7, 6, 7], startFret: 5 },
     { name: 'Edim7', variation: 'High 1', positions: [9, 10, 9, 10], startFret: 8 },
   ],
-  Eadd9: [
+  'Eadd9': [
     { name: 'Eadd9', variation: 'Open 1', positions: [11, 11, 0, 11], startFret: 10, barres: [{ fret: 11, fromString: 1, toString: 4 }] },
     { name: 'Eadd9', variation: 'Mini 1', positions: [1, 4, 2, 2], startFret: 0 },
     { name: 'Eadd9', variation: 'Mini 2', positions: [4, 6, 4, 7], startFret: 3 },
     { name: 'Eadd9', variation: 'High 1', positions: [9, 8, 7, 9], startFret: 6 },
   ],
-  E9: [
+  'E9': [
     { name: 'E9', variation: 'Open 1', positions: [7, 8, 0, 9], startFret: 6 },
     { name: 'E9', variation: 'Mini 1', positions: [7, 6, 4, 7], startFret: 3 },
     { name: 'E9', variation: 'High 1', positions: [9, 8, 10, 9], startFret: 7 },
     { name: 'E9', variation: 'High 2', positions: [11, 14, 12, 11], startFret: 10 },
   ],
-  E6: [
+  'E6': [
     { name: 'E6', variation: 'Open 1', positions: [1, 1, 0, 2], startFret: 0 },
     { name: 'E6', variation: 'Barre 1', positions: [4, 4, 4, 4], startFret: 3, barres: [{ fret: 4, fromString: 1, toString: 4 }] },
     { name: 'E6', variation: 'High 1', positions: [9, 11, 9, 11], startFret: 8 },
     { name: 'E6', variation: 'High 2', positions: [13, 13, 12, 14], startFret: 11 },
   ],
-  Em6: [
+  'Em6': [
     { name: 'Em6', variation: 'Open 1', positions: [0, 1, 0, 2], startFret: 0 },
     { name: 'Em6', variation: 'Mini 1', positions: [4, 4, 3, 4], startFret: 2 },
     { name: 'Em6', variation: 'Mini 2', positions: [6, 7, 7, 7], startFret: 5 },
     { name: 'Em6', variation: 'High 1', positions: [9, 11, 9, 10], startFret: 8 },
   ],
-  E7sus4: [
+  'E7sus4': [
     { name: 'E7sus4', variation: 'Open 1', positions: [2, 2, 0, 2], startFret: 1, barres: [{ fret: 2, fromString: 1, toString: 4 }] },
     { name: 'E7sus4', variation: 'Mini 1', positions: [4, 4, 5, 5], startFret: 3 },
     { name: 'E7sus4', variation: 'High 1', positions: [7, 9, 7, 7], startFret: 6, barres: [{ fret: 7, fromString: 1, toString: 4 }] },
     { name: 'E7sus4', variation: 'High 2', positions: [14, 14, 12, 14], startFret: 11 },
   ],
-  Em7b5: [
+  'Em7b5': [
     { name: 'Em7b5', variation: 'Open 1', positions: [0, 2, 0, 1], startFret: 0 },
     { name: 'Em7b5', variation: 'Mini 1', positions: [3, 4, 3, 5], startFret: 2 },
     { name: 'Em7b5', variation: 'Mini 2', positions: [7, 7, 6, 7], startFret: 5 },
     { name: 'Em7b5', variation: 'High 1', positions: [9, 10, 10, 10], startFret: 8 },
   ],
   // F Family
-  F: [
+  'F': [
     { name: 'F', variation: 'Open 1', positions: [2, 0, 1, 4], startFret: 0 },
     { name: 'F', variation: 'Mini 1', positions: [2, 1, 1, 3], startFret: 0 },
     { name: 'F', variation: 'Mini 2', positions: [5, 5, 5, 4], startFret: 3 },
     { name: 'F', variation: 'High 1', positions: [10, 9, 8, 7], startFret: 6 },
   ],
-  Fm: [
+  'Fm': [
     { name: 'Fm', variation: 'Open 1', positions: [1, 0, 1, 0], startFret: 0 },
     { name: 'Fm', variation: 'Mini 1', positions: [1, 2, 1, 3], startFret: 0 },
     { name: 'Fm', variation: 'Mini 2', positions: [5, 5, 4, 4], startFret: 3 },
     { name: 'Fm', variation: 'High 1', positions: [10, 8, 8, 7], startFret: 6 },
   ],
-  Fdim: [
+  'Fdim': [
     { name: 'Fdim', variation: 'Open 1', positions: [1, 0, 1, 2], startFret: 0 },
     { name: 'Fdim', variation: 'Mini 1', positions: [1, 4, 1, 2], startFret: 0 },
     { name: 'Fdim', variation: 'Mini 2', positions: [4, 5, 4, 6], startFret: 3 },
     { name: 'Fdim', variation: 'High 1', positions: [10, 8, 7, 7], startFret: 6 },
   ],
-  Faug: [
+  'Faug': [
     { name: 'Faug', variation: 'Open 1', positions: [2, 0, 1, 4], startFret: 0 },
     { name: 'Faug', variation: 'Mini 1', positions: [2, 3, 1, 4], startFret: 0 },
     { name: 'Faug', variation: 'Mini 2', positions: [5, 5, 5, 4], startFret: 3 },
     { name: 'Faug', variation: 'High 1', positions: [10, 9, 9, 7], startFret: 6 },
   ],
-  Fsus2: [
+  'Fsus2': [
     { name: 'Fsus2', variation: 'Open 1', positions: [0, 0, 1, 4], startFret: 0 },
     { name: 'Fsus2', variation: 'Mini 1', positions: [2, 5, 3, 3], startFret: 1 },
     { name: 'Fsus2', variation: 'Mini 2', positions: [5, 7, 6, 8], startFret: 4 },
     { name: 'Fsus2', variation: 'High 1', positions: [10, 7, 8, 7], startFret: 6 },
   ],
-  Fsus4: [
+  'Fsus4': [
     { name: 'Fsus4', variation: 'Open 1', positions: [3, 0, 1, 4], startFret: 0 },
     { name: 'Fsus4', variation: 'Mini 1', positions: [3, 2, 1, 3], startFret: 0 },
     { name: 'Fsus4', variation: 'Mini 2', positions: [5, 5, 6, 4], startFret: 3 },
     { name: 'Fsus4', variation: 'High 1', positions: [10, 10, 8, 7], startFret: 6 },
   ],
-  Fmaj7: [
+  'Fmaj7': [
     { name: 'Fmaj7', variation: 'Open 1', positions: [2, 5, 0, 3], startFret: 1 },
     { name: 'Fmaj7', variation: 'Mini 1', positions: [2, 4, 1, 3], startFret: 0 },
     { name: 'Fmaj7', variation: 'Barre 1', positions: [5, 5, 5, 7], startFret: 4, barres: [{ fret: 5, fromString: 1, toString: 3 }] },
     { name: 'Fmaj7', variation: 'High 1', positions: [10, 9, 8, 7], startFret: 6 },
   ],
-  Fm7: [
+  'Fm7': [
     { name: 'Fm7', variation: 'Open 1', positions: [10, 0, 11, 11], startFret: 9 },
     { name: 'Fm7', variation: 'Mini 1', positions: [1, 3, 1, 3], startFret: 0 },
     { name: 'Fm7', variation: 'Mini 2', positions: [5, 5, 4, 6], startFret: 3 },
     { name: 'Fm7', variation: 'High 1', positions: [8, 8, 8, 8], startFret: 7, barres: [{ fret: 8, fromString: 1, toString: 4 }] },
   ],
-  F7: [
+  'F7': [
     { name: 'F7', variation: 'Open 1', positions: [8, 5, 8, 0], startFret: 4 },
     { name: 'F7', variation: 'Mini 1', positions: [2, 3, 1, 3], startFret: 0 },
     { name: 'F7', variation: 'Barre 1', positions: [5, 5, 5, 6], startFret: 4, barres: [{ fret: 5, fromString: 1, toString: 3 }] },
     { name: 'F7', variation: 'High 1', positions: [8, 9, 8, 8], startFret: 7, barres: [{ fret: 8, fromString: 1, toString: 4 }] },
   ],
-  Fdim7: [
+  'Fdim7': [
     { name: 'Fdim7', variation: 'Mini 1', positions: [1, 2, 1, 2], startFret: 0 },
     { name: 'Fdim7', variation: 'Mini 2', positions: [4, 5, 4, 5], startFret: 3 },
     { name: 'Fdim7', variation: 'High 1', positions: [7, 8, 7, 8], startFret: 6 },
     { name: 'Fdim7', variation: 'High 2', positions: [10, 11, 10, 11], startFret: 9 },
   ],
-  Fadd9: [
+  'Fadd9': [
     { name: 'Fadd9', variation: 'Open 1', positions: [0, 0, 1, 0], startFret: 0 },
     { name: 'Fadd9', variation: 'Mini 1', positions: [2, 5, 3, 3], startFret: 1 },
     { name: 'Fadd9', variation: 'Mini 2', positions: [5, 7, 5, 8], startFret: 4 },
     { name: 'Fadd9', variation: 'High 1', positions: [10, 9, 8, 10], startFret: 7 },
   ],
-  F9: [
+  'F9': [
     { name: 'F9', variation: 'Open 1', positions: [0, 3, 1, 0], startFret: 0 },
     { name: 'F9', variation: 'Mini 1', positions: [8, 7, 5, 8], startFret: 4 },
     { name: 'F9', variation: 'High 1', positions: [10, 9, 11, 10], startFret: 8 },
   ],
-  F6: [
+  'F6': [
     { name: 'F6', variation: 'Open 1', positions: [7, 5, 8, 0], startFret: 4 },
     { name: 'F6', variation: 'Mini 1', positions: [2, 2, 1, 3], startFret: 0 },
     { name: 'F6', variation: 'Barre 1', positions: [5, 5, 5, 5], startFret: 4, barres: [{ fret: 5, fromString: 1, toString: 4 }] },
     { name: 'F6', variation: 'High 1', positions: [7, 9, 8, 8], startFret: 6 },
   ],
-  Fm6: [
+  'Fm6': [
     { name: 'Fm6', variation: 'Open 1', positions: [10, 0, 10, 11], startFret: 9 },
     { name: 'Fm6', variation: 'Mini 1', positions: [1, 2, 1, 3], startFret: 0 },
     { name: 'Fm6', variation: 'Mini 2', positions: [5, 5, 4, 5], startFret: 3 },
     { name: 'Fm6', variation: 'High 1', positions: [7, 8, 8, 8], startFret: 6 },
   ],
-  F7sus4: [
+  'F7sus4': [
     { name: 'F7sus4', variation: 'Open 1', positions: [8, 0, 6, 8], startFret: 5 },
     { name: 'F7sus4', variation: 'Mini 1', positions: [3, 3, 1, 3], startFret: 0 },
     { name: 'F7sus4', variation: 'Mini 2', positions: [5, 5, 6, 6], startFret: 4 },
     { name: 'F7sus4', variation: 'High 1', positions: [8, 10, 8, 8], startFret: 7, barres: [{ fret: 8, fromString: 1, toString: 4 }] },
   ],
-  Fm7b5: [
+  'Fm7b5': [
     { name: 'Fm7b5', variation: 'Mini 1', positions: [1, 3, 1, 2], startFret: 0 },
     { name: 'Fm7b5', variation: 'Mini 2', positions: [4, 5, 4, 6], startFret: 3 },
     { name: 'Fm7b5', variation: 'High 1', positions: [8, 8, 7, 8], startFret: 6 },
     { name: 'Fm7b5', variation: 'High 2', positions: [10, 11, 11, 11], startFret: 9 },
   ],
   // F#/Gb Family
-  F#: [
+  'F#': [
     { name: 'F#', flatName: 'Gb', variation: 'Open 1', positions: [0, 1, 2, 1], startFret: 0 },
     { name: 'F#', flatName: 'Gb', variation: 'Mini 1', positions: [4, 1, 2, 1], startFret: 0 },
     { name: 'F#', flatName: 'Gb', variation: 'Mini 2', positions: [4, 6, 6, 4], startFret: 3 },
     { name: 'F#', flatName: 'Gb', variation: 'High 1', positions: [7, 10, 9, 9], startFret: 6 },
   ],
-  F#m: [
+  'F#m': [
     { name: 'F#m', flatName: 'Gbm', variation: 'Open 1', positions: [3, 1, 2, 0], startFret: 0 },
     { name: 'F#m', flatName: 'Gbm', variation: 'Mini 1', positions: [2, 1, 2, 1], startFret: 0 },
     { name: 'F#m', flatName: 'Gbm', variation: 'Mini 2', positions: [4, 6, 5, 4], startFret: 3 },
     { name: 'F#m', flatName: 'Gbm', variation: 'High 1', positions: [7, 9, 9, 9], startFret: 6 },
   ],
-  F#dim: [
+  'F#dim': [
     { name: 'F#dim', flatName: 'Gbdim', variation: 'Open 1', positions: [1, 0, 2, 0], startFret: 0 },
     { name: 'F#dim', flatName: 'Gbdim', variation: 'Mini 1', positions: [2, 1, 2, 3], startFret: 0 },
     { name: 'F#dim', flatName: 'Gbdim', variation: 'Mini 2', positions: [5, 6, 5, 4], startFret: 3 },
     { name: 'F#dim', flatName: 'Gbdim', variation: 'High 1', positions: [7, 9, 8, 9], startFret: 6 },
   ],
-  F#aug: [
+  'F#aug': [
     { name: 'F#aug', flatName: 'Gbaug', variation: 'Open 1', positions: [0, 2, 2, 1], startFret: 0 },
     { name: 'F#aug', flatName: 'Gbaug', variation: 'Mini 1', positions: [4, 2, 2, 1], startFret: 0 },
     { name: 'F#aug', flatName: 'Gbaug', variation: 'Mini 2', positions: [7, 6, 6, 4], startFret: 3 },
     { name: 'F#aug', flatName: 'Gbaug', variation: 'High 1', positions: [7, 10, 7, 9], startFret: 6 },
   ],
-  F#sus2: [
+  'F#sus2': [
     { name: 'F#sus2', flatName: 'Gbsus2', variation: 'Open 1', positions: [1, 0, 2, 4], startFret: 0 },
     { name: 'F#sus2', flatName: 'Gbsus2', variation: 'Mini 1', positions: [1, 1, 2, 3], startFret: 0 },
     { name: 'F#sus2', flatName: 'Gbsus2', variation: 'Mini 2', positions: [6, 6, 4, 7], startFret: 3 },
     { name: 'F#sus2', flatName: 'Gbsus2', variation: 'High 1', positions: [7, 8, 9, 9], startFret: 6 },
   ],
-  F#sus4: [
+  'F#sus4': [
     { name: 'F#sus4', flatName: 'Gbsus4', variation: 'Open 1', positions: [0, 1, 2, 2], startFret: 0 },
     { name: 'F#sus4', flatName: 'Gbsus4', variation: 'Mini 1', positions: [4, 1, 2, 1], startFret: 0 },
     { name: 'F#sus4', flatName: 'Gbsus4', variation: 'Mini 2', positions: [4, 6, 6, 4], startFret: 3 },
     { name: 'F#sus4', flatName: 'Gbsus4', variation: 'High 1', positions: [11, 11, 9, 8], startFret: 7 },
   ],
-  F#maj7: [
+  'F#maj7': [
     { name: 'F#maj7', flatName: 'Gbmaj7', variation: 'Mini 1', positions: [3, 5, 2, 4], startFret: 1 },
     { name: 'F#maj7', flatName: 'Gbmaj7', variation: 'Barre 1', positions: [6, 6, 6, 8], startFret: 5, barres: [{ fret: 6, fromString: 1, toString: 3 }] },
     { name: 'F#maj7', flatName: 'Gbmaj7', variation: 'High 1', positions: [11, 10, 9, 8], startFret: 7 },
     { name: 'F#maj7', flatName: 'Gbmaj7', variation: 'High 2', positions: [11, 13, 13, 13], startFret: 10 },
   ],
-  F#m7: [
+  'F#m7': [
     { name: 'F#m7', flatName: 'Gbm7', variation: 'Open 1', positions: [9, 6, 9, 0], startFret: 5 },
     { name: 'F#m7', flatName: 'Gbm7', variation: 'Mini 1', positions: [2, 4, 2, 4], startFret: 1 },
     { name: 'F#m7', flatName: 'Gbm7', variation: 'Mini 2', positions: [6, 6, 5, 7], startFret: 4 },
     { name: 'F#m7', flatName: 'Gbm7', variation: 'High 1', positions: [9, 9, 9, 9], startFret: 8, barres: [{ fret: 9, fromString: 1, toString: 4 }] },
   ],
-  F#7: [
+  'F#7': [
     { name: 'F#7', flatName: 'Gb7', variation: 'Open 1', positions: [3, 6, 0, 4], startFret: 2 },
     { name: 'F#7', flatName: 'Gb7', variation: 'Mini 1', positions: [3, 4, 2, 4], startFret: 1 },
     { name: 'F#7', flatName: 'Gb7', variation: 'Barre 1', positions: [6, 6, 6, 7], startFret: 5, barres: [{ fret: 6, fromString: 1, toString: 3 }] },
     { name: 'F#7', flatName: 'Gb7', variation: 'High 1', positions: [9, 10, 9, 9], startFret: 8, barres: [{ fret: 9, fromString: 1, toString: 4 }] },
   ],
-  F#dim7: [
+  'F#dim7': [
     { name: 'F#dim7', flatName: 'Gbdim7', variation: 'Open 1', positions: [5, 3, 2, 0], startFret: 1 },
     { name: 'F#dim7', flatName: 'Gbdim7', variation: 'Mini 1', positions: [2, 3, 2, 3], startFret: 1 },
     { name: 'F#dim7', flatName: 'Gbdim7', variation: 'Mini 2', positions: [5, 6, 5, 6], startFret: 4 },
     { name: 'F#dim7', flatName: 'Gbdim7', variation: 'High 1', positions: [8, 9, 8, 9], startFret: 7 },
   ],
-  F#add9: [
+  'F#add9': [
     { name: 'F#add9', flatName: 'Gbadd9', variation: 'Barre 1', positions: [1, 1, 2, 1], startFret: 0, barres: [{ fret: 1, fromString: 1, toString: 4 }] },
     { name: 'F#add9', flatName: 'Gbadd9', variation: 'Mini 1', positions: [6, 8, 6, 9], startFret: 5 },
     { name: 'F#add9', flatName: 'Gbadd9', variation: 'High 1', positions: [11, 10, 9, 11], startFret: 8 },
     { name: 'F#add9', flatName: 'Gbadd9', variation: 'High 2', positions: [13, 13, 14, 13], startFret: 12, barres: [{ fret: 13, fromString: 1, toString: 4 }] },
   ],
-  F#9: [
+  'F#9': [
     { name: 'F#9', flatName: 'Gb9', variation: 'Open 1', positions: [11, 10, 0, 11], startFret: 9 },
     { name: 'F#9', flatName: 'Gb9', variation: 'Mini 1', positions: [1, 4, 2, 1], startFret: 0 },
     { name: 'F#9', flatName: 'Gb9', variation: 'Mini 2', positions: [9, 8, 6, 9], startFret: 5 },
     { name: 'F#9', flatName: 'Gb9', variation: 'High 1', positions: [11, 10, 12, 11], startFret: 9 },
   ],
-  F#6: [
+  'F#6': [
     { name: 'F#6', flatName: 'Gb6', variation: 'Mini 1', positions: [3, 3, 2, 4], startFret: 1 },
     { name: 'F#6', flatName: 'Gb6', variation: 'Barre 1', positions: [6, 6, 6, 6], startFret: 5, barres: [{ fret: 6, fromString: 1, toString: 4 }] },
     { name: 'F#6', flatName: 'Gb6', variation: 'High 1', positions: [8, 10, 9, 9], startFret: 7 },
     { name: 'F#6', flatName: 'Gb6', variation: 'High 2', positions: [11, 13, 11, 13], startFret: 10 },
   ],
-  F#m6: [
+  'F#m6': [
     { name: 'F#m6', flatName: 'Gbm6', variation: 'Open 1', positions: [8, 6, 9, 0], startFret: 5 },
     { name: 'F#m6', flatName: 'Gbm6', variation: 'Mini 1', positions: [2, 3, 2, 4], startFret: 1 },
     { name: 'F#m6', flatName: 'Gbm6', variation: 'Mini 2', positions: [6, 6, 5, 6], startFret: 4 },
     { name: 'F#m6', flatName: 'Gbm6', variation: 'High 1', positions: [8, 9, 9, 9], startFret: 7 },
   ],
-  F#7sus4: [
+  'F#7sus4': [
     { name: 'F#7sus4', flatName: 'Gb7sus4', variation: 'Open 1', positions: [4, 6, 0, 4], startFret: 3 },
     { name: 'F#7sus4', flatName: 'Gb7sus4', variation: 'Mini 1', positions: [4, 4, 2, 4], startFret: 1 },
     { name: 'F#7sus4', flatName: 'Gb7sus4', variation: 'Mini 2', positions: [6, 6, 7, 7], startFret: 5 },
     { name: 'F#7sus4', flatName: 'Gb7sus4', variation: 'High 1', positions: [9, 11, 9, 9], startFret: 8, barres: [{ fret: 9, fromString: 1, toString: 4 }] },
   ],
-  F#m7b5: [
+  'F#m7b5': [
     { name: 'F#m7b5', flatName: 'Gbm7b5', variation: 'Open 1', positions: [5, 4, 2, 0], startFret: 1 },
     { name: 'F#m7b5', flatName: 'Gbm7b5', variation: 'Mini 1', positions: [2, 4, 2, 3], startFret: 1 },
     { name: 'F#m7b5', flatName: 'Gbm7b5', variation: 'Mini 2', positions: [5, 6, 5, 7], startFret: 4 },
     { name: 'F#m7b5', flatName: 'Gbm7b5', variation: 'High 1', positions: [9, 9, 8, 9], startFret: 7 },
   ],
   // G Family
-  G: [
+  'G': [
     { name: 'G', variation: 'Open 1', positions: [0, 2, 1, 2], startFret: 0 },
     { name: 'G', variation: 'Mini 1', positions: [1, 2, 3, 2], startFret: 0 },
     { name: 'G', variation: 'Mini 2', positions: [4, 7, 4, 5], startFret: 3 },
     { name: 'G', variation: 'High 1', positions: [7, 7, 7, 8], startFret: 6, barres: [{ fret: 7, fromString: 1, toString: 3 }] },
   ],
-  Gm: [
+  'Gm': [
     { name: 'Gm', variation: 'Open 1', positions: [0, 2, 2, 1], startFret: 0 },
     { name: 'Gm', variation: 'Mini 1', positions: [1, 2, 3, 1], startFret: 0 },
     { name: 'Gm', variation: 'Mini 2', positions: [4, 7, 6, 5], startFret: 3 },
     { name: 'Gm', variation: 'High 1', positions: [7, 10, 7, 10], startFret: 6 },
   ],
-  Gdim: [
+  'Gdim': [
     { name: 'Gdim', variation: 'Open 1', positions: [0, 1, 0, 1], startFret: 0 },
     { name: 'Gdim', variation: 'Mini 1', positions: [3, 1, 3, 3], startFret: 0 },
     { name: 'Gdim', variation: 'Mini 2', positions: [4, 7, 6, 4], startFret: 3 },
     { name: 'Gdim', variation: 'High 1', positions: [7, 10, 9, 10], startFret: 6 },
   ],
-  Gaug: [
+  'Gaug': [
     { name: 'Gaug', variation: 'Open 1', positions: [0, 3, 1, 2], startFret: 0 },
     { name: 'Gaug', variation: 'Mini 1', positions: [1, 3, 3, 2], startFret: 0 },
     { name: 'Gaug', variation: 'Mini 2', positions: [4, 7, 5, 6], startFret: 3 },
     { name: 'Gaug', variation: 'High 1', positions: [8, 7, 7, 9], startFret: 6 },
   ],
-  Gsus2: [
+  'Gsus2': [
     { name: 'Gsus2', variation: 'Open 1', positions: [0, 2, 1, 0], startFret: 0 },
     { name: 'Gsus2', variation: 'Mini 1', positions: [2, 2, 3, 1], startFret: 0 },
     { name: 'Gsus2', variation: 'Mini 2', positions: [7, 7, 5, 4], startFret: 3 },
     { name: 'Gsus2', variation: 'High 1', positions: [7, 9, 7, 10], startFret: 6 },
   ],
-  Gsus4: [
+  'Gsus4': [
     { name: 'Gsus4', variation: 'Open 1', positions: [0, 2, 1, 3], startFret: 0 },
     { name: 'Gsus4', variation: 'Mini 1', positions: [1, 2, 3, 3], startFret: 0 },
     { name: 'Gsus4', variation: 'Mini 2', positions: [5, 7, 4, 5], startFret: 3 },
     { name: 'Gsus4', variation: 'High 1', positions: [7, 7, 8, 7], startFret: 6, barres: [{ fret: 7, fromString: 1, toString: 4 }] },
   ],
-  Gmaj7: [
+  'Gmaj7': [
     { name: 'Gmaj7', variation: 'Open 1', positions: [0, 2, 2, 2], startFret: 1, barres: [{ fret: 2, fromString: 2, toString: 4 }] },
     { name: 'Gmaj7', variation: 'Mini 1', positions: [4, 6, 3, 5], startFret: 2 },
     { name: 'Gmaj7', variation: 'High 1', positions: [7, 7, 7, 9], startFret: 6, barres: [{ fret: 7, fromString: 1, toString: 3 }] },
     { name: 'Gmaj7', variation: 'High 2', positions: [11, 11, 10, 10], startFret: 9 },
   ],
-  Gm7: [
+  'Gm7': [
     { name: 'Gm7', variation: 'Open 1', positions: [0, 2, 1, 1], startFret: 0 },
     { name: 'Gm7', variation: 'Mini 1', positions: [3, 5, 3, 5], startFret: 2 },
     { name: 'Gm7', variation: 'Mini 2', positions: [7, 7, 6, 8], startFret: 5 },
     { name: 'Gm7', variation: 'High 1', positions: [10, 10, 10, 10], startFret: 9, barres: [{ fret: 10, fromString: 1, toString: 4 }] },
   ],
-  G7: [
+  'G7': [
     { name: 'G7', variation: 'Open 1', positions: [0, 2, 1, 2], startFret: 0 },
     { name: 'G7', variation: 'Mini 1', positions: [4, 5, 3, 5], startFret: 2 },
     { name: 'G7', variation: 'High 1', positions: [7, 7, 7, 8], startFret: 6, barres: [{ fret: 7, fromString: 1, toString: 3 }] },
     { name: 'G7', variation: 'High 2', positions: [10, 11, 10, 10], startFret: 9, barres: [{ fret: 10, fromString: 1, toString: 4 }] },
   ],
-  Gdim7: [
+  'Gdim7': [
     { name: 'Gdim7', variation: 'Open 1', positions: [0, 1, 0, 1], startFret: 0 },
     { name: 'Gdim7', variation: 'Mini 1', positions: [3, 4, 3, 4], startFret: 2 },
     { name: 'Gdim7', variation: 'Mini 2', positions: [6, 7, 6, 7], startFret: 5 },
     { name: 'Gdim7', variation: 'High 1', positions: [9, 10, 9, 10], startFret: 8 },
   ],
-  Gadd9: [
+  'Gadd9': [
     { name: 'Gadd9', variation: 'Open 1', positions: [0, 2, 5, 2], startFret: 1 },
     { name: 'Gadd9', variation: 'Barre 1', positions: [2, 2, 3, 2], startFret: 1, barres: [{ fret: 2, fromString: 1, toString: 4 }] },
     { name: 'Gadd9', variation: 'Mini 1', positions: [4, 7, 5, 5], startFret: 3 },
     { name: 'Gadd9', variation: 'High 1', positions: [7, 9, 7, 10], startFret: 6 },
   ],
-  G9: [
+  'G9': [
     { name: 'G9', variation: 'Open 1', positions: [0, 5, 5, 2], startFret: 1 },
     { name: 'G9', variation: 'Mini 1', positions: [2, 5, 3, 2], startFret: 1 },
     { name: 'G9', variation: 'High 1', positions: [10, 9, 7, 10], startFret: 6 },
     { name: 'G9', variation: 'High 2', positions: [12, 11, 13, 12], startFret: 10 },
   ],
-  G6: [
+  'G6': [
     { name: 'G6', variation: 'Open 1', positions: [0, 2, 0, 2], startFret: 1 },
     { name: 'G6', variation: 'Mini 1', positions: [4, 4, 3, 5], startFret: 2 },
     { name: 'G6', variation: 'High 1', positions: [7, 7, 7, 7], startFret: 6, barres: [{ fret: 7, fromString: 1, toString: 4 }] },
     { name: 'G6', variation: 'High 2', positions: [12, 14, 12, 14], startFret: 11 },
   ],
-  Gm6: [
+  'Gm6': [
     { name: 'Gm6', variation: 'Open 1', positions: [0, 2, 0, 1], startFret: 0 },
     { name: 'Gm6', variation: 'Mini 1', positions: [3, 4, 3, 5], startFret: 2 },
     { name: 'Gm6', variation: 'Mini 2', positions: [7, 7, 6, 7], startFret: 5 },
     { name: 'Gm6', variation: 'High 1', positions: [9, 10, 10, 10], startFret: 8 },
   ],
-  G7sus4: [
+  'G7sus4': [
     { name: 'G7sus4', variation: 'Open 1', positions: [0, 2, 1, 3], startFret: 0 },
     { name: 'G7sus4', variation: 'Mini 1', positions: [5, 5, 3, 5], startFret: 2 },
     { name: 'G7sus4', variation: 'High 1', positions: [7, 7, 8, 8], startFret: 6 },
     { name: 'G7sus4', variation: 'High 2', positions: [10, 12, 10, 10], startFret: 9, barres: [{ fret: 10, fromString: 1, toString: 4 }] },
   ],
-  Gm7b5: [
+  'Gm7b5': [
     { name: 'Gm7b5', variation: 'Open 1', positions: [0, 1, 1, 1], startFret: 0, barres: [{ fret: 1, fromString: 2, toString: 4 }] },
     { name: 'Gm7b5', variation: 'Mini 1', positions: [3, 5, 3, 4], startFret: 2 },
     { name: 'Gm7b5', variation: 'Mini 2', positions: [6, 7, 6, 8], startFret: 5 },
     { name: 'Gm7b5', variation: 'High 1', positions: [10, 10, 9, 10], startFret: 8 },
   ],
   // Ab/G# Family
-  Ab: [
+  'Ab': [
     { name: 'Ab', variation: 'Open 1', positions: [1, 3, 0, 3], startFret: 0 },
     { name: 'Ab', variation: 'Mini 1', positions: [1, 3, 2, 3], startFret: 0 },
     { name: 'Ab', variation: 'Mini 2', positions: [5, 5, 4, 6], startFret: 3 },
     { name: 'Ab', variation: 'High 1', positions: [8, 8, 8, 7], startFret: 6 },
   ],
-  Abm: [
+  'Abm': [
     { name: 'Abm', variation: 'Open 1', positions: [1, 3, 0, 2], startFret: 0 },
     { name: 'Abm', variation: 'Mini 1', positions: [1, 3, 3, 2], startFret: 0 },
     { name: 'Abm', variation: 'Mini 2', positions: [4, 5, 4, 6], startFret: 3 },
     { name: 'Abm', variation: 'High 1', positions: [8, 8, 7, 9], startFret: 6 },
   ],
-  Abdim: [
+  'Abdim': [
     { name: 'Abdim', variation: 'Open 1', positions: [1, 2, 0, 2], startFret: 0 },
     { name: 'Abdim', variation: 'Mini 1', positions: [1, 2, 2, 2], startFret: 0 },
     { name: 'Abdim', variation: 'Mini 2', positions: [4, 5, 4, 5], startFret: 3 },
     { name: 'Abdim', variation: 'High 1', positions: [7, 8, 7, 7], startFret: 6, barres: [{ fret: 7, fromString: 1, toString: 4 }] },
   ],
-  Abaug: [
+  'Abaug': [
     { name: 'Abaug', variation: 'Open 1', positions: [1, 0, 0, 4], startFret: 0 },
     { name: 'Abaug', variation: 'Mini 1', positions: [1, 4, 2, 3], startFret: 0 },
     { name: 'Abaug', variation: 'Mini 2', positions: [5, 4, 4, 5], startFret: 3 },
     { name: 'Abaug', variation: 'High 1', positions: [10, 8, 8, 7], startFret: 6 },
   ],
-  Absus2: [
+  'Absus2': [
     { name: 'Absus2', variation: 'Open 1', positions: [1, 3, 0, 1], startFret: 0 },
     { name: 'Absus2', variation: 'Barre 1', positions: [1, 3, 1, 1], startFret: 0, barres: [{ fret: 1, fromString: 1, toString: 4 }] },
     { name: 'Absus2', variation: 'Mini 1', positions: [8, 8, 6, 5], startFret: 4 },
     { name: 'Absus2', variation: 'High 1', positions: [8, 10, 10, 11], startFret: 7 },
   ],
-  Absus4: [
+  'Absus4': [
     { name: 'Absus4', variation: 'Open 1', positions: [1, 3, 0, 4], startFret: 0 },
     { name: 'Absus4', variation: 'Mini 1', positions: [1, 3, 1, 4], startFret: 0 },
     { name: 'Absus4', variation: 'Mini 2', positions: [6, 7, 4, 6], startFret: 3 },
     { name: 'Absus4', variation: 'High 1', positions: [8, 8, 9, 7], startFret: 6 },
   ],
-  Abmaj7: [
+  'Abmaj7': [
     { name: 'Abmaj7', variation: 'Open 1', positions: [0, 3, 4, 3], startFret: 2 },
     { name: 'Abmaj7', variation: 'Mini 1', positions: [1, 3, 3, 3], startFret: 0 },
     { name: 'Abmaj7', variation: 'Mini 2', positions: [5, 7, 4, 6], startFret: 3 },
     { name: 'Abmaj7', variation: 'High 1', positions: [8, 8, 8, 10], startFret: 7, barres: [{ fret: 8, fromString: 1, toString: 3 }] },
   ],
-  Abm7: [
+  'Abm7': [
     { name: 'Abm7', variation: 'Mini 1', positions: [1, 3, 2, 2], startFret: 0 },
     { name: 'Abm7', variation: 'Mini 2', positions: [4, 6, 4, 6], startFret: 3 },
     { name: 'Abm7', variation: 'High 1', positions: [8, 8, 7, 9], startFret: 6 },
     { name: 'Abm7', variation: 'High 2', positions: [11, 11, 11, 11], startFret: 10, barres: [{ fret: 11, fromString: 1, toString: 4 }] },
   ],
-  Ab7: [
+  'Ab7': [
     { name: 'Ab7', variation: 'Open 1', positions: [11, 0, 11, 11], startFret: 10, barres: [{ fret: 11, fromString: 1, toString: 4 }] },
     { name: 'Ab7', variation: 'Mini 1', positions: [1, 3, 2, 3], startFret: 0 },
     { name: 'Ab7', variation: 'Mini 2', positions: [5, 6, 4, 6], startFret: 3 },
     { name: 'Ab7', variation: 'High 1', positions: [8, 8, 8, 9], startFret: 7, barres: [{ fret: 8, fromString: 1, toString: 3 }] },
   ],
-  Abdim7: [
+  'Abdim7': [
     { name: 'Abdim7', variation: 'Mini 1', positions: [1, 2, 1, 2], startFret: 0 },
     { name: 'Abdim7', variation: 'Mini 2', positions: [4, 5, 4, 5], startFret: 3 },
     { name: 'Abdim7', variation: 'High 1', positions: [7, 8, 7, 8], startFret: 6 },
     { name: 'Abdim7', variation: 'High 2', positions: [10, 11, 10, 11], startFret: 9 },
   ],
-  Abadd9: [
+  'Abadd9': [
     { name: 'Abadd9', variation: 'Open 1', positions: [3, 0, 4, 6], startFret: 2 },
     { name: 'Abadd9', variation: 'Barre 1', positions: [3, 3, 4, 3], startFret: 2, barres: [{ fret: 3, fromString: 1, toString: 4 }] },
     { name: 'Abadd9', variation: 'Mini 1', positions: [5, 8, 6, 6], startFret: 4 },
     { name: 'Abadd9', variation: 'High 1', positions: [8, 10, 8, 11], startFret: 7 },
   ],
-  Ab9: [
+  'Ab9': [
     { name: 'Ab9', variation: 'Open 1', positions: [1, 0, 2, 1], startFret: 0 },
     { name: 'Ab9', variation: 'Mini 1', positions: [3, 6, 4, 3], startFret: 2 },
     { name: 'Ab9', variation: 'High 1', positions: [11, 10, 8, 11], startFret: 7 },
     { name: 'Ab9', variation: 'High 2', positions: [13, 12, 14, 13], startFret: 11 },
   ],
-  Ab6: [
+  'Ab6': [
     { name: 'Ab6', variation: 'Open 1', positions: [10, 0, 11, 11], startFret: 9 },
     { name: 'Ab6', variation: 'Mini 1', positions: [1, 3, 1, 3], startFret: 0 },
     { name: 'Ab6', variation: 'Mini 2', positions: [5, 5, 4, 6], startFret: 3 },
     { name: 'Ab6', variation: 'High 1', positions: [8, 8, 8, 8], startFret: 7, barres: [{ fret: 8, fromString: 1, toString: 4 }] },
   ],
-  Abm6: [
+  'Abm6': [
     { name: 'Abm6', variation: 'Mini 1', positions: [1, 3, 1, 2], startFret: 0 },
     { name: 'Abm6', variation: 'Mini 2', positions: [4, 5, 4, 6], startFret: 3 },
     { name: 'Abm6', variation: 'High 1', positions: [8, 8, 7, 8], startFret: 6 },
     { name: 'Abm6', variation: 'High 2', positions: [10, 11, 11, 11], startFret: 9 },
   ],
-  Ab7sus4: [
+  'Ab7sus4': [
     { name: 'Ab7sus4', variation: 'Mini 1', positions: [1, 3, 2, 4], startFret: 0 },
     { name: 'Ab7sus4', variation: 'Mini 2', positions: [6, 6, 4, 6], startFret: 3 },
     { name: 'Ab7sus4', variation: 'High 1', positions: [8, 8, 9, 9], startFret: 7 },
     { name: 'Ab7sus4', variation: 'High 2', positions: [11, 13, 11, 11], startFret: 10, barres: [{ fret: 11, fromString: 1, toString: 4 }] },
   ],
-  Abm7b5: [
+  'Abm7b5': [
     { name: 'Abm7b5', variation: 'Mini 1', positions: [1, 2, 2, 2], startFret: 0 },
     { name: 'Abm7b5', variation: 'Mini 2', positions: [4, 6, 4, 5], startFret: 3 },
     { name: 'Abm7b5', variation: 'High 1', positions: [7, 8, 7, 9], startFret: 6 },
     { name: 'Abm7b5', variation: 'High 2', positions: [11, 11, 10, 11], startFret: 9 },
   ],
   // A Family
-  A: [
+  'A': [
     { name: 'A', variation: 'Open 1', positions: [2, 1, 0, 2], startFret: 0 },
     { name: 'A', variation: 'Mini 1', positions: [2, 4, 1, 4], startFret: 0 },
     { name: 'A', variation: 'Mini 2', positions: [6, 4, 5, 6], startFret: 3 },
     { name: 'A', variation: 'High 1', positions: [10, 9, 9, 7], startFret: 6 },
   ],
-  Am: [
+  'Am': [
     { name: 'Am', variation: 'Open 1', positions: [0, 0, 0, 0], startFret: 0 },
     { name: 'Am', variation: 'Mini 1', positions: [2, 4, 1, 3], startFret: 0 },
     { name: 'Am', variation: 'Mini 2', positions: [5, 4, 5, 4], startFret: 3 },
     { name: 'Am', variation: 'High 1', positions: [7, 9, 8, 7], startFret: 6 },
   ],
-  Adim: [
+  'Adim': [
     { name: 'Adim', variation: 'Open 1', positions: [2, 3, 0, 3], startFret: 1 },
     { name: 'Adim', variation: 'Mini 1', positions: [2, 3, 1, 3], startFret: 0 },
     { name: 'Adim', variation: 'Mini 2', positions: [5, 4, 5, 6], startFret: 3 },
     { name: 'Adim', variation: 'High 1', positions: [8, 9, 8, 7], startFret: 6 },
   ],
-  Aaug: [
+  'Aaug': [
     { name: 'Aaug', variation: 'Open 1', positions: [2, 0, 1, 4], startFret: 0 },
     { name: 'Aaug', variation: 'Mini 1', positions: [2, 3, 1, 4], startFret: 0 },
     { name: 'Aaug', variation: 'Mini 2', positions: [5, 5, 5, 4], startFret: 3 },
     { name: 'Aaug', variation: 'High 1', positions: [10, 9, 9, 7], startFret: 6 },
   ],
-  Asus2: [
+  'Asus2': [
     { name: 'Asus2', variation: 'Open 1', positions: [2, 1, 0, 2], startFret: 0 },
     { name: 'Asus2', variation: 'Mini 1', positions: [2, 4, 1, 2], startFret: 0 },
     { name: 'Asus2', variation: 'Mini 2', positions: [4, 6, 5, 7], startFret: 3 },
     { name: 'Asus2', variation: 'High 1', positions: [9, 9, 7, 9], startFret: 6 },
   ],
-  Asus4: [
+  'Asus4': [
     { name: 'Asus4', variation: 'Open 1', positions: [2, 2, 0, 1], startFret: 0 },
     { name: 'Asus4', variation: 'Mini 1', positions: [2, 4, 2, 5], startFret: 1 },
     { name: 'Asus4', variation: 'Mini 2', positions: [7, 4, 5, 4], startFret: 3 },
     { name: 'Asus4', variation: 'High 1', positions: [7, 9, 8, 7], startFret: 6 },
   ],
-  Amaj7: [
+  'Amaj7': [
     { name: 'Amaj7', variation: 'Open 1', positions: [1, 1, 0, 0], startFret: 0 },
     { name: 'Amaj7', variation: 'Mini 1', positions: [2, 4, 4, 4], startFret: 1 },
     { name: 'Amaj7', variation: 'Mini 2', positions: [6, 8, 5, 7], startFret: 4 },
     { name: 'Amaj7', variation: 'High 1', positions: [9, 9, 9, 11], startFret: 8, barres: [{ fret: 9, fromString: 1, toString: 3 }] },
   ],
-  Am7: [
+  'Am7': [
     { name: 'Am7', variation: 'Open 1', positions: [0, 0, 0, 0], startFret: 0 },
     { name: 'Am7', variation: 'Mini 1', positions: [2, 4, 3, 3], startFret: 1 },
     { name: 'Am7', variation: 'Mini 2', positions: [5, 7, 5, 7], startFret: 4 },
     { name: 'Am7', variation: 'High 1', positions: [9, 9, 8, 10], startFret: 7 },
   ],
-  A7: [
+  'A7': [
     { name: 'A7', variation: 'Open 1', positions: [0, 1, 0, 0], startFret: 0 },
     { name: 'A7', variation: 'Mini 1', positions: [2, 4, 3, 4], startFret: 1 },
     { name: 'A7', variation: 'Mini 2', positions: [6, 7, 5, 7], startFret: 4 },
     { name: 'A7', variation: 'High 1', positions: [9, 9, 9, 10], startFret: 8, barres: [{ fret: 9, fromString: 1, toString: 3 }] },
   ],
-  Adim7: [
+  'Adim7': [
     { name: 'Adim7', variation: 'Open 1', positions: [5, 3, 2, 0], startFret: 1 },
     { name: 'Adim7', variation: 'Mini 1', positions: [2, 3, 2, 3], startFret: 1 },
     { name: 'Adim7', variation: 'Mini 2', positions: [5, 6, 5, 6], startFret: 4 },
     { name: 'Adim7', variation: 'High 1', positions: [8, 9, 8, 9], startFret: 7 },
   ],
-  Aadd9: [
+  'Aadd9': [
     { name: 'Aadd9', variation: 'Open 1', positions: [2, 1, 0, 2], startFret: 0 },
     { name: 'Aadd9', variation: 'Barre 1', positions: [4, 4, 5, 4], startFret: 3, barres: [{ fret: 4, fromString: 1, toString: 4 }] },
     { name: 'Aadd9', variation: 'High 1', positions: [9, 11, 9, 12], startFret: 8 },
     { name: 'Aadd9', variation: 'High 2', positions: [14, 13, 12, 14], startFret: 11 },
   ],
-  A9: [
+  'A9': [
     { name: 'A9', variation: 'Open 1', positions: [4, 1, 3, 0], startFret: 0 },
     { name: 'A9', variation: 'Mini 1', positions: [2, 1, 3, 2], startFret: 0 },
     { name: 'A9', variation: 'Mini 2', positions: [4, 7, 5, 4], startFret: 3 },
     { name: 'A9', variation: 'High 1', positions: [12, 11, 9, 12], startFret: 8 },
   ],
-  A6: [
+  'A6': [
     { name: 'A6', variation: 'Open 1', positions: [6, 9, 0, 9], startFret: 5 },
     { name: 'A6', variation: 'Mini 1', positions: [2, 4, 2, 4], startFret: 1 },
     { name: 'A6', variation: 'Mini 2', positions: [6, 6, 5, 7], startFret: 4 },
     { name: 'A6', variation: 'High 1', positions: [9, 9, 9, 9], startFret: 8, barres: [{ fret: 9, fromString: 1, toString: 4 }] },
   ],
-  Am6: [
+  'Am6': [
     { name: 'Am6', variation: 'Open 1', positions: [5, 4, 2, 0], startFret: 1 },
     { name: 'Am6', variation: 'Mini 1', positions: [2, 4, 2, 3], startFret: 1 },
     { name: 'Am6', variation: 'Mini 2', positions: [5, 6, 5, 7], startFret: 4 },
     { name: 'Am6', variation: 'High 1', positions: [9, 9, 8, 9], startFret: 7 },
   ],
-  A7sus4: [
+  'A7sus4': [
     { name: 'A7sus4', variation: 'Open 1', positions: [0, 2, 0, 0], startFret: 1 },
     { name: 'A7sus4', variation: 'Mini 1', positions: [2, 4, 3, 5], startFret: 1 },
     { name: 'A7sus4', variation: 'Mini 2', positions: [7, 7, 5, 7], startFret: 4 },
     { name: 'A7sus4', variation: 'High 1', positions: [9, 9, 10, 10], startFret: 8 },
   ],
-  Am7b5: [
+  'Am7b5': [
     { name: 'Am7b5', variation: 'Open 1', positions: [0, 3, 5, 3], startFret: 2 },
     { name: 'Am7b5', variation: 'Mini 1', positions: [2, 3, 3, 3], startFret: 1 },
     { name: 'Am7b5', variation: 'Mini 2', positions: [5, 7, 5, 6], startFret: 4 },
     { name: 'Am7b5', variation: 'High 1', positions: [8, 9, 8, 10], startFret: 7 },
   ],
   // Bb/A# Family
-  Bb: [
+  'Bb': [
     { name: 'Bb', variation: 'Open 1', positions: [3, 2, 1, 0], startFret: 0 },
     { name: 'Bb', variation: 'Mini 1', positions: [3, 2, 1, 3], startFret: 0 },
     { name: 'Bb', variation: 'Mini 2', positions: [4, 5, 6, 5], startFret: 3 },
     { name: 'Bb', variation: 'High 1', positions: [7, 10, 8, 8], startFret: 6 },
   ],
-  Bbm: [
+  'Bbm': [
     { name: 'Bbm', variation: 'Open 1', positions: [3, 0, 1, 4], startFret: 0 },
     { name: 'Bbm', variation: 'Mini 1', positions: [3, 1, 1, 3], startFret: 0 },
     { name: 'Bbm', variation: 'Mini 2', positions: [5, 5, 6, 4], startFret: 3 },
     { name: 'Bbm', variation: 'High 1', positions: [7, 10, 9, 8], startFret: 6 },
   ],
-  Bbdim: [
+  'Bbdim': [
     { name: 'Bbdim', variation: 'Open 1', positions: [3, 1, 0, 0], startFret: 0 },
     { name: 'Bbdim', variation: 'Mini 1', positions: [3, 4, 1, 4], startFret: 0 },
     { name: 'Bbdim', variation: 'Barre 1', positions: [4, 4, 6, 4], startFret: 3, barres: [{ fret: 4, fromString: 1, toString: 4 }] },
     { name: 'Bbdim', variation: 'High 1', positions: [7, 10, 9, 7], startFret: 6 },
   ],
-  Bbaug: [
+  'Bbaug': [
     { name: 'Bbaug', variation: 'Open 1', positions: [0, 2, 2, 1], startFret: 0 },
     { name: 'Bbaug', variation: 'Mini 1', positions: [3, 2, 2, 1], startFret: 0 },
     { name: 'Bbaug', variation: 'Mini 2', positions: [7, 6, 6, 4], startFret: 3 },
     { name: 'Bbaug', variation: 'High 1', positions: [7, 10, 7, 9], startFret: 6 },
   ],
-  Bbsus2: [
+  'Bbsus2': [
     { name: 'Bbsus2', variation: 'Open 1', positions: [3, 0, 1, 4], startFret: 0 },
     { name: 'Bbsus2', variation: 'Mini 1', positions: [3, 2, 1, 3], startFret: 0 },
     { name: 'Bbsus2', variation: 'Mini 2', positions: [5, 5, 6, 4], startFret: 3 },
     { name: 'Bbsus2', variation: 'High 1', positions: [7, 10, 8, 8], startFret: 6 },
   ],
-  Bbsus4: [
+  'Bbsus4': [
     { name: 'Bbsus4', variation: 'Open 1', positions: [3, 3, 1, 0], startFret: 0 },
     { name: 'Bbsus4', variation: 'Mini 1', positions: [3, 3, 1, 3], startFret: 0 },
     { name: 'Bbsus4', variation: 'Mini 2', positions: [4, 5, 6, 6], startFret: 3 },
     { name: 'Bbsus4', variation: 'High 1', positions: [8, 10, 7, 8], startFret: 6 },
   ],
-  Bbmaj7: [
+  'Bbmaj7': [
     { name: 'Bbmaj7', variation: 'Open 1', positions: [3, 2, 1, 0], startFret: 0 },
     { name: 'Bbmaj7', variation: 'Mini 1', positions: [2, 2, 1, 1], startFret: 0 },
     { name: 'Bbmaj7', variation: 'Mini 2', positions: [7, 9, 6, 8], startFret: 5 },
     { name: 'Bbmaj7', variation: 'High 1', positions: [10, 10, 10, 12], startFret: 9, barres: [{ fret: 10, fromString: 1, toString: 3 }] },
   ],
-  Bbm7: [
+  'Bbm7': [
     { name: 'Bbm7', variation: 'Barre 1', positions: [1, 1, 1, 1], startFret: 0, barres: [{ fret: 1, fromString: 1, toString: 4 }] },
     { name: 'Bbm7', variation: 'Mini 1', positions: [6, 8, 6, 8], startFret: 5 },
     { name: 'Bbm7', variation: 'High 1', positions: [10, 10, 9, 11], startFret: 8 },
     { name: 'Bbm7', variation: 'High 2', positions: [13, 13, 13, 13], startFret: 12, barres: [{ fret: 13, fromString: 1, toString: 4 }] },
   ],
-  Bb7: [
+  'Bb7': [
     { name: 'Bb7', variation: 'Barre 1', positions: [1, 2, 1, 1], startFret: 0, barres: [{ fret: 1, fromString: 1, toString: 4 }] },
     { name: 'Bb7', variation: 'Mini 1', positions: [7, 8, 6, 8], startFret: 5 },
     { name: 'Bb7', variation: 'High 1', positions: [10, 10, 10, 11], startFret: 9, barres: [{ fret: 10, fromString: 1, toString: 3 }] },
   ],
-  Bbdim7: [
+  'Bbdim7': [
     { name: 'Bbdim7', variation: 'Open 1', positions: [0, 1, 0, 1], startFret: 0 },
     { name: 'Bbdim7', variation: 'Mini 1', positions: [3, 4, 3, 4], startFret: 2 },
     { name: 'Bbdim7', variation: 'Mini 2', positions: [6, 7, 6, 7], startFret: 5 },
     { name: 'Bbdim7', variation: 'High 1', positions: [9, 10, 9, 10], startFret: 8 },
   ],
-  Bbadd9: [
+  'Bbadd9': [
     { name: 'Bbadd9', variation: 'Open 1', positions: [7, 0, 6, 8], startFret: 5 },
     { name: 'Bbadd9', variation: 'Mini 1', positions: [3, 2, 1, 3], startFret: 0 },
     { name: 'Bbadd9', variation: 'Barre 1', positions: [5, 5, 6, 5], startFret: 4, barres: [{ fret: 5, fromString: 1, toString: 4 }] },
     { name: 'Bbadd9', variation: 'High 1', positions: [7, 10, 8, 8], startFret: 6 },
   ],
-  Bb9: [
+  'Bb9': [
     { name: 'Bb9', variation: 'Open 1', positions: [3, 0, 4, 5], startFret: 2 },
     { name: 'Bb9', variation: 'Mini 1', positions: [3, 2, 4, 3], startFret: 1 },
     { name: 'Bb9', variation: 'Mini 2', positions: [5, 8, 6, 5], startFret: 4 },
     { name: 'Bb9', variation: 'High 1', positions: [13, 12, 10, 13], startFret: 9 },
   ],
-  Bb6: [
+  'Bb6': [
     { name: 'Bb6', variation: 'Open 1', positions: [0, 2, 1, 1], startFret: 0 },
     { name: 'Bb6', variation: 'Mini 1', positions: [3, 5, 3, 5], startFret: 2 },
     { name: 'Bb6', variation: 'Mini 2', positions: [7, 7, 6, 8], startFret: 5 },
     { name: 'Bb6', variation: 'High 1', positions: [10, 10, 10, 10], startFret: 9, barres: [{ fret: 10, fromString: 1, toString: 4 }] },
   ],
-  Bbm6: [
+  'Bbm6': [
     { name: 'Bbm6', variation: 'Open 1', positions: [0, 1, 1, 1], startFret: 0, barres: [{ fret: 1, fromString: 2, toString: 4 }] },
     { name: 'Bbm6', variation: 'Mini 1', positions: [3, 5, 3, 4], startFret: 2 },
     { name: 'Bbm6', variation: 'Mini 2', positions: [6, 7, 6, 8], startFret: 5 },
     { name: 'Bbm6', variation: 'High 1', positions: [10, 10, 9, 10], startFret: 8 },
   ],
-  Bb7sus4: [
+  'Bb7sus4': [
     { name: 'Bb7sus4', variation: 'Barre 1', positions: [1, 3, 1, 1], startFret: 0, barres: [{ fret: 1, fromString: 1, toString: 4 }] },
     { name: 'Bb7sus4', variation: 'Mini 1', positions: [8, 8, 6, 8], startFret: 5 },
     { name: 'Bb7sus4', variation: 'High 1', positions: [10, 10, 11, 11], startFret: 9 },
   ],
-  Bbm7b5: [
+  'Bbm7b5': [
     { name: 'Bbm7b5', variation: 'Open 1', positions: [1, 1, 0, 1], startFret: 0, barres: [{ fret: 1, fromString: 1, toString: 4 }] },
     { name: 'Bbm7b5', variation: 'Mini 1', positions: [3, 4, 4, 4], startFret: 2 },
     { name: 'Bbm7b5', variation: 'Mini 2', positions: [6, 8, 6, 7], startFret: 5 },
     { name: 'Bbm7b5', variation: 'High 1', positions: [9, 10, 9, 11], startFret: 8 },
   ],
   // B Family
-  B: [
+  'B': [
     { name: 'B', variation: 'Open 1', positions: [4, 3, 2, 0], startFret: 1 },
     { name: 'B', variation: 'Mini 1', positions: [4, 3, 2, 1], startFret: 0 },
     { name: 'B', variation: 'Mini 2', positions: [4, 6, 4, 6], startFret: 3 },
     { name: 'B', variation: 'High 1', positions: [8, 7, 7, 9], startFret: 6 },
   ],
-  Bm: [
+  'Bm': [
     { name: 'Bm', variation: 'Open 1', positions: [4, 0, 2, 5], startFret: 1 },
     { name: 'Bm', variation: 'Mini 1', positions: [4, 2, 2, 1], startFret: 0 },
     { name: 'Bm', variation: 'Mini 2', positions: [4, 6, 5, 5], startFret: 3 },
     { name: 'Bm', variation: 'High 1', positions: [7, 10, 7, 9], startFret: 6 },
   ],
-  Bdim: [
+  'Bdim': [
     { name: 'Bdim', variation: 'Open 1', positions: [4, 2, 1, 0], startFret: 0 },
     { name: 'Bdim', variation: 'Mini 1', positions: [4, 2, 1, 3], startFret: 0 },
     { name: 'Bdim', variation: 'Mini 2', positions: [4, 5, 5, 5], startFret: 3 },
     { name: 'Bdim', variation: 'High 1', positions: [7, 7, 7, 8], startFret: 6, barres: [{ fret: 7, fromString: 1, toString: 3 }] },
   ],
-  Baug: [
+  'Baug': [
     { name: 'Baug', variation: 'Open 1', positions: [0, 3, 1, 2], startFret: 0 },
     { name: 'Baug', variation: 'Mini 1', positions: [4, 3, 3, 1], startFret: 0 },
     { name: 'Baug', variation: 'Mini 2', positions: [4, 7, 5, 6], startFret: 3 },
     { name: 'Baug', variation: 'High 1', positions: [8, 9, 7, 10], startFret: 6 },
   ],
-  Bsus2: [
+  'Bsus2': [
     { name: 'Bsus2', variation: 'Open 1', positions: [4, 1, 2, 0], startFret: 0 },
     { name: 'Bsus2', variation: 'Mini 1', positions: [4, 1, 2, 1], startFret: 0 },
     { name: 'Bsus2', variation: 'Mini 2', positions: [4, 6, 6, 4], startFret: 3 },
     { name: 'Bsus2', variation: 'High 1', positions: [8, 11, 9, 9], startFret: 7 },
   ],
-  Bsus4: [
+  'Bsus4': [
     { name: 'Bsus4', variation: 'Open 1', positions: [4, 4, 2, 0], startFret: 1 },
     { name: 'Bsus4', variation: 'Mini 1', positions: [4, 4, 2, 1], startFret: 0 },
     { name: 'Bsus4', variation: 'Mini 2', positions: [4, 6, 4, 7], startFret: 3 },
     { name: 'Bsus4', variation: 'High 1', positions: [9, 8, 7, 9], startFret: 6 },
   ],
-  Bmaj7: [
+  'Bmaj7': [
     { name: 'Bmaj7', variation: 'Mini 1', positions: [4, 3, 2, 1], startFret: 0 },
     { name: 'Bmaj7', variation: 'Mini 2', positions: [4, 6, 6, 6], startFret: 3 },
     { name: 'Bmaj7', variation: 'High 1', positions: [8, 10, 7, 9], startFret: 6 },
     { name: 'Bmaj7', variation: 'High 2', positions: [11, 11, 11, 13], startFret: 10, barres: [{ fret: 11, fromString: 1, toString: 3 }] },
   ],
-  Bm7: [
+  'Bm7': [
     { name: 'Bm7', variation: 'Open 1', positions: [4, 2, 2, 0], startFret: 1 },
     { name: 'Bm7', variation: 'Barre 1', positions: [2, 2, 2, 2], startFret: 1, barres: [{ fret: 2, fromString: 1, toString: 4 }] },
     { name: 'Bm7', variation: 'Mini 1', positions: [4, 6, 5, 5], startFret: 3 },
     { name: 'Bm7', variation: 'High 1', positions: [7, 9, 7, 9], startFret: 6 },
   ],
-  B7: [
+  'B7': [
     { name: 'B7', variation: 'Open 1', positions: [4, 3, 2, 0], startFret: 1 },
     { name: 'B7', variation: 'Barre 1', positions: [2, 3, 2, 2], startFret: 1, barres: [{ fret: 2, fromString: 1, toString: 4 }] },
     { name: 'B7', variation: 'Mini 1', positions: [4, 6, 5, 6], startFret: 3 },
     { name: 'B7', variation: 'High 1', positions: [8, 9, 7, 9], startFret: 6 },
   ],
-  Bdim7: [
+  'Bdim7': [
     { name: 'Bdim7', variation: 'Mini 1', positions: [1, 2, 1, 2], startFret: 0 },
     { name: 'Bdim7', variation: 'Mini 2', positions: [4, 5, 4, 5], startFret: 3 },
     { name: 'Bdim7', variation: 'High 1', positions: [7, 8, 7, 8], startFret: 6 },
     { name: 'Bdim7', variation: 'High 2', positions: [10, 11, 10, 11], startFret: 9 },
   ],
-  Badd9: [
+  'Badd9': [
     { name: 'Badd9', variation: 'Mini 1', positions: [4, 3, 2, 4], startFret: 1 },
     { name: 'Badd9', variation: 'Barre 1', positions: [6, 6, 7, 6], startFret: 5, barres: [{ fret: 6, fromString: 1, toString: 4 }] },
     { name: 'Badd9', variation: 'High 1', positions: [8, 11, 9, 9], startFret: 7 },
     { name: 'Badd9', variation: 'High 2', positions: [11, 13, 11, 14], startFret: 10 },
   ],
-  B9: [
+  'B9': [
     { name: 'B9', variation: 'Open 1', positions: [8, 11, 9, 0], startFret: 7 },
     { name: 'B9', variation: 'Mini 1', positions: [4, 3, 5, 4], startFret: 2 },
     { name: 'B9', variation: 'Mini 2', positions: [6, 9, 7, 6], startFret: 5 },
     { name: 'B9', variation: 'High 1', positions: [14, 13, 11, 14], startFret: 10 },
   ],
-  B6: [
+  'B6': [
     { name: 'B6', variation: 'Mini 1', positions: [1, 3, 2, 2], startFret: 0 },
     { name: 'B6', variation: 'Mini 2', positions: [4, 6, 4, 6], startFret: 3 },
     { name: 'B6', variation: 'High 1', positions: [8, 8, 7, 9], startFret: 6 },
     { name: 'B6', variation: 'High 2', positions: [11, 11, 11, 11], startFret: 10, barres: [{ fret: 11, fromString: 1, toString: 4 }] },
   ],
-  Bm6: [
+  'Bm6': [
     { name: 'Bm6', variation: 'Mini 1', positions: [1, 2, 2, 2], startFret: 0 },
     { name: 'Bm6', variation: 'Mini 2', positions: [4, 6, 4, 5], startFret: 3 },
     { name: 'Bm6', variation: 'High 1', positions: [7, 8, 7, 9], startFret: 6 },
     { name: 'Bm6', variation: 'High 2', positions: [11, 11, 10, 11], startFret: 9 },
   ],
-  B7sus4: [
+  'B7sus4': [
     { name: 'B7sus4', variation: 'Open 1', positions: [4, 4, 2, 0], startFret: 1 },
     { name: 'B7sus4', variation: 'Barre 1', positions: [2, 4, 2, 2], startFret: 1, barres: [{ fret: 2, fromString: 1, toString: 4 }] },
     { name: 'B7sus4', variation: 'Mini 1', positions: [4, 6, 5, 7], startFret: 3 },
     { name: 'B7sus4', variation: 'High 1', positions: [9, 9, 7, 9], startFret: 6 },
   ],
-  Bm7b5: [
+  'Bm7b5': [
     { name: 'Bm7b5', variation: 'Open 1', positions: [4, 2, 1, 0], startFret: 0 },
     { name: 'Bm7b5', variation: 'Mini 1', positions: [2, 2, 1, 2], startFret: 0 },
     { name: 'Bm7b5', variation: 'Mini 2', positions: [4, 5, 5, 5], startFret: 3 },
