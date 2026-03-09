@@ -2,6 +2,10 @@
 
 <p align="center">Generate a beautiful stringed instrument chord chart for editorial and versatile purposes.</p>
 
+<p align="center">
+  <a href="https://strings-chordforge.vercel.app" target="_blank"><img alt="Visit Vercel: Strings ChordForge" src="https://img.shields.io/badge/Strings%20ChordForge-Vercel?style=for-the-badge&logo=vercel&label=Visit&color=maroon"></a>
+</p>
+
 <picture>
   <source srcset="https://github.com/user-attachments/assets/eb8f9daf-f2a1-4eab-8e23-e3edd635cfb6" media="(prefers-color-scheme: dark)" />
   <img src="https://github.com/user-attachments/assets/04883981-1ba6-45d6-a0ba-8cf00cb77a7f" />
