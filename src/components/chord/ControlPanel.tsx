@@ -75,7 +75,7 @@ export function ControlPanel({
     <div className="space-y-5">
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-lg font-bold text-foreground tracking-tight">ChordForge</h1>
+          <a href="https://github.com/yoelwep13578/strings-chordforge/" target="_blank"><h1 className="text-lg font-bold text-foreground tracking-tight">ChordForge</h1></a>
           <p className="text-xs text-muted-foreground">Chord chart generator</p>
         </div>
         <Button variant="outline" size="sm" className="gap-1.5" onClick={() => setGuideOpen(true)}>
