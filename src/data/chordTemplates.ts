@@ -103,12 +103,12 @@ export const GUITAR_CHORDS: Record<string, ChordTemplate[]> = {
     { name: 'Csus2', variation: 'Variation 3', positions: [8, 10, 12, null, null, null], startFret: 6 },
     { name: 'Csus2', variation: 'Variation 4', positions: [null, null, 10, 12, 13, 10], startFret: 9 },
     { name: 'Csus2', variation: 'Variation 5', positions: [null, null, 10, 12, 13, null], startFret: 8 },
-    { name: 'Csus2', variation: 'Variation 6', positions: [8, 10, 10, 8, 8, 8], startFret: 7, barres: [{ fret: 8, fromString: 1, toString: 6 }] },
+    { name: 'Csus2', variation: 'Variation 6', positions: [null, null, 5, 7, 8, 5], startFret: 4 },
   ],
   Cadd9: [
     { name: 'Cadd9', variation: 'Variation 1', positions: [null, 3, 2, 0, 3, 0], startFret: 0 },
     { name: 'Cadd9', variation: 'Variation 2', positions: [null, 3, 2, 0, 3, 3], startFret: 0 },
-    { name: 'Cadd9', variation: 'Variation 3', positions: [null, 3, 5, 5, 3, 3], startFret: 2, barres: [{ fret: 3, fromString: 1, toString: 2 }] },
+    { name: 'Cadd9', variation: 'Variation 3', positions: [null, 3, 5, 5, 3, 3], startFret: 2, barres: [{ fret: 3, fromString: 1, toString: 5 }] },
     { name: 'Cadd9', variation: 'Variation 4', positions: [null, null, 10, 12, 13, 10], startFret: 9 },
     { name: 'Cadd9', variation: 'Variation 5', positions: [8, 7, 10, 7, null, null], startFret: 6 },
     { name: 'Cadd9', variation: 'Variation 6', positions: [8, 10, 10, 9, 8, 10], startFret: 7, barres: [{ fret: 8, fromString: 1, toString: 6 }] },
@@ -133,7 +133,7 @@ export const GUITAR_CHORDS: Record<string, ChordTemplate[]> = {
     { name: 'Cmaj7', variation: 'Variation 1', positions: [null, 3, 2, 0, 0, 0], startFret: 0 },
     { name: 'Cmaj7', variation: 'Variation 2', positions: [null, 3, 5, 4, 5, 3], startFret: 2, barres: [{ fret: 3, fromString: 1, toString: 5 }] },
     { name: 'Cmaj7', variation: 'Variation 3', positions: [8, null, 9, 9, 8, null], startFret: 6 },
-    { name: 'Cmaj7', variation: 'Variation 4', positions: [null, null, 10, 12, 12, 12], startFret: 8, barres: [{ fret: 12, fromString: 1, toString: 3 }] },
+    { name: 'Cmaj7', variation: 'Variation 4', positions: [null, null, 10, 12, 12, 12], startFret: 9, barres: [{ fret: 12, fromString: 1, toString: 3 }] },
     { name: 'Cmaj7', variation: 'Variation 5', positions: [null, null, 10, 12, 12, 12], startFret: 9 },
     { name: 'Cmaj7', variation: 'Variation 6', positions: [8, 7, 7, 7, 8, 8], startFret: 6, barres: [{ fret: 7, fromString: 1, toString: 4 }] },
   ],
@@ -288,7 +288,7 @@ export const GUITAR_CHORDS: Record<string, ChordTemplate[]> = {
     { name: 'C#maj7', flatName: 'Dbmaj7', variation: 'Variation 1', positions: [null, 4, 3, 1, 1, 1], startFret: 0 },
     { name: 'C#maj7', flatName: 'Dbmaj7', variation: 'Variation 2', positions: [null, 4, 6, 5, 6, 4], startFret: 3, barres: [{ fret: 4, fromString: 1, toString: 5 }] },
     { name: 'C#maj7', flatName: 'Dbmaj7', variation: 'Variation 3', positions: [9, null, 10, 10, 9, null], startFret: 7 },
-    { name: 'C#maj7', flatName: 'Dbmaj7', variation: 'Variation 4', positions: [null, null, 11, 13, 13, 13], startFret: 9, barres: [{ fret: 13, fromString: 1, toString: 3 }] },
+    { name: 'C#maj7', flatName: 'Dbmaj7', variation: 'Variation 4', positions: [null, null, 11, 13, 13, 13], startFret: 10, barres: [{ fret: 13, fromString: 1, toString: 3 }] },
     { name: 'C#maj7', flatName: 'Dbmaj7', variation: 'Variation 5', positions: [null, null, 11, 13, 13, 13], startFret: 10 },
   ],
   'C#7': [
@@ -369,7 +369,7 @@ export const GUITAR_CHORDS: Record<string, ChordTemplate[]> = {
   ],
   Dm: [
     { name: 'Dm', variation: 'Variation 1', positions: [null, null, 0, 2, 3, 1], startFret: 0 },
-    { name: 'Dm', variation: 'Variation 2', positions: [null, null, 0, 2, 3, 1], startFret: 0 },
+    { name: 'Dm', variation: 'Variation 2', positions: [null, null, 3, 2, 3, 1], startFret: 0 },
     { name: 'Dm', variation: 'Variation 3', positions: [null, 5, 4, 2, 3, 1], startFret: 0 },
     { name: 'Dm', variation: 'Variation 4', positions: [null, null, 5, 7, 7, 6], startFret: 4, barres: [{ fret: 5, fromString: 1, toString: 4 }] },
     { name: 'Dm', variation: 'Variation 5', positions: [10, 12, 12, 10, 10, 10], startFret: 9, barres: [{ fret: 10, fromString: 1, toString: 6 }] },
@@ -392,7 +392,7 @@ export const GUITAR_CHORDS: Record<string, ChordTemplate[]> = {
   ],
   Dsus4: [
     { name: 'Dsus4', variation: 'Variation 1', positions: [null, null, 0, 2, 3, 3], startFret: 0 },
-    { name: 'Dsus4', variation: 'Variation 2', positions: [null, null, 0, 2, 3, 3], startFret: 0 },
+    { name: 'Dsus4', variation: 'Variation 2', positions: [null, null, 3, 2, 3, 3], startFret: 0 },
     { name: 'Dsus4', variation: 'Variation 3', positions: [null, 5, 4, 2, 3, 3], startFret: 1, barres: [{ fret: 3, fromString: 1, toString: 2 }] },
     { name: 'Dsus4', variation: 'Variation 4', positions: [null, null, 5, 7, 7, 8], startFret: 4, barres: [{ fret: 5, fromString: 1, toString: 4 }] },
     { name: 'Dsus4', variation: 'Variation 5', positions: [10, 12, 12, 12, 10, 10], startFret: 9, barres: [{ fret: 10, fromString: 1, toString: 6 }] },
@@ -400,7 +400,7 @@ export const GUITAR_CHORDS: Record<string, ChordTemplate[]> = {
   ],
   Dsus2: [
     { name: 'Dsus2', variation: 'Variation 1', positions: [null, null, 0, 2, 3, 0], startFret: 0 },
-    { name: 'Dsus2', variation: 'Variation 2', positions: [null, null, 0, 2, 3, 0], startFret: 0 },
+    { name: 'Dsus2', variation: 'Variation 2', positions: [null, null, 2, 2, 0, 0], startFret: 0 },
     { name: 'Dsus2', variation: 'Variation 3', positions: [null, null, 5, 7, 7, 5], startFret: 4, barres: [{ fret: 5, fromString: 1, toString: 4 }] },
     { name: 'Dsus2', variation: 'Variation 4', positions: [10, 12, 14, null, null, null], startFret: 8 },
     { name: 'Dsus2', variation: 'Variation 5', positions: [null, null, 12, 14, 15, 12], startFret: 11 },
@@ -408,7 +408,7 @@ export const GUITAR_CHORDS: Record<string, ChordTemplate[]> = {
   ],
   Dadd9: [
     { name: 'Dadd9', variation: 'Variation 1', positions: [null, null, 0, 2, 0, 2], startFret: 0 },
-    { name: 'Dadd9', variation: 'Variation 2', positions: [null, null, 0, 2, 0, 2], startFret: 0 },
+    { name: 'Dadd9', variation: 'Variation 2', positions: [null, null, 4, 4, 3, 2], startFret: 1 },
     { name: 'Dadd9', variation: 'Variation 3', positions: [null, null, 5, 4, 5, 5], startFret: 3, barres: [{ fret: 5, fromString: 1, toString: 3 }] },
     { name: 'Dadd9', variation: 'Variation 4', positions: [10, 12, 14, 11, null, null], startFret: 9 },
     { name: 'Dadd9', variation: 'Variation 5', positions: [null, null, 12, 14, 15, 12], startFret: 11 },
@@ -430,14 +430,14 @@ export const GUITAR_CHORDS: Record<string, ChordTemplate[]> = {
   ],
   Dmaj7: [
     { name: 'Dmaj7', variation: 'Variation 1', positions: [null, null, 0, 2, 2, 2], startFret: 0 },
-    { name: 'Dmaj7', variation: 'Variation 2', positions: [null, null, 0, 2, 2, 2], startFret: 0 },
+    { name: 'Dmaj7', variation: 'Variation 2', positions: [null, null, 4, 2, 2, 2], startFret: 1 },
     { name: 'Dmaj7', variation: 'Variation 3', positions: [null, null, 5, 4, 5, 5], startFret: 3, barres: [{ fret: 5, fromString: 1, toString: 3 }] },
     { name: 'Dmaj7', variation: 'Variation 4', positions: [10, null, 11, 11, 10, null], startFret: 8 },
     { name: 'Dmaj7', variation: 'Variation 5', positions: [null, null, 12, 14, 14, 14], startFret: 10, barres: [{ fret: 14, fromString: 1, toString: 3 }] },
   ],
   D7: [
     { name: 'D7', variation: 'Variation 1', positions: [null, null, 0, 2, 1, 2], startFret: 0 },
-    { name: 'D7', variation: 'Variation 2', positions: [null, null, 0, 2, 1, 2], startFret: 0 },
+    { name: 'D7', variation: 'Variation 2', positions: [null, null, 4, 2, 1, 2], startFret: 0 },
     { name: 'D7', variation: 'Variation 3', positions: [null, null, 5, 4, 5, 3], startFret: 2 },
     { name: 'D7', variation: 'Variation 4', positions: [10, 12, 10, 11, 10, 10], startFret: 9, barres: [{ fret: 10, fromString: 1, toString: 6 }] },
     { name: 'D7', variation: 'Variation 5', positions: [null, null, 10, 11, 10, 10], startFret: 8, barres: [{ fret: 10, fromString: 1, toString: 4 }] },
@@ -677,7 +677,7 @@ export const GUITAR_CHORDS: Record<string, ChordTemplate[]> = {
   ],
   Em: [
     { name: 'Em', variation: 'Variation 1', positions: [0, 2, 2, 0, 0, 0], startFret: 0 },
-    { name: 'Em', variation: 'Variation 2', positions: [0, 2, 2, 0, 0, 0], startFret: 0 },
+    { name: 'Em', variation: 'Variation 2', positions: [0, 2, 2, 0, 0, 3], startFret: 0 },
     { name: 'Em', variation: 'Variation 3', positions: [null, 7, 5, 4, 5, 4], startFret: 3 },
     { name: 'Em', variation: 'Variation 4', positions: [null, null, 4, 5, 4, 4], startFret: 3, barres: [{ fret: 4, fromString: 1, toString: 4 }] },
     { name: 'Em', variation: 'Variation 5', positions: [12, 14, 14, 12, 12, 12], startFret: 11, barres: [{ fret: 12, fromString: 1, toString: 6 }] },
@@ -702,7 +702,7 @@ export const GUITAR_CHORDS: Record<string, ChordTemplate[]> = {
   ],
   Esus4: [
     { name: 'Esus4', variation: 'Variation 1', positions: [0, 2, 2, 2, 0, 0], startFret: 0 },
-    { name: 'Esus4', variation: 'Variation 2', positions: [0, 2, 2, 2, 0, 0], startFret: 0 },
+    { name: 'Esus4', variation: 'Variation 2', positions: [0, 2, 2, 2, 0, 2], startFret: 0 },
     { name: 'Esus4', variation: 'Variation 3', positions: [null, 7, 6, 4, 5, 7], startFret: 3 },
     { name: 'Esus4', variation: 'Variation 4', positions: [null, null, 4, 4, 4, 4], startFret: 3, barres: [{ fret: 4, fromString: 1, toString: 4 }] },
     { name: 'Esus4', variation: 'Variation 5', positions: [12, 14, 14, 14, 12, 12], startFret: 11, barres: [{ fret: 12, fromString: 1, toString: 6 }] },
@@ -710,7 +710,7 @@ export const GUITAR_CHORDS: Record<string, ChordTemplate[]> = {
   ],
   Esus2: [
     { name: 'Esus2', variation: 'Variation 1', positions: [0, 2, 2, 1, 0, 2], startFret: 0 },
-    { name: 'Esus2', variation: 'Variation 2', positions: [0, 2, 2, 1, 0, 2], startFret: 0 },
+    { name: 'Esus2', variation: 'Variation 2', positions: [0, 2, 4, 1, 0, 2], startFret: 0 },
     { name: 'Esus2', variation: 'Variation 3', positions: [null, null, 4, 4, 4, 4], startFret: 3, barres: [{ fret: 4, fromString: 1, toString: 4 }] },
     { name: 'Esus2', variation: 'Variation 4', positions: [12, 14, 16, null, null, null], startFret: 10 },
     { name: 'Esus2', variation: 'Variation 5', positions: [null, null, 9, 11, 12, 9], startFret: 8 },
@@ -750,7 +750,7 @@ export const GUITAR_CHORDS: Record<string, ChordTemplate[]> = {
   ],
   E7: [
     { name: 'E7', variation: 'Variation 1', positions: [0, 2, 0, 1, 0, 0], startFret: 0 },
-    { name: 'E7', variation: 'Variation 2', positions: [0, 2, 0, 1, 0, 0], startFret: 0 },
+    { name: 'E7', variation: 'Variation 2', positions: [0, 2, 0, 1, 3, 0], startFret: 0 },
     { name: 'E7', variation: 'Variation 3', positions: [null, 7, 6, 4, 5, 4], startFret: 3, barres: [{ fret: 4, fromString: 1, toString: 5 }] },
     { name: 'E7', variation: 'Variation 4', positions: [null, null, 4, 4, 4, 4], startFret: 3, barres: [{ fret: 4, fromString: 1, toString: 4 }] },
     { name: 'E7', variation: 'Variation 5', positions: [12, 14, 12, 13, 12, 12], startFret: 11, barres: [{ fret: 12, fromString: 1, toString: 6 }] },
