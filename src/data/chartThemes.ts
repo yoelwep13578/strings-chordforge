@@ -10,6 +10,9 @@ export interface ChartColors {
   finger: string;
   fingerHighlight: string;
   fingerText: string;
+  highlighted: string;
+  highlightedHighlight: string;
+  highlightedText: string;
   binding: string;
   label: string;
   labelContrast: string;
@@ -32,6 +35,9 @@ export const CHART_THEMES: Record<string, ChartColors> = {
     finger: '#e89b0c',
     fingerHighlight: '#f0b830',
     fingerText: '#1c1612',
+    highlighted: '#2196F3',
+    highlightedHighlight: '#42A5F5',
+    highlightedText: '#ffffff',
     binding: '#6a6050',
     label: '#7a7e88',
     labelContrast: '#ffffff',
@@ -52,6 +58,9 @@ export const CHART_THEMES: Record<string, ChartColors> = {
     finger: '#d45500',
     fingerHighlight: '#e87020',
     fingerText: '#ffffff',
+    highlighted: '#1976D2',
+    highlightedHighlight: '#2196F3',
+    highlightedText: '#ffffff',
     binding: '#a09080',
     label: '#6a5e50',
     labelContrast: '#000000',
@@ -72,6 +81,9 @@ export const CHART_THEMES: Record<string, ChartColors> = {
     finger: '#e0e0e0',
     fingerHighlight: '#ffffff',
     fingerText: '#111111',
+    highlighted: '#90CAF9',
+    highlightedHighlight: '#BBDEFB',
+    highlightedText: '#111111',
     binding: '#777777',
     label: '#999999',
     labelContrast: '#ffffff',
@@ -92,6 +104,9 @@ export const CHART_THEMES: Record<string, ChartColors> = {
     finger: '#222222',
     fingerHighlight: '#444444',
     fingerText: '#ffffff',
+    highlighted: '#1565C0',
+    highlightedHighlight: '#1976D2',
+    highlightedText: '#ffffff',
     binding: '#888888',
     label: '#666666',
     labelContrast: '#000000',

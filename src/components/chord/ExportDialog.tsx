@@ -15,11 +15,12 @@ interface Props {
   svgRef: React.RefObject<SVGSVGElement>;
   chordName: string;
   rotation: number;
+  size: number;
+  onSizeChange: (size: number) => void;
 }
 
-export function ExportDialog({ open, onOpenChange, svgRef, chordName, rotation }: Props) {
+export function ExportDialog({ open, onOpenChange, svgRef, chordName, rotation, size, onSizeChange }: Props) {
   const [format, setFormat] = useState<'svg' | 'png' | 'jpg'>('svg');
-  const [size, setSize] = useState(1200);
   const [transparent, setTransparent] = useState(true);
   const [copied, setCopied] = useState(false);
   const { toast } = useToast();
@@ -75,7 +76,7 @@ export function ExportDialog({ open, onOpenChange, svgRef, chordName, rotation }
               <div className="flex items-center justify-between">
                 <Label className="text-sm">{sizeLabel}</Label>
                 <Input type="number" className="w-28 h-8 text-sm" min={100} max={8000}
-                  value={size} onChange={(e) => setSize(parseInt(e.target.value) || 1200)} />
+                  value={size} onChange={(e) => onSizeChange(parseInt(e.target.value) || 1200)} />
               </div>
               {format === 'png' && (
                 <div className="flex items-center justify-between">

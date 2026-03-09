@@ -1,5 +1,5 @@
-import React, { useMemo, forwardRef, useState, useCallback } from 'react';
-import { InstrumentConfig, ChordConfig, DisplayConfig, ChartTheme, AllLabelSettings, LabelSettings, BarreConfig, barreToInternal } from '@/types/chord';
+import React, { useMemo, forwardRef, useState, useCallback, useRef } from 'react';
+import { InstrumentConfig, ChordConfig, DisplayConfig, ChartTheme, AllLabelSettings, LabelSettings, BarreConfig, barreToInternal, highlightKey } from '@/types/chord';
 import { getNoteAtFret, fretPosition, formatNote, formatChordName } from '@/utils/music';
 import { CHART_THEMES, ChartColors } from '@/data/chartThemes';
 
@@ -9,7 +9,7 @@ interface Props {
   display: DisplayConfig;
   chartTheme: ChartTheme;
   labelSettings: AllLabelSettings;
-  onPositionClick: (stringIndex: number, fret: number) => void;
+  onPositionClick: (stringIndex: number, fret: number, highlight?: boolean) => void;
   onBarreAdd?: (barre: BarreConfig) => void;
 }
 
@@ -34,32 +34,54 @@ export const ChordSVG = forwardRef<SVGSVGElement, Props>(
     
     // Apply global full contrast for outline themes
     const C: ChartColors = useMemo(() => {
-      if (!display.globalFullContrast) return baseC;
-      const isOutlineLight = chartTheme === 'outline-light';
-      const isOutlineDark = chartTheme === 'outline-dark';
-      if (!isOutlineLight && !isOutlineDark) return baseC;
-      const c = isOutlineLight ? '#ffffff' : '#000000';
-      return {
-        ...baseC,
-        fret: c,
-        nut: c,
-        nutDark: c,
-        stringBass: c,
-        stringTreble: c,
-        inlay: isOutlineLight ? 'rgba(255,255,255,0.15)' : 'rgba(0,0,0,0.15)',
-        finger: c,
-        fingerHighlight: c,
-        fingerText: isOutlineLight ? '#000000' : '#ffffff',
-        binding: c,
-        label: c,
-        labelContrast: c,
-        chordName: c,
-        chordNameContrast: c,
-        openMute: c,
-        useGradients: false,
-      };
-    }, [baseC, display.globalFullContrast, chartTheme]);
+      let colors = baseC;
+      
+      if (display.globalFullContrast) {
+        const isOutlineLight = chartTheme === 'outline-light';
+        const isOutlineDark = chartTheme === 'outline-dark';
+        if (isOutlineLight || isOutlineDark) {
+          const c = isOutlineLight ? '#ffffff' : '#000000';
+          const hc = isOutlineLight ? '#aaaaff' : '#0000aa';
+          colors = {
+            ...baseC,
+            fret: c,
+            nut: c,
+            nutDark: c,
+            stringBass: c,
+            stringTreble: c,
+            inlay: isOutlineLight ? 'rgba(255,255,255,0.15)' : 'rgba(0,0,0,0.15)',
+            finger: c,
+            fingerHighlight: c,
+            fingerText: isOutlineLight ? '#000000' : '#ffffff',
+            highlighted: hc,
+            highlightedHighlight: hc,
+            highlightedText: isOutlineLight ? '#000000' : '#ffffff',
+            binding: c,
+            label: c,
+            labelContrast: c,
+            chordName: c,
+            chordNameContrast: c,
+            openMute: c,
+            useGradients: false,
+          };
+        }
+      }
+      
+      // Apply custom highlight color override
+      if (display.highlightColor) {
+        colors = {
+          ...colors,
+          highlighted: display.highlightColor,
+          highlightedHighlight: display.highlightColor,
+        };
+      }
+      
+      return colors;
+    }, [baseC, display.globalFullContrast, display.highlightColor, chartTheme]);
     const [dragState, setDragState] = useState<DragState | null>(null);
+    const longPressTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+    const longPressTriggered = useRef(false);
+    const longPressHit = useRef<{ stringIndex: number; fret: number } | null>(null);
 
     const calc = useMemo(() => {
       const sl = display.scaleLength;
@@ -149,9 +171,26 @@ export const ChordSVG = forwardRef<SVGSVGElement, Props>(
       return null;
     }, [frets, ns, sf, topAbsY, pad, stringX]);
 
+    const clearLongPress = useCallback(() => {
+      if (longPressTimer.current) {
+        clearTimeout(longPressTimer.current);
+        longPressTimer.current = null;
+      }
+    }, []);
+
     const handleMouseDown = (e: React.MouseEvent<SVGSVGElement>) => {
+      if (e.button === 2) return; // handle right-click in context menu
       const hit = hitTest(e);
       if (!hit || hit.fret === 0) return;
+      longPressTriggered.current = false;
+      longPressHit.current = hit;
+      // Start long-press timer
+      longPressTimer.current = setTimeout(() => {
+        longPressTriggered.current = true;
+        if (longPressHit.current) {
+          onPositionClick(longPressHit.current.stringIndex, longPressHit.current.fret, true);
+        }
+      }, 500);
       setDragState({ startString: hit.stringIndex, startFret: hit.fret, currentString: hit.stringIndex });
     };
 
@@ -159,21 +198,27 @@ export const ChordSVG = forwardRef<SVGSVGElement, Props>(
       if (!dragState) return;
       const hit = hitTest(e);
       if (hit && hit.fret === dragState.startFret) {
+        if (hit.stringIndex !== dragState.currentString) {
+          clearLongPress(); // cancel long-press if dragging across strings
+        }
         setDragState({ ...dragState, currentString: hit.stringIndex });
       }
     };
 
     const handleMouseUp = (e: React.MouseEvent<SVGSVGElement>) => {
+      clearLongPress();
+      if (e.button === 2) return;
       if (dragState) {
         const from = Math.min(dragState.startString, dragState.currentString);
         const to = Math.max(dragState.startString, dragState.currentString);
         if (from !== to && onBarreAdd) {
           onBarreAdd({ fret: dragState.startFret, fromString: from, toString: to });
-        } else {
+        } else if (!longPressTriggered.current) {
           // Single click - normal position toggle
           onPositionClick(dragState.startString, dragState.startFret);
         }
         setDragState(null);
+        longPressHit.current = null;
         return;
       }
       // Fallback for clicks above nut
@@ -181,6 +226,66 @@ export const ChordSVG = forwardRef<SVGSVGElement, Props>(
       if (hit && hit.fret === 0) {
         onPositionClick(hit.stringIndex, 0);
       }
+    };
+
+    const handleContextMenu = (e: React.MouseEvent<SVGSVGElement>) => {
+      e.preventDefault();
+      clearLongPress();
+      const hit = hitTest(e);
+      if (hit && hit.fret > 0) {
+        onPositionClick(hit.stringIndex, hit.fret, true);
+      }
+    };
+
+    // Touch handlers for long-press on touch devices
+    const handleTouchStart = (e: React.TouchEvent<SVGSVGElement>) => {
+      if (e.touches.length !== 1) return;
+      const touch = e.touches[0];
+      const svg = e.currentTarget;
+      const pt = svg.createSVGPoint();
+      pt.x = touch.clientX;
+      pt.y = touch.clientY;
+      const ctm = svg.getScreenCTM();
+      if (!ctm) return;
+      const p = pt.matrixTransform(ctm.inverse());
+
+      // Simple hit test for touch
+      let hit: { stringIndex: number; fret: number } | null = null;
+      if (p.y < frets[0].svgY && p.y > frets[0].svgY - 14) {
+        let nearest = 0, minD = Infinity;
+        for (let s = 0; s < ns; s++) {
+          const d = Math.abs(p.x - stringX(s, topAbsY));
+          if (d < minD) { minD = d; nearest = s; }
+        }
+        if (minD < 12) hit = { stringIndex: nearest, fret: 0 };
+      } else if (p.y >= frets[0].svgY && p.y <= frets[frets.length - 1].svgY) {
+        let fretNum = sf + 1;
+        for (let i = 1; i < frets.length; i++) {
+          if (p.y <= frets[i].svgY) { fretNum = frets[i].num; break; }
+        }
+        const absY = topAbsY + (p.y - pad.top);
+        let nearest = 0, minD = Infinity;
+        for (let s = 0; s < ns; s++) {
+          const d = Math.abs(p.x - stringX(s, absY));
+          if (d < minD) { minD = d; nearest = s; }
+        }
+        if (minD < 12) hit = { stringIndex: nearest, fret: fretNum };
+      }
+
+      if (!hit || hit.fret === 0) return;
+      longPressTriggered.current = false;
+      longPressHit.current = hit;
+      longPressTimer.current = setTimeout(() => {
+        longPressTriggered.current = true;
+        if (longPressHit.current) {
+          onPositionClick(longPressHit.current.stringIndex, longPressHit.current.fret, true);
+        }
+      }, 500);
+    };
+
+    const handleTouchEnd = () => {
+      clearLongPress();
+      longPressHit.current = null;
     };
 
     const fbPoints = [
@@ -213,7 +318,7 @@ export const ChordSVG = forwardRef<SVGSVGElement, Props>(
     }
 
     // Collect all finger dots (standard + multi-position)
-    const allFingerDots: { x: number; y: number; note: string; stringIndex: number }[] = [];
+    const allFingerDots: { x: number; y: number; note: string; stringIndex: number; fret: number }[] = [];
 
     if (display.multiPositionMode && chord.multiPositions) {
       chord.multiPositions.forEach((fretList, s) => {
@@ -225,6 +330,7 @@ export const ChordSVG = forwardRef<SVGSVGElement, Props>(
             y: toSvgY(midAbsY),
             note: getNoteAtFret(instrument.tuningIndices[s], fret),
             stringIndex: s,
+            fret,
           });
         }
       });
@@ -241,6 +347,7 @@ export const ChordSVG = forwardRef<SVGSVGElement, Props>(
         y: toSvgY(midAbsY),
         note: getNoteAtFret(instrument.tuningIndices[s], fret),
         stringIndex: s,
+        fret,
       });
     });
 
@@ -307,6 +414,10 @@ export const ChordSVG = forwardRef<SVGSVGElement, Props>(
         onMouseDown={handleMouseDown}
         onMouseMove={handleMouseMove}
         onMouseUp={handleMouseUp}
+        onContextMenu={handleContextMenu}
+        onTouchStart={handleTouchStart}
+        onTouchEnd={handleTouchEnd}
+        onTouchCancel={handleTouchEnd}
         style={{
           cursor: 'crosshair',
           maxHeight: '82vh',
@@ -331,6 +442,10 @@ export const ChordSVG = forwardRef<SVGSVGElement, Props>(
               <radialGradient id="finger-grad" cx="40%" cy="35%" r="60%">
                 <stop offset="0%" stopColor={C.fingerHighlight} />
                 <stop offset="100%" stopColor={C.finger} />
+              </radialGradient>
+              <radialGradient id="highlighted-grad" cx="40%" cy="35%" r="60%">
+                <stop offset="0%" stopColor={C.highlightedHighlight} />
+                <stop offset="100%" stopColor={C.highlighted} />
               </radialGradient>
             </>
           )}
@@ -393,23 +508,29 @@ export const ChordSVG = forwardRef<SVGSVGElement, Props>(
         {dragPreview}
 
         {/* Finger dots */}
-        {allFingerDots.map((dot, i) => (
-          <g key={`fd${i}`}>
-            <circle cx={dot.x} cy={dot.y} r={dotR}
-              fill={C.useGradients ? 'url(#finger-grad)' : C.finger} />
-            {display.showNoteLabels && (
-              <text x={dot.x + labelSettings.noteLabels.widthOffset} y={dot.y + 0.85 + labelSettings.noteLabels.heightOffset}
-                textAnchor="middle"
-                fontSize={labelSettings.noteLabels.fontSize}
-                fontFamily={getLabelFont(labelSettings.noteLabels, display.labelFont)}
-                fontWeight="700"
-                fill={getLabelColor(labelSettings.noteLabels, C.fingerText, C.fingerText)}
-                transform={counterRotate(labelSettings.noteLabels, dot.x + labelSettings.noteLabels.widthOffset, dot.y + 0.85 + labelSettings.noteLabels.heightOffset)}
-                {...getLabelAnchor(labelSettings.noteLabels)}
-              >{formatNote(dot.note, display.useFlats, display.useProperSymbols)}</text>
-            )}
-          </g>
-        ))}
+        {allFingerDots.map((dot, i) => {
+          const isHighlighted = chord.highlightedPositions.has(highlightKey(dot.stringIndex, dot.fret));
+          const fillColor = isHighlighted
+            ? (C.useGradients ? 'url(#highlighted-grad)' : C.highlighted)
+            : (C.useGradients ? 'url(#finger-grad)' : C.finger);
+          const textColor = isHighlighted ? C.highlightedText : C.fingerText;
+          return (
+            <g key={`fd${i}`}>
+              <circle cx={dot.x} cy={dot.y} r={dotR} fill={fillColor} />
+              {display.showNoteLabels && (
+                <text x={dot.x + labelSettings.noteLabels.widthOffset} y={dot.y + 0.85 + labelSettings.noteLabels.heightOffset}
+                  textAnchor="middle"
+                  fontSize={labelSettings.noteLabels.fontSize}
+                  fontFamily={getLabelFont(labelSettings.noteLabels, display.labelFont)}
+                  fontWeight="700"
+                  fill={getLabelColor(labelSettings.noteLabels, textColor, textColor)}
+                  transform={counterRotate(labelSettings.noteLabels, dot.x + labelSettings.noteLabels.widthOffset, dot.y + 0.85 + labelSettings.noteLabels.heightOffset)}
+                  {...getLabelAnchor(labelSettings.noteLabels)}
+                >{formatNote(dot.note, display.useFlats, display.useProperSymbols)}</text>
+              )}
+            </g>
+          );
+        })}
 
         {/* Open / Muted indicators */}
         {chord.positions.map((fret, s) => {

@@ -10,7 +10,9 @@ import { Button } from '@/components/ui/button';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Separator } from '@/components/ui/separator';
 import { Tooltip, TooltipContent, TooltipTrigger, TooltipProvider } from '@/components/ui/tooltip';
-import { Download, RotateCcw, RotateCw, Info } from 'lucide-react';
+import { Download, Copy, RotateCcw, RotateCw, Info, HelpCircle } from 'lucide-react';
+import { GuideDialog } from './GuideDialog';
+import { useState, useRef, useCallback } from 'react';
 
 interface Props {
   instrumentKey: string;
@@ -28,6 +30,9 @@ interface Props {
   variationIndex: number;
   onVariationChange: (index: number) => void;
   onExport: () => void;
+  onQuickCopy: () => void;
+  lastExportSize: number;
+  rotation: number;
 }
 
 const SectionTitle = ({ children }: { children: React.ReactNode }) => (
@@ -49,18 +54,36 @@ export function ControlPanel({
   labelSettings, onLabelSettingsChange,
   selectedChordKey, onChordKeyChange,
   variationIndex, onVariationChange,
-  onExport,
+  onExport, onQuickCopy, lastExportSize, rotation,
 }: Props) {
   const chordPresets = CHORD_LIBRARIES[instrumentKey] || {};
   const variations = chordPresets[selectedChordKey] || [];
   const isOutlineTheme = chartTheme === 'outline-light' || chartTheme === 'outline-dark';
+  const [guideOpen, setGuideOpen] = useState(false);
+  const colorTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const [localColor, setLocalColor] = useState(display.highlightColor || '#2196F3');
+
+  const handleColorChange = useCallback((value: string) => {
+    setLocalColor(value);
+    if (colorTimeout.current) clearTimeout(colorTimeout.current);
+    colorTimeout.current = setTimeout(() => {
+      onDisplayChange({ ...display, highlightColor: value });
+    }, 50);
+  }, [display, onDisplayChange]);
 
   return (
     <div className="space-y-5">
-      <div>
-        <h1 className="text-lg font-bold text-foreground tracking-tight">ChordForge</h1>
-        <p className="text-xs text-muted-foreground">Chord chart generator</p>
+      <div className="flex items-center justify-between">
+        <div>
+          <h1 className="text-lg font-bold text-foreground tracking-tight">ChordForge</h1>
+          <p className="text-xs text-muted-foreground">Chord chart generator</p>
+        </div>
+        <Button variant="outline" size="sm" className="gap-1.5" onClick={() => setGuideOpen(true)}>
+          <HelpCircle className="w-3.5 h-3.5" /> Guide
+        </Button>
       </div>
+
+      <GuideDialog open={guideOpen} onOpenChange={setGuideOpen} />
 
       <Separator />
 
@@ -76,6 +99,28 @@ export function ControlPanel({
               ))}
             </SelectContent>
           </Select>
+        </Field>
+        <Field label="Highlight Color">
+          <div className="flex items-center gap-2">
+            <label className="relative w-8 h-8 cursor-pointer">
+              <input
+                type="color"
+                className="absolute inset-0 opacity-0 cursor-pointer w-full h-full"
+                value={localColor}
+                onChange={(e) => handleColorChange(e.target.value)}
+              />
+              <span
+                className="block w-8 h-8 rounded-full border-2 border-border shadow-sm"
+                style={{ backgroundColor: localColor }}
+              />
+            </label>
+            {display.highlightColor && (
+              <Button variant="ghost" size="sm" className="h-7 px-2 text-xs"
+                onClick={() => { setLocalColor('#2196F3'); onDisplayChange({ ...display, highlightColor: '' }); }}>
+                Reset
+              </Button>
+            )}
+          </div>
         </Field>
       </div>
 
@@ -383,10 +428,20 @@ export function ControlPanel({
 
       <Separator />
 
-      <Button onClick={onExport} className="w-full gap-2">
-        <Download className="w-4 h-4" />
-        Export Chart
-      </Button>
+      <div className="space-y-2">
+        <Button onClick={onExport} className="w-full gap-2">
+          <Download className="w-4 h-4" />
+          <span className="flex-1 text-left">Export Chart</span>
+          <kbd className="text-[10px] opacity-60 font-mono">{navigator.platform?.includes('Mac') ? '⌘E' : 'Ctrl+E'}</kbd>
+        </Button>
+        <Button variant="outline" onClick={onQuickCopy} className="w-full gap-2">
+          <Copy className="w-4 h-4" />
+          <span className="flex-1 text-left">
+            Copy with {(rotation === 90 || rotation === -90) ? 'Height' : 'Width'} {lastExportSize}
+          </span>
+          <kbd className="text-[10px] opacity-60 font-mono">{navigator.platform?.includes('Mac') ? '⌘C' : 'Ctrl+C'}</kbd>
+        </Button>
+      </div>
     </div>
   );
 }

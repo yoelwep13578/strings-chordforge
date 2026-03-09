@@ -24,10 +24,16 @@ export interface ChordConfig {
   name: string;
   flatName?: string;
   positions: (number | null)[];
+  highlightedPositions: Set<string>;  // "stringIndex-fret" keys for highlighted dots
   multiPositions: number[][];  // per-string array of frets (for scale mode)
   startFret: number;
   numFrets: number;
   barres: BarreConfig[];
+}
+
+/** Create a highlight key for a string/fret pair */
+export function highlightKey(stringIndex: number, fret: number): string {
+  return `${stringIndex}-${fret}`;
 }
 
 export interface BarreConfig {
@@ -93,6 +99,7 @@ export interface DisplayConfig {
   globalFullContrast: boolean;
   useFlats: boolean;
   useProperSymbols: boolean;
+  highlightColor: string;
 }
 
 export interface ExportOptions {
