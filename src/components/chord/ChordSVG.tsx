@@ -101,7 +101,7 @@ export const ChordSVG = forwardRef<SVGSVGElement, Props>(
       const botW = widthAt(botAbsY);
       const maxW = Math.max(topW, botW);
 
-      const pad = { top: 32, bottom: 10, left: 28, right: 8 };
+      const pad = { top: 32, bottom: 8, left: 9, right: 8 };
       const vw = maxW + pad.left + pad.right;
       const vh = fbHeight + pad.top + pad.bottom;
       const cx = pad.left + maxW / 2;
