@@ -321,9 +321,18 @@ The standard orientation for chord diagrams is generally upward (here using **0�
 
 ### Toggle-able Displays
 
-#### Contrast Color (Pure White and Pure Black)
+#### Multi-Position Marks
 
-When enabled, black and white will be pushed to #000000 and #FFFFFF. Entire ChordForge interface (including diagram) uses softened colors to reduce eye strain, which can make colors in Outline Light and Outline Dark chart style kinda weak. You can adjust this on **Global Full Contrast** to suit your taste and background color.
+Multiposition Mark Mode can let you to mark more than one finger position/pressing position on the same string, which can be used to create scale diagrams, performances, and more. You can enable it on **Multi-Position** option.
+
+<picture>
+  <source srcset="https://github.com/user-attachments/assets/1356e0f0-5c8e-4687-bc16-16ded970e58f" media="(prefers-color-scheme: dark)" />
+  <img src="https://github.com/user-attachments/assets/e5a5c5dc-6d60-4021-8fd3-9bd4147656ba" />
+</picture>
+
+#### Global Contrast Color (Pure White and Pure Black)
+
+When enabled, black and white will be pushed to #000000 and #FFFFFF. Entire ChordForge interface (including diagram) uses softened colors to reduce eye strain, which can make colors in Outline Light and Outline Dark chart style kinda weak. You can adjust this on **Global Full Contrast** option to suit your taste and background color.
 
 <div align="center">
   <table>
@@ -382,11 +391,11 @@ When enabled, black and white will be pushed to #000000 and #FFFFFF. Entire Chor
   </tr>
 </table>
 
-ChordForge uses Sharp Mode for accidental notes. You can switch between Sharp Mode or Flat Mode on **Change # to b**.
+ChordForge uses Sharp Mode for accidental notes. You can switch between Sharp Mode or Flat Mode on **Change # to b** option.
 
 #### Proper Accidental Symbol
 
-When enabled, `#` will replaced with `♯` and `b` will replaced with `♭`. You can use common accidental symbol or proper accidental symbol on **Use Proper ♯ and ♭**.
+When enabled, `#` will replaced with `♯` and `b` will replaced with `♭`. You can use common accidental symbol or proper accidental symbol on **Use Proper ♯ and ♭** option.
 
 <table align="center">
   <tr align="center">
