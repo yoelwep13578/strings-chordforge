@@ -132,14 +132,33 @@ const Index = () => {
     if (display.multiPositionMode && fret > 0) {
       setChord((prev) => {
         const mp = prev.multiPositions.map(arr => [...arr]);
-        const idx = mp[stringIndex].indexOf(fret);
-        if (idx >= 0) {
-          mp[stringIndex].splice(idx, 1);
+        const hp = new Set(prev.highlightedPositions);
+        const key = highlightKey(stringIndex, fret);
+        const exists = mp[stringIndex].includes(fret);
+
+        if (highlight) {
+          // Right-click: toggle highlight on multi-position dot
+          if (exists && hp.has(key)) {
+            hp.delete(key);
+          } else if (exists) {
+            hp.add(key);
+          } else {
+            mp[stringIndex].push(fret);
+            mp[stringIndex].sort((a, b) => a - b);
+            hp.add(key);
+          }
         } else {
-          mp[stringIndex].push(fret);
-          mp[stringIndex].sort((a, b) => a - b);
+          // Left-click: toggle dot presence
+          if (hp.has(key)) {
+            hp.delete(key);
+          } else if (exists) {
+            mp[stringIndex].splice(mp[stringIndex].indexOf(fret), 1);
+          } else {
+            mp[stringIndex].push(fret);
+            mp[stringIndex].sort((a, b) => a - b);
+          }
         }
-        return { ...prev, multiPositions: mp };
+        return { ...prev, multiPositions: mp, highlightedPositions: hp };
       });
     } else {
       setChord((prev) => {
