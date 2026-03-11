@@ -81,6 +81,10 @@ Choose your preferred color & taste between wooden style or diagram-based style.
 
 Adjust the diagram to your liking, for example, by changing the instrument, scale length, neck width, marker size, font & size, and more.
 
+<div align="center">
+  <a href="#customization-guide"><img alt="Static Badge" src="https://img.shields.io/badge/Customization%20Guide-k?style=for-the-badge&label=See%20Also&color=white" /></a>
+</div>
+
 
 ## How to Use
 
@@ -88,15 +92,19 @@ Adjust the diagram to your liking, for example, by changing the instrument, scal
 
 2. Click on the diagram to mark the finger positions as desired
 
-    - Click before the nut to mark a muted string or open string
-    - Click anywhere on the fretboard to mark the finger position. Click at same position again to remove it
+    - Click before the nut to mark a muted string or open string.
+    - Click anywhere on the fretboard to mark the finger position. Click at same position again to remove it.
     - Right click anywhere on the fretboard to mark as highlighted finger position.
 
    or you can start by selecting a chord and its variations, then adjust the positions.
 
 3. Customize the diagram to your liking.
 
-4. Export the result. You can adjust the image width. You can choose SVG, PNG, JPG formats, or simply copy it if you don't want to bother downloading it.
+4. Export the result `Ctrl+E`.
+
+    - You can save it as SVG.
+    - You can save it as PNG or JPG formats, and use desired size.
+    - Or simply copy it `Ctrl+C` if you don't want to bother downloading it.
 
 
 ## Example Use Cases
@@ -136,7 +144,7 @@ Adjust the diagram to your liking, for example, by changing the instrument, scal
   </tr>
 </table>
 
-## Customizing Guide
+## Customization Guide
 
 ### Scale Length, Nut Width, and Bridge Width "Kickstarter"
 
@@ -323,7 +331,7 @@ The standard orientation for chord diagrams is generally upward (here using **0�
 
 #### Multi-Position Marks
 
-Multiposition Mark Mode can let you to mark more than one finger position/pressing position on the same string, which can be used to create scale diagrams, performances, and more. You can enable it on **Multi-Position** option.
+Multiposition Mark Mode can let you to mark more than one finger position/pressing position on the same string, which can be used to create scale diagrams, performances, and more. You can enable it in **Multi-Position** option.
 
 <picture>
   <source srcset="https://github.com/user-attachments/assets/1356e0f0-5c8e-4687-bc16-16ded970e58f" media="(prefers-color-scheme: dark)" />
@@ -332,7 +340,7 @@ Multiposition Mark Mode can let you to mark more than one finger position/pressi
 
 #### Global Contrast Color (Pure White and Pure Black)
 
-When enabled, black and white will be pushed to #000000 and #FFFFFF. Entire ChordForge interface (including diagram) uses softened colors to reduce eye strain, which can make colors in Outline Light and Outline Dark chart style kinda weak. You can adjust this on **Global Full Contrast** option to suit your taste and background color.
+When enabled, black and white will be pushed to #000000 and #FFFFFF. Entire ChordForge interface (including diagram) uses softened colors to reduce eye strain, which can make colors in Outline Light and Outline Dark chart style kinda weak. You can adjust this in **Global Full Contrast** option to suit your taste and background color.
 
 <div align="center">
   <table>
@@ -391,11 +399,11 @@ When enabled, black and white will be pushed to #000000 and #FFFFFF. Entire Chor
   </tr>
 </table>
 
-ChordForge uses Sharp Mode for accidental notes. You can switch between Sharp Mode or Flat Mode on **Change # to b** option.
+ChordForge uses Sharp Mode for accidental notes. You can switch between Sharp Mode or Flat Mode in **Change # to b** option.
 
 #### Proper Accidental Symbol
 
-When enabled, `#` will replaced with `♯` and `b` will replaced with `♭`. You can use common accidental symbol or proper accidental symbol on **Use Proper ♯ and ♭** option.
+When enabled, `#` will replaced with `♯` and `b` will replaced with `♭`. You can use common accidental symbol or proper accidental symbol in **Use Proper ♯ and ♭** option.
 
 <table align="center">
   <tr align="center">
@@ -462,7 +470,51 @@ When enabled, `#` will replaced with `♯` and `b` will replaced with `♭`. You
 
 #### Fret Mark (Inlay)
 
+The frets marked (inlay) include the 3rd, 5th, 7th, 9th, 12th, 15th, 17th, 19th, 21st, and 24th frets, which are in a faint color to make sure it not assumed as finger mark position. 
+
+- Single Dot: 3, 5, 7, 9, 15, 17, 19, 21
+- Double Dots: 12, 24
+
+You can show or hide these in **Show Frets** option.
+
+<p align="center">Fret Mark Shown</p>
+
+<picture>
+  <source srcset="https://github.com/user-attachments/assets/af14f1e5-22f9-455d-8498-0bc4ef823364" media="(prefers-color-scheme: dark)" />
+  <img src="https://github.com/user-attachments/assets/346da076-3584-4c0a-8e09-4c722463e9ae" />
+</picture>
+
+<p align="center">Fret Mark Hidden</p>
+
+<picture>
+  <source srcset="https://github.com/user-attachments/assets/78aabeaf-567b-40d5-b8d0-bfe1a58bbd15" media="(prefers-color-scheme: dark)" />
+  <img src="https://github.com/user-attachments/assets/003e56ec-e43c-42c5-90e7-0c0038680988" />
+</picture>
+
 #### Fret Numbers
+
+<table align="center"><thead>
+  <tr>
+    <th>Fret Numbers Shown</th>
+    <th>Fret Numbers Hidden</th>
+  </tr></thead>
+<tbody>
+  <tr>
+    <td>
+      <picture>
+        <source width="200" srcset="https://github.com/user-attachments/assets/8249a43d-ad2c-4b83-9343-0f5148e243bc" media="(prefers-color-scheme: dark)" />
+        <img width="200" src="https://github.com/user-attachments/assets/1f3b1d84-8c94-4dbe-8383-e4aafc5b13e0" />
+      </picture>
+    </td>
+    <td>
+      <picture>
+        <source width="200" srcset="https://github.com/user-attachments/assets/62fee32f-6add-4faf-955d-89e67bf464ab" media="(prefers-color-scheme: dark)" />
+        <img width="200" src="https://github.com/user-attachments/assets/fd24120e-6e9a-49fb-a38e-549598bba29a" />
+      </picture>
+    </td>
+  </tr>
+</tbody>
+</table>
 
 #### Tuning Labels
 
