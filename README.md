@@ -493,6 +493,8 @@ You can show or hide these in **Show Frets** option.
 
 #### Fret Numbers
 
+Fret numbers can be useful as additional clues for chord diagrams that frequently shift frets and for diagrams with hidden inlay. You can show or hide fret numbers in **Fret Numbers** option.
+
 <table align="center"><thead>
   <tr>
     <th>Fret Numbers Shown</th>
@@ -517,5 +519,36 @@ You can show or hide these in **Show Frets** option.
 </table>
 
 #### Tuning Labels
+
+All instruments are tuned to standard tuning. 
+
+- Guitar: E A D G B E
+- 'Ukulele: G C E A
+- Bass: E A D G
+
+You can show or hide these labels in **Tuning Labels** option.
+
+<table align="center"><thead>
+  <tr>
+    <th>Tuning Labels Shown</th>
+    <th>Tuning Labels Hidden</th>
+  </tr></thead>
+<tbody>
+  <tr>
+    <td>
+      <picture>
+        <source width="200" srcset="https://github.com/user-attachments/assets/3acae2cd-2ec8-47e8-a5b0-ab33c39580d7" media="(prefers-color-scheme: dark)" />
+        <img width="200" src="https://github.com/user-attachments/assets/7bae938d-4faa-44e1-9b22-3de9e15cb0df" />
+      </picture>
+    </td>
+    <td>
+      <picture>
+        <source width="200" srcset="https://github.com/user-attachments/assets/237b20c3-1e49-43f8-a664-0696b488528e" media="(prefers-color-scheme: dark)" />
+        <img width="200" src="https://github.com/user-attachments/assets/34bafa84-b64d-464a-9484-bc9444dcddb2" />
+      </picture>
+    </td>
+  </tr>
+</tbody>
+</table>
 
 #### Note Labels
