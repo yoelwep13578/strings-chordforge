@@ -327,6 +327,9 @@ The standard orientation for chord diagrams is generally upward (here using **0Â
 </table>
 </div>
 
+> [!TIP]
+> Want to rotate all labels instead keep stayed when diagram rotated? It's related to [Chord Name and Individual Labels Customization](#chord-name-and-individual-labels-customization).
+
 ### Toggle-able Displays
 
 #### Multi-Position Marks
@@ -552,3 +555,55 @@ You can show or hide these labels in **Tuning Labels** option.
 </table>
 
 #### Note Labels
+
+Note labels may not necessary for chord fingering diagram, but note labels are recommended for diagrams that explains what notes of chord and what notes of scale. You can show/hide note labels in **Note Labels** option.
+
+<table align="center"><thead>
+  <tr>
+    <th>Note Labels Shown</th>
+    <th>Note Labels Hidden</th>
+  </tr></thead>
+<tbody>
+  <tr>
+    <td>
+      <picture>
+        <source width="200" srcset="https://github.com/user-attachments/assets/2e20dff1-9576-40e1-b704-4703cf04d051" media="(prefers-color-scheme: dark)" />
+        <img width="200" src="https://github.com/user-attachments/assets/651381ad-b55c-4ab4-a900-6ffbcbad153e" />
+      </picture>
+    </td>
+    <td>
+      <picture>
+        <source width="200" srcset="https://github.com/user-attachments/assets/87387e62-9110-461a-abe8-d88eff9c9858" media="(prefers-color-scheme: dark)" />
+        <img width="200" src="https://github.com/user-attachments/assets/f5349288-2635-41e3-80ca-04ff3d28ebad" />
+      </picture>
+    </td>
+  </tr>
+</tbody>
+</table>
+
+### Mute, Open, and Finger Dot Size
+
+Size of mute symbol, open symbol, and finger dot are adjustable! Too small? Just increase its size.
+
+<div align="center">
+  <picture>
+    <source width="500" srcset="https://github.com/user-attachments/assets/5fd4060b-5cb7-4cf9-b70d-90f0964ac468" media="(prefers-color-scheme: dark)" />
+    <img width="500" src="https://github.com/user-attachments/assets/01ba08e8-526e-4abb-b84a-cea4e67655c2" />
+  </picture>
+</div>
+
+<p align="center">Example: Mute Size 6 | Open Size 2.4 | Finger Dot Size 3.8</p>
+
+### Fonts
+
+ChordForge uses Inter as default diagram font. If you don't like Inter, you can use other available fonts here in **Global Font** option:
+
+- Instrument Serif
+- JetBrains Mono
+- Playfair Serif
+- Source Serif 4
+
+> [!TIP]
+> Want to use individual font for individual labels? Let's jump to [Chord Name and Individual Labels Customization](#chord-name-and-individual-labels-customization).
+
+### Chord Name and Individual Labels Customization
