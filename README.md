@@ -328,7 +328,7 @@ The standard orientation for chord diagrams is generally upward (here using **0Â
 </div>
 
 > [!TIP]
-> Want to rotate all labels instead keep stayed when diagram rotated? It's related to [Chord Name and Individual Labels Customization](#chord-name-and-individual-labels-customization).
+> Want to rotate labels instead keep stayed when diagram rotated? Disable **[Rotate with Chart](#rotate-with-chart)** for [Chord Name and Individual Labels Customization](#chord-name-and-individual-labels-customization).
 
 ### Toggle-able Displays
 
@@ -592,7 +592,7 @@ Size of mute symbol, open symbol, and finger dot are adjustable! Too small? Just
   </picture>
 </div>
 
-<p align="center">Example: Mute Size 6 | Open Size 2.4 | Finger Dot Size 3.8</p>
+<p align="center">Example: Mute Size <code>6</code> | Open Size <code>2.4</code> | Finger Dot Size <code>3.8</code></p>
 
 ### Fonts
 
@@ -607,3 +607,74 @@ ChordForge uses Inter as default diagram font. If you don't like Inter, you can 
 > Want to use individual font for individual labels? Let's jump to [Chord Name and Individual Labels Customization](#chord-name-and-individual-labels-customization).
 
 ### Chord Name and Individual Labels Customization
+
+In `LABEL SETTINGS` section, here are these dropdown customization menus:
+
+- Chord Name
+- Fret Numbers
+- Tuning Labels
+- Note Numbers
+
+You can customize it individually
+
+#### Font Size
+
+Increase or decrease font size as you like.
+
+#### Full Contrast
+
+When enabled, the label will pushed to pure white `#FFFFFF` and pure black `#000000` color. This disabled by default, so the label will use softened colors.
+
+#### Height Offset
+
+Some enlarged label size may messes its current vertical position. Adjust its position (offset) vertically as you desired.
+
+#### Width Offset
+
+Same like previous situation where some enlarged label size may messes its current horizontal position. Adjust its position (offset) horizontally as you desired.
+
+#### Rotate with Chart
+
+By default, labels are rotated to follow diagram/chart orientation. When disabled, labels will not rotated.
+
+> [!NOTE]
+> When label position kinda messed on horizontal orientation, it's time to adjust **Height Offset** and **Width Offset**.
+
+<table align="center">
+  <tr>
+    <td>
+      <picture>
+        <source width="400" srcset="https://github.com/user-attachments/assets/0e6cefb4-eb44-46bf-b4bb-b687f0c98625" media="(prefers-color-scheme: dark)" />
+        <img width="400" src="https://github.com/user-attachments/assets/5f9be26b-9fd4-48a4-bbb4-1e210d40419c" />
+      </picture>
+    </td>
+    <td>
+      <picture>
+        <source width="400" srcset="https://github.com/user-attachments/assets/c02232ea-87ae-4cf3-88ec-87eba29d367d" media="(prefers-color-scheme: dark)" />
+        <img width="400" src="https://github.com/user-attachments/assets/f8f4729f-946f-4397-adf7-90cb2807afd7" />
+      </picture>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <b>Example 1</b><br>
+      - Chord Name Rotate with Chart: Enabled<br>
+      - Fret Numbers Rotate with Chart: Disabled<br>
+      - Tuning Labels Rotate with Chart: Enabled<br>
+      - Note Labels Rotate with Chart: Disabled<br>
+      - Note Labels Height Offset: <code>-0.8</code>
+    </td>
+    <td>
+      <b>Example 2</b><br>
+      - Chord Name Rotate with Chart: Disabled<br>
+      - Fret Numbers Rotate with Chart: Disabled<br>
+      - Tuning Labels Rotate with Chart: Disabled<br>
+      - Note Labels Rotate with Chart: Disabled<br>
+      - Note Labels Height Offset: <code>-0.8</code>
+    </td>
+  </tr>
+</table>
+
+#### System Fonts
+
+To use different font for different labels, enable **Use System Font** option and you can type your own font names. Using available global fonts are acceptable.
