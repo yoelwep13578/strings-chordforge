@@ -139,7 +139,8 @@ Adjust the diagram to your liking, for example, by changing the instrument, scal
       Songbook or Zine Indie
     </td>
     <td align="center">
-      <img src="" />
+      <img src="https://github.com/user-attachments/assets/d5ca6ea8-b3d2-44ad-87a6-5fbe8794e3a7" /><br>
+      Flashcard
     </td>
   </tr>
 </table>
