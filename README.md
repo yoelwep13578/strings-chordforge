@@ -110,8 +110,7 @@ Adjust the diagram to your liking, for example, by changing the instrument, scal
 ## Example Use Cases
 
 <table>
-  <tr>
-    <td align="center">
+    <td align="center" width="50%">
       <img src="https://github.com/user-attachments/assets/c81b4273-d5d1-420c-b8bf-02a6e9716585" /><br>
       Lyrics and Chords Video<br>
       Image Credit: George Webster
@@ -162,8 +161,9 @@ Adjust the diagram to your liking, for example, by changing the instrument, scal
       Credits: PixelRocker & GuitarZero2Hero
     </td>
     <td align="center">
-      <img src="" /><br>
-      And More...
+      <img src="https://github.com/user-attachments/assets/c07a923c-7987-4c12-92d8-c311d972ae6b" /><br>
+      Shirt<br>
+      Mockup Credit: SHVETS Production
     </td>
   </tr>
 </table>
