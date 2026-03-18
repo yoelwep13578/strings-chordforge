@@ -100,11 +100,11 @@ Adjust the diagram to your liking, for example, by changing the instrument, scal
 
 3. Customize the diagram to your liking.
 
-4. Export the result `Ctrl+E`.
+4. Export the result (`Ctrl+E`).
 
     - You can save it as SVG.
     - You can save it as PNG or JPG formats, and use desired size.
-    - Or simply copy it `Ctrl+C` if you don't want to bother downloading it.
+    - Or simply copy it (`Ctrl+C`) if you don't want to bother downloading it.
 
 
 ## Example Use Cases
@@ -153,6 +153,17 @@ Adjust the diagram to your liking, for example, by changing the instrument, scal
       <img src="https://github.com/user-attachments/assets/8c1c260d-1c32-4401-83d7-15b190bcebb2" /><br>
       Visualization<br>
       Image Credit: ICSA
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <img src="https://github.com/user-attachments/assets/7973bbd0-e7a1-49b9-9ada-19d279a42fd0" /><br>
+      Thumbnail<br>
+      Credits: PixelRocker & GuitarZero2Hero
+    </td>
+    <td align="center">
+      <img src="" /><br>
+      And More...
     </td>
   </tr>
 </table>
