@@ -143,6 +143,18 @@ Adjust the diagram to your liking, for example, by changing the instrument, scal
       Flashcard
     </td>
   </tr>
+  <tr>
+    <td align="center">
+      <img src="https://github.com/user-attachments/assets/5b684ef1-db22-4381-b834-4928141db88c" /><br>
+      Website/Blog/Article<br>
+      Article Credit: National Guitar Academy
+    </td>
+    <td align="center">
+      <img src="https://github.com/user-attachments/assets/8c1c260d-1c32-4401-83d7-15b190bcebb2" /><br>
+      Visualization<br>
+      Image Credit: ICSA
+    </td>
+  </tr>
 </table>
 
 ## Customization Guide
