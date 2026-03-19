@@ -109,7 +109,13 @@ Adjust the diagram to your liking, for example, by changing the instrument, scal
 
 ## Example Use Cases
 
+<details>
+<summary>Use Case Gallery</summary>
+
+### Use Case Gallery
+
 <table>
+  <tr>
     <td align="center" width="50%">
       <img src="https://github.com/user-attachments/assets/c81b4273-d5d1-420c-b8bf-02a6e9716585" /><br>
       Lyrics and Chords Video<br>
@@ -164,6 +170,104 @@ Adjust the diagram to your liking, for example, by changing the instrument, scal
       <img src="https://github.com/user-attachments/assets/c07a923c-7987-4c12-92d8-c311d972ae6b" /><br>
       Shirt<br>
       Mockup Credit: SHVETS Production
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <img src="https://github.com/user-attachments/assets/d3d78db0-0fc4-4cd9-a1fb-649f4dacf9d3" /><br>
+      Bag<br>
+      Mockup Credit: rawpixel
+    </td>
+    <td align="center">
+      <img src="" /><br>
+      And More...
+    </td>
+  </tr>
+</table>
+</details>
+
+### For Educator
+
+<table>
+  <tr>
+    <td align="center" width="50%">
+      <img src="https://github.com/user-attachments/assets/ecde5180-3237-422c-98bc-5dae9562a61a" /><br>
+      Music Education Worksheet
+    </td>
+    <td align="center">
+      <img src="https://github.com/user-attachments/assets/d5ca6ea8-b3d2-44ad-87a6-5fbe8794e3a7" /><br>
+      Flashcard
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <img src="https://github.com/user-attachments/assets/8c1c260d-1c32-4401-83d7-15b190bcebb2" /><br>
+      Visualization<br>
+      Image Credit: ICSA
+    </td>
+  </tr>
+</table>
+
+### For Writer & Publisher
+
+<table>
+  <tr>
+    <td align="center" width="50%">
+      <img src="https://github.com/user-attachments/assets/e691ae60-0f03-47a2-af1b-ecad16cf8ae5" /><br>
+      Music Education Book<br>
+      Mockup Credit: upklyak
+    </td>
+    <td align="center">
+      <img src="https://github.com/user-attachments/assets/5b684ef1-db22-4381-b834-4928141db88c" /><br>
+      Website/Blog/Article<br>
+      Article Credit: National Guitar Academy
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <img src="https://github.com/user-attachments/assets/e83872d3-1094-4e53-9349-27e9201f24b0" /><br>
+      Songbook or Zine Indie
+    </td>
+  </tr>
+</table>
+
+### For Content Creator
+
+<table>
+  <tr>
+    <td align="center" width="50%">
+      <img src="https://github.com/user-attachments/assets/7973bbd0-e7a1-49b9-9ada-19d279a42fd0" /><br>
+      Thumbnail<br>
+      Credits: PixelRocker & GuitarZero2Hero
+    </td>
+    <td align="center" width="50%">
+      <img src="https://github.com/user-attachments/assets/c81b4273-d5d1-420c-b8bf-02a6e9716585" /><br>
+      Lyrics and Chords Video<br>
+      Image Credit: George Webster
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <img src="https://github.com/user-attachments/assets/6861e96b-690d-4ece-857e-be76f0196ae5" /><br>
+      Tutorial or Lesson Video<br>
+      Image Credit: Marco Cirillo Ukulele
+    </td>
+  </tr>
+</table>
+
+### For Designer or Print-on-Demand Purpose
+
+<table>
+  <tr>
+    <td align="center" width="50%">
+      <img src="https://github.com/user-attachments/assets/c07a923c-7987-4c12-92d8-c311d972ae6b" /><br>
+      Shirt<br>
+      Mockup Credit: SHVETS Production
+    </td>
+    <td align="center">
+      <img src="https://github.com/user-attachments/assets/d3d78db0-0fc4-4cd9-a1fb-649f4dacf9d3" /><br>
+      Bag<br>
+      Mockup Credit: rawpixel
     </td>
   </tr>
 </table>
