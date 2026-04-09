@@ -175,7 +175,7 @@ export function ControlPanel({
           <Input className="w-32 h-8 text-sm" value={chord.name}
             onChange={(e) => onChordChange({ ...chord, name: e.target.value })} />
         </Field>
-        <Button variant="outline" size="sm" className="w-full gap-1.5 text-destructive hover:text-destructive" onClick={onClearPositions}>
+        <Button variant="outline" size="sm" className="w-full gap-1.5 text-destructive hover:bg-destructive hover:text-white" onClick={onClearPositions}>
           <Trash2 className="w-3.5 h-3.5" /> Clear All Positions
         </Button>
       </div>
