@@ -246,6 +246,13 @@ const Index = () => {
           onQuickCopy={handleQuickCopy}
           lastExportSize={lastExportSize}
           rotation={display.rotation}
+          onClearPositions={() => setChord(prev => ({
+            ...prev,
+            positions: Array(instrument.strings).fill(-1),
+            highlightedPositions: new Set<string>(),
+            multiPositions: Array.from({ length: instrument.strings }, () => []),
+            barres: [],
+          }))}
         />
       </aside>
 

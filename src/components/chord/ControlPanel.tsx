@@ -10,7 +10,7 @@ import { Button } from '@/components/ui/button';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Separator } from '@/components/ui/separator';
 import { Tooltip, TooltipContent, TooltipTrigger, TooltipProvider } from '@/components/ui/tooltip';
-import { Download, Copy, RotateCcw, RotateCw, Info, HelpCircle } from 'lucide-react';
+import { Download, Copy, RotateCcw, RotateCw, Info, HelpCircle, Trash2 } from 'lucide-react';
 import { GuideDialog } from './GuideDialog';
 import { useState, useRef, useCallback } from 'react';
 
@@ -31,6 +31,7 @@ interface Props {
   onVariationChange: (index: number) => void;
   onExport: () => void;
   onQuickCopy: () => void;
+  onClearPositions: () => void;
   lastExportSize: number;
   rotation: number;
 }
@@ -54,7 +55,7 @@ export function ControlPanel({
   labelSettings, onLabelSettingsChange,
   selectedChordKey, onChordKeyChange,
   variationIndex, onVariationChange,
-  onExport, onQuickCopy, lastExportSize, rotation,
+  onExport, onQuickCopy, onClearPositions, lastExportSize, rotation,
 }: Props) {
   const chordPresets = CHORD_LIBRARIES[instrumentKey] || {};
   const variations = chordPresets[selectedChordKey] || [];
@@ -174,8 +175,10 @@ export function ControlPanel({
           <Input className="w-32 h-8 text-sm" value={chord.name}
             onChange={(e) => onChordChange({ ...chord, name: e.target.value })} />
         </Field>
+        <Button variant="outline" size="sm" className="w-full gap-1.5 text-destructive hover:text-destructive" onClick={onClearPositions}>
+          <Trash2 className="w-3.5 h-3.5" /> Clear All Positions
+        </Button>
       </div>
-
       <Separator />
 
       {/* Fretboard */}
